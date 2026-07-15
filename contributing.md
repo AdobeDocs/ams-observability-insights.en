@@ -8,9 +8,9 @@ This file describes how you can contribute, and points out the guidelines to fol
 
 This project has adopted the [Adobe Open Source Code of Conduct](code-of-conduct.md). By contributing to AEM documentation, you agree to adhere to this code of conduct. Report unacceptable behavior to [Grp-opensourceoffice@adobe.com](mailto:Grp-opensourceoffice@adobe.com).
 
-## Guidelines for Contributing
+## Contributor Guide Documentation
 
-While any contributions are welcomed to improve AEM documentation, be sure that contributions adhere to certain guidelines and standards where possible. Review the [Guidelines for Contributing to AEM Documentation](guidelines.md) for more information.
+See the [Contributor Guide](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html).
 
 ## How to Contribute
 

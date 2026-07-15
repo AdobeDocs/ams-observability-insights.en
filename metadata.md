@@ -8,6 +8,7 @@ usetq: true
 type: Documentation
 mini-toc-levels: 2
 git-repo: https://github.com/AdobeDocs/ams-synoptryx.en
+recommendations: noDisplay
 hide: true
 index: false
 ---

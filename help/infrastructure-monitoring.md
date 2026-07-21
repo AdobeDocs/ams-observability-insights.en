@@ -10,7 +10,7 @@ Synoptryx Infrastructure monitors Author, Publish, Dispatcher, and other hosts i
 
 ## Infrastructure Monitoring {#infrastructure}
 
-![Synoptryx Infrastructure hosts view with inventory and performance filters](assets/image21.png)
+![Synoptryx Infrastructure hosts view with inventory and performance filters]
 
 * **Inventory** — Current status and inventory of monitored systems
 * **Events feed** — Logins, upgrades, and other infrastructure events

@@ -6,7 +6,7 @@ role: Admin
 ---
 # Infrastructure Monitoring with Synoptryx {#infrastructure-monitoring}
 
-Synoptryx Infrastructure monitors Author, Publish, Dispatcher, and other hosts in your Adobe Experience Manager (AEM) Managed Services footprint. Host data is centralized so you can compare systems and investigate issues efficiently.
+Synoptryx Infrastructure monitors Author, Publish, Dispatcher, and other hosts in your Adobe Experience Manager (AEM) Managed Services footprint. Host data is centralized so you can compare systems and investigate issues efficiently....
 
 ## Infrastructure Monitoring {#infrastructure}
 

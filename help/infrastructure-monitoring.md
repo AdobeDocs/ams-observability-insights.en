@@ -4,17 +4,18 @@ description: Use Synoptryx Infrastructure monitoring to review host-level system
 feature: Operations
 role: Admin
 ---
+
 # Infrastructure Monitoring with Synoptryx {#infrastructure-monitoring}
 
-Synoptryx Infrastructure monitors Author, Publish, Dispatcher, and other hosts in your Adobe Experience Manager (AEM) Managed Services footprint. Host data is centralized so you can compare systems and investigate issues efficiently....
+Synoptryx Infrastructure monitors Author, Publish, Dispatcher, and other hosts in your Adobe Experience Manager (AEM) Managed Services footprint. Host data is centralized so you can compare systems and investigate issues efficiently.
 
 ## Infrastructure Monitoring {#infrastructure}
 
 ![Synoptryx Infrastructure hosts view with inventory and performance filters]
 
-* **Inventory** — Current status and inventory of monitored systems
-* **Events feed** — Logins, upgrades, and other infrastructure events
-* **Hosts** — CPU, memory, network, processes, and disk metrics; filter and compare hosts to find bottlenecks
+- **Inventory** — Current status and inventory of monitored systems
+- **Events feed** — Logins, upgrades, and other infrastructure events
+- **Hosts** — CPU, memory, network, processes, and disk metrics; filter and compare hosts to find bottlenecks
 
 Each host provides tabs for System, Network, Processes, and Storage.
 
@@ -22,12 +23,12 @@ Each host provides tabs for System, Network, Processes, and Storage.
 
 The System tab shows default performance graphs; use chart dropdowns to add more views. Key metrics include:
 
-|Metric|Description|
-|---|---|
-|CPU %|Derived from `cpuUserPercent`, `cpuSystemPercent`, `cpuIoWaitPercent`, and `cpuStealPercent`|
-|Load average (5 min)|Tasks waiting for CPU|
-|Memory used %|Used compared to free memory|
-|Host disk I/O|Data transfer between RAM and storage|
+| Metric               | Description                                                                                  |
+| -------------------- | -------------------------------------------------------------------------------------------- |
+| CPU %                | Derived from `cpuUserPercent`, `cpuSystemPercent`, `cpuIoWaitPercent`, and `cpuStealPercent` |
+| Load average (5 min) | Tasks waiting for CPU                                                                        |
+| Memory used %        | Used compared to free memory                                                                 |
+| Host disk I/O        | Data transfer between RAM and storage                                                        |
 
 ![Infrastructure System tab with CPU, load, memory, and disk charts](assets/image23.png)
 
@@ -41,7 +42,7 @@ Monitor bandwidth (packets and bytes), errors per second, and the health of host
 
 Review per-process CPU, I/O bytes, and memory across your hosts.
 
-Process-level CPU reflects use of a *single* core per process, not total system CPU—helpful when isolating a specific daemon or service.
+Process-level CPU reflects use of a _single_ core per process, not total system CPU—helpful when isolating a specific daemon or service.
 
 ![Infrastructure Processes tab showing per-process resource usage](assets/image27.png)
 

@@ -280,7 +280,7 @@ For every percentile:
 
 ## Requests by HTTP Status Code
 
-![Requests by Status Code](assets/apm/5_requests_%20by_status_code.png)
+![Requests by Status Code](assets/apm/5_requests_by_status_code.png)
 
 ### Description
 

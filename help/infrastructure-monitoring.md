@@ -9,9 +9,7 @@ role: Admin
 
 This section describes each host-level infrastructure monitoring graph displayed on the infrastructure monitoring dashboard. Each section explains the purpose of the metric, the data being collected, the units of measurement, and the information presented in the visualization.
 
----
-
-# Dashboard Overview
+## Dashboard Overview
 
 The Host Infrastructure Monitoring Dashboard provides real-time visibility into the utilization and performance of the underlying host. These metrics assist operators in monitoring compute, memory, storage, and network resources while identifying potential resource bottlenecks.
 
@@ -26,13 +24,11 @@ The dashboard includes the following monitoring panels:
 - Host CPU Load Average
 - Host Memory Usage
 
----
-
-# 1. Host CPU Utilization
+## 1. Host CPU Utilization
 
 ![Host CPU Utilization](assets/host-monitoring/host_cpu_utilization.png)
 
-## Description
+### Description
 
 The **Host CPU Utilization** panel displays the percentage of CPU resources currently being consumed by the operating system and all running processes over time.
 
@@ -40,23 +36,17 @@ This metric represents the overall CPU usage across the host and provides a time
 
 The graph allows operators to monitor how CPU consumption changes during the selected observation window.
 
----
-
-## Metric
+### Metric
 
 | Metric    | Description                              |
 | --------- | ---------------------------------------- |
 | `cpu_pct` | Percentage of total CPU currently in use |
 
----
-
-## Units
+### Units
 
 - Percentage (%)
 
----
-
-## Displayed Statistics
+### Displayed Statistics
 
 The panel summarizes CPU utilization using three values:
 
@@ -66,22 +56,18 @@ The panel summarizes CPU utilization using three values:
 | Last      | Most recently collected CPU utilization value                   |
 | Max       | Highest CPU utilization observed during the selected time range |
 
----
-
-## Graph Components
+### Graph Components
 
 - Time-series line representing CPU utilization.
 - Percentage-based Y-axis ranging from **0% to 100%**.
 - Summary statistics displayed below the graph.
 - Historical trend across the selected monitoring interval.
 
----
-
-# 2. Host Disk I/O
+## 2. Host Disk I/O
 
 ![Host Disk I/O](assets/host-monitoring/host_disk_io.png)
 
-## Description
+### Description
 
 The **Host Disk I/O** panel displays storage throughput for disk read and disk write operations performed by the host.
 
@@ -89,9 +75,7 @@ The graph presents two independent time-series that represent data being transfe
 
 This visualization helps monitor storage activity over time and provides insight into the volume of data being read from and written to disks.
 
----
-
-## Metrics
+### Metrics
 
 | Metric       | Description                       |
 | ------------ | --------------------------------- |
@@ -100,9 +84,7 @@ This visualization helps monitor storage activity over time and provides insight
 
 Internally, these metrics are displayed using smoothed throughput values.
 
----
-
-## Units
+### Units
 
 - Bytes per second (B/s)
 - Kilobytes per second (KB/s)
@@ -111,9 +93,7 @@ Internally, these metrics are displayed using smoothed throughput values.
 
 The displayed unit automatically scales based on throughput.
 
----
-
-## Graph Components
+### Graph Components
 
 - Green line representing disk read throughput.
 - Orange line representing disk write throughput.
@@ -121,31 +101,24 @@ The displayed unit automatically scales based on throughput.
 - Separate legend for each metric.
 - Current metric values displayed beside each series.
 
----
-
-# 3. Host Network I/O
+## 3. Host Network I/O
 
 ![Host Network I/O](assets/host-monitoring/host_network_io.png)
 
-## Description
+### Description
 
 The **Host Network I/O** panel displays the volume of network traffic transmitted and received by the host over time.
 
 The graph measures the rate at which data flows through the network interfaces and provides visibility into network bandwidth consumption.
-
 This metric represents aggregate network throughput.
 
----
-
-## Metric
+### Metric
 
 | Metric          | Description                                                           |
 | --------------- | --------------------------------------------------------------------- |
 | `bytes_per_sec` | Aggregate network throughput measured as bytes transferred per second |
 
----
-
-## Units
+### Units
 
 The graph automatically scales between:
 
@@ -156,9 +129,7 @@ The graph automatically scales between:
 
 depending on the observed traffic volume.
 
----
-
-## Displayed Statistics
+### Displayed Statistics
 
 | Statistic | Description                        |
 | --------- | ---------------------------------- |
@@ -166,22 +137,18 @@ depending on the observed traffic volume.
 | Last      | Most recent throughput measurement |
 | Max       | Highest throughput observed        |
 
----
-
-## Graph Components
+### Graph Components
 
 - Single throughput line.
 - Time-series visualization.
 - Dynamic bandwidth scaling.
 - Summary statistics displayed beneath the chart.
 
----
-
-# 4. CPU I/O Wait
+## 4. CPU I/O Wait
 
 ![CPU I/O Wait](assets/host-monitoring/cpu_io_wait.png)
 
-## Description
+### Description
 
 The **CPU I/O Wait** panel displays the percentage of CPU time spent waiting for input/output operations to complete.
 
@@ -189,23 +156,17 @@ This metric represents processor idle time that occurs because active processes 
 
 The graph visualizes how I/O wait changes over time.
 
----
-
-## Metric
+### Metric
 
 | Metric    | Description                                            |
 | --------- | ------------------------------------------------------ |
 | `cpu_pct` | Percentage of CPU time spent waiting on I/O operations |
 
----
-
-## Units
+### Units
 
 - Percentage (%)
 
----
-
-## Displayed Statistics
+### Displayed Statistics
 
 | Statistic | Description                     |
 | --------- | ------------------------------- |
@@ -213,56 +174,44 @@ The graph visualizes how I/O wait changes over time.
 | Last      | Most recently recorded value    |
 | Max       | Highest recorded value          |
 
----
-
-## Graph Components
+### Graph Components
 
 - Time-series line.
 - Percentage-based Y-axis.
 - Summary statistics.
 - Historical trend visualization.
 
----
-
-# 5. Storage Usage
+## 5. Storage Usage
 
 ![Storage Usage](assets/host-monitoring/storage_disk_usage.png)
 
-## Description
+### Description
 
 The **Storage Usage** panel displays the overall percentage of storage capacity currently utilized on the monitored host.
 
 The graph provides a historical view of filesystem capacity utilization during the selected time interval.
 
----
-
-## Metric
+### Metric
 
 | Metric          | Description                                        |
 | --------------- | -------------------------------------------------- |
 | Storage Usage % | Percentage of allocated storage currently consumed |
 
----
-
-## Units
+### Units
 
 - Percentage (%)
 
----
-
-## Graph Components
+### Graph Components
 
 - Time-series utilization graph.
 - Percentage scale.
 - Historical storage utilization trend.
 
----
-
-# 6. Disk Usage
+## 6. Disk Usage
 
 ![Disk Usage](assets/host-monitoring/storage_disk_usage.png)
 
-## Description
+### Description
 
 The **Disk Usage** panel displays storage utilization for each mounted filesystem or storage device.
 
@@ -270,9 +219,7 @@ Each row corresponds to a specific block device or mounted partition and reports
 
 This table provides a filesystem-level breakdown of storage utilization.
 
----
-
-## Displayed Information
+### Displayed Information
 
 Each entry includes:
 
@@ -282,28 +229,22 @@ Each entry includes:
 | Used %          | Percentage of utilized storage capacity      |
 | Utilization Bar | Visual representation of storage consumption |
 
----
-
-## Units
+### Units
 
 - Percentage (%)
 
----
-
-## Graph Components
+### Graph Components
 
 - Filesystem/device listing.
 - Utilization percentage.
 - Color-coded capacity indicator.
 - Sorted utilization values.
 
----
-
-# 7. Host CPU Load Average
+## 7. Host CPU Load Average
 
 ![Host CPU Load Average](assets/host-monitoring/host_cpu_load_average.png)
 
-## Description
+### Description
 
 The **Host CPU Load Average** panel displays the Linux system load averages over three rolling time windows.
 
@@ -311,9 +252,7 @@ Unlike CPU utilization, load average represents the average number of processes 
 
 The graph simultaneously displays three rolling averages that provide short-term and long-term workload trends.
 
----
-
-## Metrics
+### Metrics
 
 | Metric     | Description                                  |
 | ---------- | -------------------------------------------- |
@@ -321,15 +260,11 @@ The graph simultaneously displays three rolling averages that provide short-term
 | `load_5m`  | Average system load over the last 5 minutes  |
 | `load_15m` | Average system load over the last 15 minutes |
 
----
-
-## Units
+### Units
 
 - Load Average (dimensionless value)
 
----
-
-## Displayed Statistics
+### Displayed Statistics
 
 For each load average metric:
 
@@ -339,22 +274,18 @@ For each load average metric:
 | Last      | Latest recorded load value              |
 | Max       | Highest observed load value             |
 
----
-
-## Graph Components
+### Graph Components
 
 - Three independent trend lines.
 - Time-series visualization.
 - Individual legends for each rolling average.
 - Summary statistics for each metric.
 
----
-
-# 8. Host Memory Usage
+## 8. Host Memory Usage
 
 ![Host Memory Usage](assets/host-monitoring/host_memory_usage.png)
 
-## Description
+### Description
 
 The **Host Memory Usage** panel displays the percentage of physical system memory currently allocated by the operating system.
 
@@ -362,23 +293,17 @@ This metric represents overall RAM utilization across all running processes, ker
 
 The graph provides a continuous view of memory consumption throughout the selected monitoring period.
 
----
-
-## Metric
+### Metric
 
 | Metric       | Description                                    |
 | ------------ | ---------------------------------------------- |
 | `memory_pct` | Percentage of physical memory currently in use |
 
----
-
-## Units
+### Units
 
 - Percentage (%)
 
----
-
-## Displayed Statistics
+### Displayed Statistics
 
 | Statistic | Description                        |
 | --------- | ---------------------------------- |
@@ -386,18 +311,14 @@ The graph provides a continuous view of memory consumption throughout the select
 | Last      | Most recently recorded utilization |
 | Max       | Highest utilization observed       |
 
----
-
-## Graph Components
+### Graph Components
 
 - Time-series memory utilization graph.
 - Percentage-based Y-axis.
 - Historical utilization trend.
 - Summary statistics.
 
----
-
-# Summary of Dashboard Metrics
+## Summary of Dashboard Metrics
 
 | Dashboard Panel       | Primary Metric                   | Unit         |
 | --------------------- | -------------------------------- | ------------ |

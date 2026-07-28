@@ -2,7 +2,7 @@
 cloud: Experience Cloud
 user-guide-title: Adobe Managed Services Synoptryx
 breadcrumb-title: AEM Content AI
-user-guide-description: Adobe Managed Services Synoptryx Documentation
+user-guide-description: Adobe Managed Services Synoptryx documentation
 ---
 
 # Adobe Managed Services Synoptryx {#content}

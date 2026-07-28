@@ -9,7 +9,7 @@ role: Admin
 
 Synoptryx gives your team visibility into application performance, infrastructure health, and end-user experience—without setting up a separate monitoring platform.
 
-> [!NOTE]
+>[!NOTE]
 >
 > A Synoptryx Product Overview Whitepaper is available for the full AEM Managed Services observability and monitoring overview, ideal for sharing with stakeholders or reviewing offline.
 
@@ -48,7 +48,7 @@ Each application has its own license key. All topologies in your Managed Service
 
 Monitoring data is consolidated in a Synoptryx account that Adobe provisions and manages. Your team receives **full read-only access** to all APM and Infrastructure metrics collected by the agents. Adobe Managed Services retains ownership and administrative control of the account.
 
-> [!NOTE]
+>[!NOTE]
 >
 > **Getting access:** Access to Synoptryx requires Adobe IMS provisioning. Your Customer Success Engineer (CSE) can provision and manage user access for your organization.
 

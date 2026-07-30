@@ -1,6 +1,6 @@
 ---
-title: Infrastructure monitoring with Synoptryx
-description: Use Synoptryx Infrastructure monitoring to review host-level system, network, process, and storage metrics across your AEM Managed Services footprint.
+title: Infrastructure monitoring with [!DNL Synoptryx]
+description: Use [!DNL Synoptryx] Infrastructure monitoring to review host-level system, network, process, and storage metrics across your AEM Managed Services footprint.
 feature: Operations
 role: Admin
 ---
@@ -30,7 +30,7 @@ The dashboard includes the following monitoring panels:
 
 ### Description
 
-The **Host CPU Utilization** panel displays the percentage of CPU resources currently being consumed by the operating system and all running processes over time.
+The **[!UICONTROL Host CPU Utilization]** panel displays the percentage of CPU resources currently being consumed by the operating system and all running processes over time.
 
 This metric represents the overall CPU usage across the host and provides a time-series visualization of processor activity.
 
@@ -69,7 +69,7 @@ The panel summarizes CPU utilization using three values:
 
 ### Description
 
-The **Host Disk I/O** panel displays storage throughput for disk read and disk write operations performed by the host.
+The **[!UICONTROL Host Disk I/O]** panel displays storage throughput for disk read and disk write operations performed by the host.
 
 The graph presents two independent time-series that represent data being transferred between the operating system and storage devices.
 
@@ -107,7 +107,7 @@ The displayed unit automatically scales based on throughput.
 
 ### Description
 
-The **Host Network I/O** panel displays the volume of network traffic transmitted and received by the host over time.
+The **[!UICONTROL Host Network I/O]** panel displays the volume of network traffic transmitted and received by the host over time.
 
 The graph measures the rate at which data flows through the network interfaces and provides visibility into network bandwidth consumption.
 This metric represents aggregate network throughput.
@@ -150,7 +150,7 @@ depending on the observed traffic volume.
 
 ### Description
 
-The **CPU I/O Wait** panel displays the percentage of CPU time spent waiting for input/output operations to complete.
+The **[!UICONTROL CPU I/O Wait]** panel displays the percentage of CPU time spent waiting for input/output operations to complete.
 
 This metric represents processor idle time that occurs because active processes are blocked while waiting for storage devices or other I/O operations.
 
@@ -187,7 +187,7 @@ The graph visualizes how I/O wait changes over time.
 
 ### Description
 
-The **Storage Usage** panel displays the overall percentage of storage capacity currently utilized on the monitored host.
+The **[!UICONTROL Storage Usage]** panel displays the overall percentage of storage capacity currently utilized on the monitored host.
 
 The graph provides a historical view of filesystem capacity utilization during the selected time interval.
 
@@ -213,7 +213,7 @@ The graph provides a historical view of filesystem capacity utilization during t
 
 ### Description
 
-The **Disk Usage** panel displays storage utilization for each mounted filesystem or storage device.
+The **[!UICONTROL Disk Usage]** panel displays storage utilization for each mounted filesystem or storage device.
 
 Each row corresponds to a specific block device or mounted partition and reports the percentage of space currently in use.
 
@@ -246,7 +246,7 @@ Each entry includes:
 
 ### Description
 
-The **Host CPU Load Average** panel displays the Linux system load averages over three rolling time windows.
+The **[!UICONTROL Host CPU Load Average]** panel displays the Linux system load averages over three rolling time windows.
 
 Unlike CPU utilization, load average represents the average number of processes that are either actively running or waiting for CPU scheduling or I/O completion.
 
@@ -287,7 +287,7 @@ For each load average metric:
 
 ### Description
 
-The **Host Memory Usage** panel displays the percentage of physical system memory currently allocated by the operating system.
+The **[!UICONTROL Host Memory Usage]** panel displays the percentage of physical system memory currently allocated by the operating system.
 
 This metric represents overall RAM utilization across all running processes, kernel memory, buffers, and caches.
 

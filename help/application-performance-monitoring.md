@@ -1,17 +1,17 @@
 ---
-title: Application Performance Monitoring (APM) with Synoptryx
-description: Use the Synoptryx APM plug-in to trace AEM transactions, monitor the JVM, analyze transactions, and inspect transaction traces and external services on AEM Managed Services.
+title: Application Performance Monitoring (APM) with [!DNL Synoptryx]
+description: Use the [!DNL Synoptryx] APM plug-in to trace AEM transactions, monitor the JVM, analyze transactions, and inspect transaction traces and external services on AEM Managed Services.
 feature: Operations
 role: Admin
 ---
 
-# Application Performance Monitoring (APM) with Synoptryx {#application-performance-monitoring}
+# Application Performance Monitoring (APM) with [!DNL Synoptryx] {#application-performance-monitoring}
 
-Synoptryx Application Performance Monitoring (APM) provides real-time and historical insight into Adobe Experience Manager (AEM) performance and end-user experience. End-to-end transaction tracing, charts, and reports give visibility into application behavior down to the Java code level.
+[!DNL Synoptryx] Application Performance Monitoring (APM) provides real-time and historical insight into Adobe [!DNL Experience Manager] (AEM) performance and end-user experience. End-to-end transaction tracing, charts, and reports give visibility into application behavior down to the Java code level.
 
-## Managed Services Synoptryx APM plug-in {#apm-plugin}
+## Managed Services [!DNL Synoptryx] APM plug-in {#apm-plugin}
 
-AEM runs as a Java application on Jetty with Apache Felix OSGi modules, built on Apache Sling and Jackrabbit Oak. Adobe Managed Services, AEM Engineering, and Synoptryx Engineering jointly developed custom instrumentation for Managed Services environments.
+AEM runs as a Java application on Jetty with Apache Felix OSGi modules, built on Apache Sling and Jackrabbit Oak. Adobe Managed Services, AEM Engineering, and [!DNL Synoptryx] Engineering jointly developed custom instrumentation for Managed Services environments.
 
 That instrumentation collects:
 
@@ -23,7 +23,7 @@ That instrumentation collects:
 
 ![Synoptryx APM trace view showing nested AEM component spans and execution timeline for a page request](assets/image19.png)
 
-## Using Synoptryx APM {#using-apm}
+## Using [!DNL Synoptryx] APM {#using-apm}
 
 Use APM to find application issues before they affect end-users. Author and Publish share a codebase but are monitored as **separate APM applications** so you can analyze each tier independently.
 
@@ -32,7 +32,7 @@ Every Managed Services environment includes:
 - One APM application for Author
 - One APM application for Publish
 
-Select an application name in Synoptryx APM to open its overview and monitoring dashboard.
+Select an application name in [!DNL Synoptryx] APM to open its overview and monitoring dashboard.
 
 ![Synoptryx APM application list showing Author and Publish applications](assets/image1a.png)
 
@@ -64,7 +64,7 @@ The dashboard is organized into expandable sections that group related applicati
 
 ### Description
 
-The **Overview** section presents high-level Key Performance Indicators (KPIs) summarizing the current state of the monitored application.
+The **[!UICONTROL Overview]** section presents high-level Key Performance Indicators (KPIs) summarizing the current state of the monitored application.
 
 These KPIs provide an at-a-glance summary of application activity, throughput, request success, and overall user experience.
 

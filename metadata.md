@@ -10,6 +10,7 @@ mini-toc-levels: 2
 git-repo: https://github.com/AdobeDocs/ams-synoptryx.en
 recommendations: noDisplay
 index: true
+nudge: red
 ---
 
 # Metadata for internal use

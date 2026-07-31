@@ -7,6 +7,6 @@ user-guide-description: Adobe Managed Services Synoptryx documentation
 
 # Adobe Managed Services Synoptryx {#content}
 
-+ [Overview](/help/overview.md)
-+ [Application Performance Monitoring ](/help/application-performance-monitoring.md)
-+ [Infrastructure monitoring](/help/infrastructure-monitoring.md)
++ {hide-from-toc} [Overview](/help/overview.md)
++ {hide-from-toc} [Application Performance Monitoring ](/help/application-performance-monitoring.md)
++ {hide-from-toc} [Infrastructure monitoring](/help/infrastructure-monitoring.md)

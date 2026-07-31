@@ -7,10 +7,10 @@ product_v2:
 usetq: true
 type: Documentation
 mini-toc-levels: 2
-git-repo: https://github.com/AdobeDocs/ams-synoptryx.en
+git-repo: https://github.com/Adobe-Enterprise-Docs/ams-synoptryx.en
 recommendations: noDisplay
-index: true
-nudge: red
+hide: true
+index: false
 ---
 
 # Metadata for internal use

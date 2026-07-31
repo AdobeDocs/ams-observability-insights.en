@@ -15,6 +15,8 @@ role: Admin
 
 ## Overview {#overview}
 
+TEST
+
 [!DNL Synoptryx] is Adobe's next-generation observability platform designed to provide unified visibility across application performance, infrastructure health, and synthetic monitoring. It enables proactive monitoring of critical business services through a single, integrated experience. [!DNL Synoptryx] combines Application Performance Monitoring (APM), Infrastructure Monitoring, and Synthetic User Journey monitoring to help identify and resolve issues before they impact end users. The platform delivers deep transaction tracing, JVM insights, infrastructure telemetry, and advanced diagnostics for faster root cause analysis. Built on modern observability technologies, it provides scalable and secure monitoring across complex enterprise environments. [!DNL Synoptryx] offers extended data retention, rich dashboards, and intelligent analytics to support operational excellence. Seamless login experience with [!DNL Adobe IMS] ensures secure access and governance. The platform is engineered to improve service reliability, accelerate troubleshooting, and enhance customer experience. As Adobe's strategic observability solution, [!DNL Synoptryx] provides a future-ready foundation for monitoring, automation, and operational insights across managed services environments.
 
 [!DNL Synoptryx] is included with Adobe [!DNL Experience Manager] Managed Services—no separate monitoring platform or license is required. Adobe monitors the availability and performance of your environment as part of our standard offering, and [!DNL Synoptryx] is the dedicated platform your team can use to understand how your Adobe [!DNL Experience Manager] (AEM) application and supporting infrastructure are performing.

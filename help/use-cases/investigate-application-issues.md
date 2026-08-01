@@ -3,11 +3,12 @@ title: Investigate application issues
 description: Use Synoptryx APM to triage latency, error, and throughput issues in AEM Managed Services.
 feature: Operations
 role: Admin
+redirect_url: /help/application-performance-monitoring.md
 ---
 
-# Investigate application issues {#investigate-application-issues}
+# Investigate application issues
 
-Use this workflow when the problem appears to be customer-facing application behavior, such as slow pages, elevated error rates, or unstable transaction performance.
+This content has moved to [Application Performance Monitoring](../application-performance-monitoring.md).
 
 ## Investigation workflow {#investigation-workflow}
 

@@ -32,11 +32,10 @@ That instrumentation gives you:
 
 ## How to use this guide {#how-to-use-this-guide}
 
-Start with the task-oriented content if you are actively diagnosing an issue, then use the reference when you need detailed metric or panel definitions.
+Start with the investigation guidance on this page if you are actively diagnosing an issue, then use the reference when you need detailed metric or panel definitions.
 
-- [Investigate application issues](use-cases/investigate-application-issues.md) provides a recommended analysis flow.
 - [APM dashboard reference](reference/apm-dashboard-reference.md) documents each dashboard section and metric.
-- [Metrics, coverage, and retention](reference/metrics-and-retention.md) summarizes what data is collected and how long it is retained.
+- [Coverage, environments, and data retention](get-started/coverage-and-data.md) summarizes what data is collected and how long it is retained.
 
 ## Author and Publish applications {#author-and-publish-applications}
 
@@ -89,8 +88,25 @@ Use these dashboard areas as your first stop:
 
 For panel-by-panel descriptions, metric names, screenshots, and units, see [APM dashboard reference](reference/apm-dashboard-reference.md).
 
+## Questions to answer during investigation {#questions-to-answer}
+
+- Did throughput change before the issue, or only after symptoms began?
+- Are failures concentrated in one HTTP status band or one endpoint family?
+- Is latency elevated broadly, or only for specific transactions?
+- Do traces point to repository operations, downstream systems, or application code hot spots?
+
+## Evidence to capture when escalating {#evidence-to-capture}
+
+Capture these items when escalating or collaborating with Adobe Managed Services:
+
+- Environment name and time window
+- Whether Author, Publish, or both are affected
+- Screenshots of overview, RED metrics, and error or latency charts
+- Example trace IDs or transaction names
+- Any correlated infrastructure anomalies
+
 ## Related content {#related-content}
 
-- [Investigate application issues](use-cases/investigate-application-issues.md)
 - [Infrastructure monitoring](infrastructure-monitoring.md)
-- [Metrics, coverage, and retention](reference/metrics-and-retention.md)
+- [APM dashboard reference](reference/apm-dashboard-reference.md)
+- [Coverage, environments, and data retention](get-started/coverage-and-data.md)

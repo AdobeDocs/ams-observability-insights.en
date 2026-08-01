@@ -32,17 +32,25 @@ All topologies in a Managed Services contract report into one Synoptryx account.
 
 APM metrics, infrastructure metrics, and related events are retained for up to **30 days**.
 
+## Summary tables {#summary-tables}
+
+| Coverage area  | What is monitored                          |
+| -------------- | ------------------------------------------ |
+| APM            | AEM Author and Publish applications        |
+| Infrastructure | All hosted servers in the managed topology |
+
+| Item              | Representation                                                |
+| ----------------- | ------------------------------------------------------------- |
+| AEM environment   | One Author APM application and one Publish APM application    |
+| Synoptryx account | One Adobe-managed account per Managed Services customer scope |
+
+| Data type                         | Retention     |
+| --------------------------------- | ------------- |
+| APM metrics and events            | Up to 30 days |
+| Infrastructure metrics and events | Up to 30 days |
+
 ## What this means operationally {#what-this-means-operationally}
 
 - Synoptryx is suited to operational analysis, active incidents, and recent trend comparison.
 - Historical analysis beyond the retention window should be handled through other reporting or archival processes if required.
 - When investigating recurring issues, capture screenshots or exported evidence before the data ages out.
-
-## Add more detail here later {#add-more-detail-here-later}
-
-This structure can be expanded with:
-
-- Environment naming examples
-- Production versus non-production coverage specifics
-- Agent deployment topology diagrams
-- Data availability caveats during maintenance or rollout windows

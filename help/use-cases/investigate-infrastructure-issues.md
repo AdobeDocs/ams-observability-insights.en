@@ -3,11 +3,12 @@ title: Investigate infrastructure issues
 description: Use host-level infrastructure dashboards to determine whether incidents are related to CPU, memory, storage, network, or I/O contention.
 feature: Operations
 role: Admin
+redirect_url: /help/infrastructure-monitoring.md
 ---
 
-# Investigate infrastructure issues {#investigate-infrastructure-issues}
+# Investigate infrastructure issues
 
-Use this workflow when the issue appears to involve host resource pressure, uneven instance behavior, or platform conditions that may affect application performance.
+This content has moved to [Infrastructure monitoring](../infrastructure-monitoring.md).
 
 ## Investigation workflow {#investigation-workflow}
 

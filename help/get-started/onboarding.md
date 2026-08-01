@@ -1,68 +1,59 @@
 ---
 title: Get started with Synoptryx
-description: Understand who Synoptryx is for, what it covers in AEM Managed Services, and how to approach the rest of this guide.
+description: Learn how to access Synoptryx, what Adobe monitors on your behalf, and where to find what you need in this guide.
 feature: Operations
 role: Admin
 ---
 
 # Get started with Synoptryx {#get-started}
 
-This section helps new readers quickly understand what Synoptryx is, how Adobe Managed Services uses it, and where to go next based on the problem they are solving.
+This section covers the essentials for new users: how to access your Synoptryx account, what environments and data Adobe monitors on your behalf, and how to navigate the rest of this documentation.
 
-## Who should read this guide {#who-should-read-this-guide}
+## The Synoptryx interface {#synoptryx-interface}
 
-This documentation is primarily for:
+When you sign in at [synoptryx.adobecqms.net](https://synoptryx.adobecqms.net), the opening screen gives you an entry point into all monitoring areas for your AEM Managed Services environments.
 
-- AEM Managed Services administrators
-- Operations and support teams
-- Customer engineering teams investigating incidents or performance regressions
-- Stakeholders who need to understand monitoring coverage and operational responsibilities
+![Synoptryx opening screen showing APM and Infrastructure monitoring entry points](../assets/apm/1_opening_screen.png)
 
-## What Synoptryx covers {#what-synoptryx-covers}
+The interface is organized around two core monitoring areas:
 
-Synoptryx provides visibility into:
+- **APM** — Displays application performance data for your Author and Publish tiers. Use this to investigate request throughput, error rates, latency, JVM behavior, and trace-level execution details. See [Application Performance Monitoring](../application-performance-monitoring.md).
+- **Infrastructure** — Displays host-level health data across your managed topology. Use this to assess CPU, memory, disk, network, and storage signals on individual servers. See [Infrastructure monitoring](../infrastructure-monitoring.md).
 
-- AEM application performance on Author and Publish tiers
-- Host-level infrastructure health across the managed topology
-- Short-term operational trends that help you investigate incidents and recurring issues
+Both areas are read-only for customer users. Adobe Managed Services manages account provisioning, instrumentation, and administrative control.
 
-## How to use this documentation {#how-to-use-this-documentation}
+## Access and account management {#access-overview}
 
-Use the content path that matches your goal:
+Synoptryx access is managed through Adobe IMS. Adobe provisions and manages your organization's account; customer teams receive read-only access to all monitored data.
 
-- Start with [Access and account management](access-and-accounts.md) if you need sign-in or provisioning details.
-- Read [Coverage, environments, and data retention](coverage-and-data.md) if you need to understand what is monitored.
-- Go to [Application Performance Monitoring](../application-performance-monitoring.md) for application-layer analysis.
-- Go to [Infrastructure monitoring](../infrastructure-monitoring.md) for host-level analysis.
-- Use the [Reference](../reference/apm-dashboard-reference.md) section for panel-by-panel metric details.
+Key points:
 
-## Recommended reader journeys {#recommended-reader-journeys}
+- Your organization's Synoptryx account is linked to a single Adobe master account.
+- All environments in your Managed Services contract—Author and Publish, production and non-production—report into this account.
+- User access is provisioned and managed by your Customer Success Engineer (CSE).
 
-### I am new to Synoptryx
+For provisioning steps, user roles, and what customer users can and cannot do, see [Access and account management](access-and-accounts.md).
 
-1. Read this page.
-2. Review [Access and account management](access-and-accounts.md).
-3. Review [Coverage, environments, and data retention](coverage-and-data.md).
-4. Open [Overview](../overview.md) for the product summary and navigation map.
+## Coverage, environments, and data retention {#coverage-overview}
 
-### I am investigating an incident
+Adobe monitors your AEM Author and Publish tiers using the Synoptryx APM Java plug-in, and all hosted servers using the Synoptryx Infrastructure agent. Monitoring is enabled in both non-production and production environments.
 
-1. Start with [Investigate application issues](../use-cases/investigate-application-issues.md) or [Investigate infrastructure issues](../use-cases/investigate-infrastructure-issues.md).
-2. Use the dashboard reference pages for detailed metric interpretation.
+Key points:
 
-### I need implementation-level metric details
+- Each AEM Managed Services environment includes one APM application for Author and one for Publish.
+- APM metrics, infrastructure metrics, and events are retained for up to **30 days**.
+- Synoptryx is suited to operational analysis and recent trend comparison; it is not an archival or long-term reporting tool. Capture screenshots or exported evidence before data ages out.
 
-Go directly to:
+For full coverage details—including how applications are represented in your account and operational implications of the retention window—see [Coverage, environments, and data retention](coverage-and-data.md).
 
-- [APM dashboard reference](../reference/apm-dashboard-reference.md)
-- [Infrastructure dashboard reference](../reference/infrastructure-dashboard-reference.md)
-- [Metrics, coverage, and retention](../reference/metrics-and-retention.md)
+## How this guide is structured {#how-this-guide-is-structured}
 
-## Planned expansion areas {#planned-expansion-areas}
+The documentation is organized into four areas. Use the descriptions below to go directly to what you need.
 
-This information architecture is designed to support additional product documentation later, including:
+**Get started** — This section. Covers access, account provisioning, monitoring scope, and data retention.
 
-- Dashboard-specific workflows
-- Alert interpretation guidance
-- Cross-environment comparison guidance
-- Known limitations and operational best practices
+**[Use Synoptryx](../use-synoptryx.md)** — Task-oriented guidance for day-to-day investigation. Use [Application Performance Monitoring](../application-performance-monitoring.md) when the symptom is application-facing: slow pages, error spikes, or unstable transactions. Use [Infrastructure monitoring](../infrastructure-monitoring.md) when you need to determine whether host-level resource pressure—CPU, memory, disk, or network—explains what you are seeing in APM. Step-by-step investigation flows are available in [Investigate application issues](../use-cases/investigate-application-issues.md) and [Investigate infrastructure issues](../use-cases/investigate-infrastructure-issues.md).
+
+**Reference** — Panel-by-panel documentation for when you need exact metric names, units, retention periods, or screenshot-level detail. See the [APM dashboard reference](../reference/apm-dashboard-reference.md), [Infrastructure dashboard reference](../reference/infrastructure-dashboard-reference.md), and [Metrics, coverage, and retention](../reference/metrics-and-retention.md).
+
+**[Troubleshooting and FAQ](../troubleshooting/common-questions.md)** — Common questions and support-oriented entry points for when you are unsure where to begin or need quick answers during an active incident.

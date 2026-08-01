@@ -54,8 +54,24 @@ For most incidents, review the host dashboard in this order:
 
 For panel-by-panel descriptions, screenshots, and metric definitions, see [Infrastructure dashboard reference](reference/infrastructure-dashboard-reference.md).
 
+## Questions to answer during investigation {#questions-to-answer}
+
+- Is the issue isolated to one host or visible across the environment?
+- Are CPU, memory, or disk signals elevated during the same window as the incident?
+- Is storage growth trending toward a threshold that could affect operations?
+- Do infrastructure symptoms explain the application behavior, or do they only appear as a downstream effect?
+
+## Evidence to capture when escalating {#evidence-to-capture}
+
+- Affected environment and hosts
+- Time window of the issue
+- CPU, memory, disk, and network screenshots
+- Whether the anomaly is isolated or systemic
+- Related application symptoms from APM
+
 ## Related content {#related-content}
 
-- [Investigate infrastructure issues](use-cases/investigate-infrastructure-issues.md)
 - [Application Performance Monitoring (APM)](application-performance-monitoring.md)
+- [Infrastructure dashboard reference](reference/infrastructure-dashboard-reference.md)
+- [Coverage, environments, and data retention](get-started/coverage-and-data.md)
 - [Infrastructure dashboard reference](reference/infrastructure-dashboard-reference.md)

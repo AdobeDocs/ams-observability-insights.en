@@ -14,7 +14,7 @@ user-guide-description: Adobe Managed Services Synoptryx Documentation
 - [Use Synoptryx](/help/use-synoptryx.md)
   - [Application Performance Monitoring](/help/application-performance-monitoring.md)
   - [Infrastructure monitoring](/help/infrastructure-monitoring.md)
-- [Reference](/help/reference/apm-dashboard-reference.md)
+    #- [Reference](/help/reference/apm-dashboard-reference.md)
   - [APM dashboard reference](/help/reference/apm-dashboard-reference.md)
   - [Infrastructure dashboard reference](/help/reference/infrastructure-dashboard-reference.md)
 - [Troubleshooting and FAQ](/help/troubleshooting/common-questions.md)

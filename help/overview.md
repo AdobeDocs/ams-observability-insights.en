@@ -11,7 +11,7 @@ Synoptryx provides visibility into application performance, infrastructure healt
 
 If you are responsible for service reliability, incident response, or performance analysis, Synoptryx helps you move from symptoms to evidence quickly. It combines application telemetry and host-level health signals so customer teams and Adobe Managed Services can investigate issues from a shared operational view.
 
-> [!VIDEO](https://video.tv.adobe.com/v/3496609
+> [!VIDEO](https://video.tv.adobe.com/v/3496609)
 
 > [!NOTE]
 >

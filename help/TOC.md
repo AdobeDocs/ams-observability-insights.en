@@ -17,4 +17,6 @@ user-guide-description: Adobe Managed Services Synoptryx Documentation
 - [Reference](/help/reference/apm-dashboard-reference.md)
   - [APM dashboard reference](/help/reference/apm-dashboard-reference.md)
   - [Infrastructure dashboard reference](/help/reference/infrastructure-dashboard-reference.md)
+  - [APM dashboard reference (legacy URL)](/help/apm-dashboard-reference.md)
+  - [Infrastructure dashboard reference (legacy URL)](/help/infrastructure-dashboard-reference.md)
 - [Troubleshooting and FAQ](/help/troubleshooting/common-questions.md)

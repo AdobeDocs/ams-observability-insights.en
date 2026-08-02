@@ -7,7 +7,7 @@ role: Admin
 
 # Reference {#reference}
 
-Use this section as the central index for Synoptryx reference documentation. Over time, this page can include additional links for metrics definitions, retention details, and panel behavior notes.
+This section provides detailed reference documentation for the dashboards available in Synoptryx. Use the links below to understand the purpose of each dashboard, the metrics presented, and how to interpret the data for operational monitoring and troubleshooting.
 
 ## Dashboard references
 

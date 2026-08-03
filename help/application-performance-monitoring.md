@@ -24,11 +24,11 @@ That instrumentation gives you:
 
 - **Meaningful transaction naming** — Sling extensions align transaction names with page structure and add a `requestURL` attribute on Insights events so you can correlate Sling URLs across dashboards.
 
-![Synoptryx APM trace view showing a descriptive AEM transaction name with Sling health check route and span timeline](assets/image19a.png)
+![Synoptryx APM trace view showing a descriptive AEM transaction name with Sling health check route and span timeline](assets/image19b.png)
 
 - **JCR instrumentation** — Repository-level operations (including XPath and JCR-SQL2) are categorized and attached to transaction traces in the database section of APM.
 
-![Synoptryx APM trace view showing nested AEM component spans and execution timeline for a page request](assets/image19.png)
+![Synoptryx APM trace view showing nested AEM component spans and execution timeline for a page request](assets/image19c.png)
 
 ## How to use this guide {#how-to-use-this-guide}
 

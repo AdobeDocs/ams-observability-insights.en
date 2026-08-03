@@ -48,7 +48,7 @@ Every Managed Services environment includes:
 
 Select an application name in Synoptryx APM to open its overview and monitoring dashboard.
 
-![Synoptryx APM application list showing Author and Publish applications](assets/image1a.png)
+![Synoptryx APM application list showing Author and Publish applications](assets/image2a.png)
 
 ## Typical investigation workflow {#typical-investigation-workflow}
 

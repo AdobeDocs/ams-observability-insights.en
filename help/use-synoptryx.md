@@ -13,7 +13,7 @@ This section covers the day-to-day monitoring and investigation workflows your t
 
 The Synoptryx left navigation panel gives you access to all monitoring areas for your AEM Managed Services environments.
 
-![Synoptryx interface showing left navigation with APM and Infrastructure options, and the Infrastructure Monitoring dashboard with host metrics and environment filters](assets/synoptryx-interface.png)
+![Synoptryx interface showing left navigation with APM and Infrastructure options, and the Infrastructure Monitoring dashboard with host metrics and environment filters](assets/synoptryx-interface2.png)
 
 The navigation includes:
 

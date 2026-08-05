@@ -11,9 +11,9 @@ Synoptryx provides visibility into application performance, infrastructure healt
 
 If you are responsible for service reliability, incident response, or performance analysis, Synoptryx helps you move from symptoms to evidence quickly. It combines application telemetry and host-level health signals so customer teams and Adobe Managed Services can investigate issues from a shared operational view.
 
->[!VIDEO](https://video.tv.adobe.com/v/3496609)
+> [!VIDEO](https://video.tv.adobe.com/v/3496683)
 
->[!NOTE]
+> [!NOTE]
 >
 > A Synoptryx Product Overview Whitepaper is available for the full AEM Managed Services observability and monitoring overview, ideal for sharing with stakeholders or reviewing offline.
 
@@ -84,7 +84,7 @@ Before you can sign in, confirm the following:
 - Your organization has an active **AEM Managed Services** subscription. Synoptryx is included at no additional cost.
 - Your Customer Success Engineer (CSE) has provisioned your Adobe IMS account and granted you access to the Synoptryx account for your organization.
 
->[!NOTE]
+> [!NOTE]
 >
 > **Getting access:** Access to Synoptryx requires Adobe IMS provisioning. Contact your Customer Success Engineer (CSE) to provision and manage user access for your organization.
 

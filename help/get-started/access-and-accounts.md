@@ -25,7 +25,7 @@ To request or update access:
 2. Provide the user details required for Adobe IMS provisioning.
 3. Confirm that the correct organization and access scope have been assigned.
 
-After provisioning is complete, sign in at [synoptryx.adobecqms.net](https://insights.adobecqms.net).
+After provisioning is complete, sign in at [insights.adobecqms.net](https://insights.adobecqms.net).
 
 ## What users can do {#what-users-can-do}
 

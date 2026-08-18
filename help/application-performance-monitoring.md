@@ -24,7 +24,7 @@ That instrumentation gives you:
 
 - **Meaningful transaction naming** — Sling extensions align transaction names with page structure and add a `requestURL` attribute on Insights events so you can correlate Sling URLs across dashboards.
 
-![Observability Insights APM trace view showing a descriptive AEM transaction name with Sling health check route and span timeline](assets/image19b.png)
+![Observability Insights APM trace view showing a descriptive AEM transaction name with Sling health check route and span timeline](v2-assets/meaningful-txn-names.png)
 
 - **JCR instrumentation** — Repository-level operations (including XPath and JCR-SQL2) are categorized and attached to transaction traces in the database section of APM.
 
@@ -39,16 +39,9 @@ Start with the investigation guidance on this page if you are actively diagnosin
 
 ## Author and Publish applications {#author-and-publish-applications}
 
-Author and Publish share a codebase but are monitored as **separate APM applications** so you can analyze each tier independently.
+The Observability Catalog provides a centralized view of your AEM applications and their operational health. Quickly find and filter applications by tier, assess overall health, and compare key performance indicators such as response time, throughput, error rate, Apdex, and response trends. This consolidated view helps teams identify performance issues, understand application behavior, and navigate to the resources that need attention.
 
-Every Managed Services environment includes:
-
-- One APM application for Author
-- One APM application for Publish
-
-Select an application name in Observability Insights APM to open its overview and monitoring dashboard.
-
-![Observability Insights APM application list showing Author and Publish applications](assets/image2a.png)
+![Observability Catalog](v2-assets/observability-catalog-listing.png)
 
 ## Typical investigation workflow {#typical-investigation-workflow}
 
@@ -59,30 +52,6 @@ Use the following sequence for most incidents:
 3. Identify the endpoints, transactions, or status groups contributing most to the issue.
 4. Open traces to inspect repository operations, downstream services, and execution timing.
 5. Correlate APM findings with host metrics if the issue might be capacity-related.
-
-## Dashboard sections {#dashboard-sections}
-
-The APM dashboard includes these major sections:
-
-- Overview
-- RED Metrics (Rate • Errors • Duration)
-- Traffic
-- Latency & Performance
-- Error Details
-- Top Transactions
-- JVM Health
-- JVM Memory
-- Garbage Collection
-
-## What to review first {#what-to-review-first}
-
-Use these dashboard areas as your first stop:
-
-- **Overview** for total requests, throughput, error rate, and APDEX.
-- **RED Metrics** to confirm whether the primary shift is volume, failure rate, or latency.
-- **Traffic** to isolate endpoints or status code bands.
-- **Latency & Performance** to compare current behavior against recent history.
-- **Error Details** to determine whether failures are rising consistently or only in short spikes.
 
 ## Detailed dashboard reference {#detailed-dashboard-reference}
 

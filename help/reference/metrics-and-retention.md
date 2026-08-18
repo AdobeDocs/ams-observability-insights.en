@@ -1,6 +1,6 @@
 ---
 title: Metrics, coverage, and retention
-description: Coverage scope, application representation, and data retention for Synoptryx in AEM Managed Services.
+description: Coverage scope, application representation, and data retention for Observability Insights in AEM Managed Services.
 feature: Operations
 role: Admin
 redirect_url: /help/get-started/coverage-and-data.md

@@ -1,13 +1,13 @@
 ---
-title: Application Performance Monitoring (APM) with Synoptryx
-description: Learn when to use the Synoptryx APM experience, what questions it answers, and where to find detailed dashboard metric definitions.
+title: Application Performance Monitoring (APM) with Observability Insights
+description: Learn when to use the Observability Insights APM experience, what questions it answers, and where to find detailed dashboard metric definitions.
 feature: Operations
 role: Admin
 ---
 
-# Application Performance Monitoring (APM) with Synoptryx {#application-performance-monitoring}
+# Application Performance Monitoring (APM) with Observability Insights {#application-performance-monitoring}
 
-Synoptryx APM is the primary place to investigate application behavior in AEM Managed Services. It helps you understand request throughput, latency, error patterns, JVM health, and transaction traces across Author and Publish tiers.
+Observability Insights APM is the primary place to investigate application behavior in AEM Managed Services. It helps you understand request throughput, latency, error patterns, JVM health, and transaction traces across Author and Publish tiers.
 
 Use this section when you need to answer questions such as:
 
@@ -18,17 +18,17 @@ Use this section when you need to answer questions such as:
 
 ## What APM covers {#what-apm-covers}
 
-AEM runs as a Java application on Jetty with Apache Felix OSGi modules, built on Apache Sling and Jackrabbit Oak. Adobe Managed Services, AEM Engineering, and Synoptryx Engineering jointly developed custom instrumentation for Managed Services environments.
+AEM runs as a Java application on Jetty with Apache Felix OSGi modules, built on Apache Sling and Jackrabbit Oak. Adobe Managed Services, AEM Engineering, and Observability Insights Engineering jointly developed custom instrumentation for Managed Services environments.
 
 That instrumentation gives you:
 
 - **Meaningful transaction naming** — Sling extensions align transaction names with page structure and add a `requestURL` attribute on Insights events so you can correlate Sling URLs across dashboards.
 
-![Synoptryx APM trace view showing a descriptive AEM transaction name with Sling health check route and span timeline](assets/image19b.png)
+![Observability Insights APM trace view showing a descriptive AEM transaction name with Sling health check route and span timeline](assets/image19b.png)
 
 - **JCR instrumentation** — Repository-level operations (including XPath and JCR-SQL2) are categorized and attached to transaction traces in the database section of APM.
 
-![Synoptryx APM trace view showing nested AEM component spans and execution timeline for a page request](assets/image19c.png)
+![Observability Insights APM trace view showing nested AEM component spans and execution timeline for a page request](assets/image19c.png)
 
 ## How to use this guide {#how-to-use-this-guide}
 
@@ -46,9 +46,9 @@ Every Managed Services environment includes:
 - One APM application for Author
 - One APM application for Publish
 
-Select an application name in Synoptryx APM to open its overview and monitoring dashboard.
+Select an application name in Observability Insights APM to open its overview and monitoring dashboard.
 
-![Synoptryx APM application list showing Author and Publish applications](assets/image2a.png)
+![Observability Insights APM application list showing Author and Publish applications](assets/image2a.png)
 
 ## Typical investigation workflow {#typical-investigation-workflow}
 

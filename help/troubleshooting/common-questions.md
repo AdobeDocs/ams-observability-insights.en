@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting and FAQ
-description: Common questions and investigation starting points for Synoptryx in AEM Managed Services.
+description: Common questions and investigation starting points for Observability Insights in AEM Managed Services.
 feature: Operations
 role: Admin
 ---
@@ -9,7 +9,7 @@ role: Admin
 
 Use this page as a starting point when you are unsure where to begin or need a quick answer during an active investigation.
 
-## Why can't I access Synoptryx? {#cannot-access-synoptryx}
+## Why can't I access Observability Insights? {#cannot-access-observability-insights}
 
 Start with [Access and account management](../get-started/access-and-accounts.md). If your provisioning is incomplete or outdated, contact your Customer Success Engineer (CSE) to request access or an update.
 
@@ -28,6 +28,6 @@ Use the dashboard reference pages for panel-by-panel descriptions, metric names,
 - [APM dashboard reference](../reference/apm-dashboard-reference.md)
 - [Infrastructure dashboard reference](../reference/infrastructure-dashboard-reference.md)
 
-## What data does Synoptryx actually collect? {#what-data-is-collected}
+## What data does Observability Insights actually collect? {#what-data-is-collected}
 
 See [Coverage, environments, and data retention](../get-started/coverage-and-data.md) for monitoring scope, application representation, retention periods, and operational implications.

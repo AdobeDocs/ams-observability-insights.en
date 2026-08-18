@@ -1,81 +1,98 @@
----
-title: Application Performance Monitoring (APM) with Observability Insights
-description: Learn when to use the Observability Insights APM experience, what questions it answers, and where to find detailed dashboard metric definitions.
-feature: Operations
-role: Admin
----
+# Application Performance Monitoring
 
-# Application Performance Monitoring (APM) with Observability Insights {#application-performance-monitoring}
+Application Performance Monitoring (APM) provides a unified view of
+application health, performance, transactions, and the infrastructure
+supporting each service. It helps operations and engineering teams
+understand how applications are behaving, identify performance
+bottlenecks, and move from high-level health indicators to individual
+transactions for deeper investigation.
 
-Observability Insights APM is the primary place to investigate application behavior in AEM Managed Services. It helps you understand request throughput, latency, error patterns, JVM health, and transaction traces across Author and Publish tiers.
+## Application summary
 
-Use this section when you need to answer questions such as:
+The **APM & Services** summary provides an at-a-glance view of the
+selected application. Key indicators such as p95 latency, server
+throughput, error rate, and Apdex make it easy to assess application
+health over the selected time range.
 
-- Is the issue isolated to Author or Publish?
-- Did latency increase before the incident, or only after error rates changed?
-- Which endpoints or transactions contribute most to traffic and slowdowns?
-- Do traces show repository calls, external dependencies, or JVM pressure that explain the issue?
+Filters for transaction type, host, and resolution allow the view to be
+refined for a specific investigation. Response-time and throughput
+trends provide additional context, helping teams distinguish isolated
+spikes from sustained performance changes.
 
-## What APM covers {#what-apm-covers}
+![APM & Services summary](v2-assets/1_apm-services-landing-page.png)
 
-AEM runs as a Java application on Jetty with Apache Felix OSGi modules, built on Apache Sling and Jackrabbit Oak. Adobe Managed Services, AEM Engineering, and Observability Insights Engineering jointly developed custom instrumentation for Managed Services environments.
+## Response time, throughput, and Apdex
 
-That instrumentation gives you:
+Application performance can be evaluated using percentile response times
+alongside request throughput. Viewing p50, p95, and p99 latency together
+helps distinguish typical user experiences from slower outliers.
 
-- **Meaningful transaction naming** — Sling extensions align transaction names with page structure and add a `requestURL` attribute on Insights events so you can correlate Sling URLs across dashboards.
+Apdex provides a complementary measure of application responsiveness by
+translating response-time performance into an easy-to-understand
+satisfaction score. Together with the error rate, these metrics provide
+a concise indication of whether an application is operating within
+expected performance levels.
 
-![Observability Insights APM trace view showing a descriptive AEM transaction name with Sling health check route and span timeline](v2-assets/meaningful-txn-names.png)
+![Response time, throughput, and Apdex](v2-assets/2_apm-summary-apdex.png)
 
-- **JCR instrumentation** — Repository-level operations (including XPath and JCR-SQL2) are categorized and attached to transaction traces in the database section of APM.
+## Errors and slow transactions
 
-![Observability Insights APM trace view showing nested AEM component spans and execution timeline for a page request](assets/image19c.png)
+APM continuously surfaces error-rate trends and slow transactions to
+help identify requests that may be affecting application performance.
+The error-rate view makes it easy to recognize changes over time, while
+the Apdex trend shows the corresponding impact on application
+responsiveness.
 
-## How to use this guide {#how-to-use-this-guide}
+The **Slowest transactions** view highlights transactions with the
+highest average duration and includes call volume, making it easier to
+distinguish frequently executed workloads from isolated slow requests.
 
-Start with the investigation guidance on this page if you are actively diagnosing an issue, then use the reference when you need detailed metric or panel definitions.
+![Error rate, Apdex, and slowest
+transactions](v2-assets/3_error-rate-transactions.png)
 
-- [APM dashboard reference](reference/apm-dashboard-reference.md) documents each dashboard section and metric.
-- [Coverage, environments, and data retention](get-started/coverage-and-data.md) summarizes what data is collected and how long it is retained.
+## Transaction and infrastructure correlation
 
-## Author and Publish applications {#author-and-publish-applications}
+The transaction listing provides a focused view of the slowest
+transaction types, including their slowest observed trace, error rate,
+and average duration. This helps teams quickly identify transaction
+patterns that warrant further investigation.
 
-The Observability Catalog provides a centralized view of your AEM applications and their operational health. Quickly find and filter applications by tier, assess overall health, and compare key performance indicators such as response time, throughput, error rate, Apdex, and response trends. This consolidated view helps teams identify performance issues, understand application behavior, and navigate to the resources that need attention.
+Application data is correlated with the underlying hosts so that
+transaction performance can be evaluated alongside infrastructure
+indicators such as response time, throughput, CPU utilization, and
+memory utilization. This correlation helps determine whether a
+performance issue originates in application processing or may be
+associated with the supporting infrastructure.
 
-![Observability Catalog](v2-assets/observability-catalog-listing.png)
+![Transactions and infrastructure
+correlation](v2-assets/4_transaction-listing.png)
 
-## Typical investigation workflow {#typical-investigation-workflow}
+## Transaction performance analysis
 
-Use the following sequence for most incidents:
+The transaction analysis view ranks transactions by performance
+characteristics and summarizes key indicators such as the most
+time-consuming transaction, slowest p95 response time, highest error
+rate, throughput, and Apdex.
 
-1. Confirm whether traffic, error rate, or latency changed materially.
-2. Determine whether the behavior affects Author, Publish, or both.
-3. Identify the endpoints, transactions, or status groups contributing most to the issue.
-4. Open traces to inspect repository operations, downstream services, and execution timing.
-5. Correlate APM findings with host metrics if the issue might be capacity-related.
+Time-series visualizations show how the most significant transactions
+contribute to overall processing time and how request throughput changes
+over the selected period. This makes it easier to identify high-impact
+endpoints, compare transaction behavior, and determine which requests
+should be investigated first.
 
-## Detailed dashboard reference {#detailed-dashboard-reference}
+![Transaction performance analysis](v2-assets/5_transaction-graphs.png)
 
-For panel-by-panel descriptions, metric names, screenshots, and units, see [APM dashboard reference](reference/apm-dashboard-reference.md).
+## Investigating performance issues
 
-## Questions to answer during investigation {#questions-to-answer}
+APM supports a progressive investigation workflow: begin with
+application-level health and performance indicators, identify abnormal
+response times, errors, or throughput changes, and then narrow the
+investigation to the transactions contributing most to the issue.
+Transaction data can be correlated with host-level infrastructure
+metrics, while **Distributed tracing** can be used to continue the
+investigation across individual request paths and service interactions.
 
-- Did throughput change before the issue, or only after symptoms began?
-- Are failures concentrated in one HTTP status band or one endpoint family?
-- Is latency elevated broadly, or only for specific transactions?
-- Do traces point to repository operations, downstream systems, or application code hot spots?
-
-## Evidence to capture when escalating {#evidence-to-capture}
-
-Capture these items when escalating or collaborating with Adobe Managed Services:
-
-- Environment name and time window
-- Whether Author, Publish, or both are affected
-- Screenshots of overview, RED metrics, and error or latency charts
-- Example trace IDs or transaction names
-- Any correlated infrastructure anomalies
-
-## Related content {#related-content}
-
-- [Infrastructure monitoring](infrastructure-monitoring.md)
-- [APM dashboard reference](reference/apm-dashboard-reference.md)
-- [Coverage, environments, and data retention](get-started/coverage-and-data.md)
+This workflow helps teams move efficiently from **application health →
+performance trend → transaction → infrastructure**,
+reducing the time required to isolate the source of a performance
+problem.

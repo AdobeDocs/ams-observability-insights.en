@@ -1,13 +1,13 @@
 ---
 title: Infrastructure dashboard reference
-description: Panel-by-panel reference for Synoptryx infrastructure dashboards, including screenshots, metrics, and units.
+description: Panel-by-panel reference for Observability Insights infrastructure dashboards, including screenshots, metrics, and units.
 feature: Operations
 role: Admin
 ---
 
 # Infrastructure dashboard reference {#infrastructure-dashboard-reference}
 
-This reference documents the host-level infrastructure panels used in Synoptryx for AEM Managed Services.
+This reference documents the host-level infrastructure panels used in Observability Insights for AEM Managed Services.
 
 ## Dashboard overview
 

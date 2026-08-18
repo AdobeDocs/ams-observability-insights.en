@@ -1,6 +1,6 @@
 ---
 title: Investigate application issues
-description: Use Synoptryx APM to triage latency, error, and throughput issues in AEM Managed Services.
+description: Use Observability Insights APM to triage latency, error, and throughput issues in AEM Managed Services.
 feature: Operations
 role: Admin
 redirect_url: /help/application-performance-monitoring.md

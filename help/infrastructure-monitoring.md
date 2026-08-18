@@ -1,11 +1,11 @@
 ---
-title: Infrastructure monitoring with Synoptryx
+title: Infrastructure monitoring with Observability Insights
 description: Learn when to use the infrastructure dashboards, what signals to review first, and where to find the full host metric reference.
 feature: Operations
 role: Admin
 ---
 
-# Infrastructure monitoring with Synoptryx {#infrastructure-monitoring}
+# Infrastructure monitoring with Observability Insights {#infrastructure-monitoring}
 
 Use the infrastructure dashboards when you need to determine whether an issue is related to host capacity, storage pressure, network throughput, or operating system resource contention.
 

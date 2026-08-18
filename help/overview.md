@@ -5,7 +5,7 @@ feature: Operations
 role: Admin
 ---
 
-# Monitor your AEM Managed Services environment with Synoptryx {#synoptryx-monitoring}
+# Monitor your AEM Managed Services environment with Observability Insights {#observability-insights-monitoring}
 
 Observability Insights provides visibility into application performance, infrastructure health, and service behavior in Adobe Experience Manager Managed Services, without requiring a separate monitoring platform.
 
@@ -60,7 +60,7 @@ This documentation is designed primarily for:
 
 ## What Adobe monitors with Observability Insights {#what-we-monitor}
 
-Adobe monitors AEM **Author** and **Publish** tiers with the Observability Insights APM Java plug-in. All hosted servers in your topology are monitored with the Synoptryx Infrastructure agent. Custom APM and Infrastructure monitoring is enabled in both non-production and production Managed Services environments.
+Adobe monitors AEM **Author** and **Publish** tiers with the Observability Insights APM Java plug-in. All hosted servers in your topology are monitored with the Observability Insights Infrastructure agent. Custom APM and Infrastructure monitoring is enabled in both non-production and production Managed Services environments.
 
 ![Diagram showing  Observability Insights APM and Infrastructure monitoring across AEM Author, Publish, and hosted servers](assets/image6.png)
 
@@ -86,6 +86,6 @@ Before you can sign in, confirm the following:
 
 > [!NOTE]
 >
-> **Getting access:** Access to Synoptryx requires Adobe IMS provisioning. Contact your Customer Success Engineer (CSE) to provision and manage user access for your organization.
+> **Getting access:** Access to Observability Insights requires Adobe IMS provisioning. Contact your Customer Success Engineer (CSE) to provision and manage user access for your organization.
 
 After the CSE has provisioned the account, sign in at [insights.adobecqms.net](https://insights.adobecqms.net). This URL is the same for all AEM Managed Services customers; your organization's environments and dashboards are scoped to your provisioned account.

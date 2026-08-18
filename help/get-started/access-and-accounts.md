@@ -1,23 +1,23 @@
 ---
 title: Access and account management
-description: Understand how Synoptryx accounts are provisioned, who manages access, and what level of control customer teams have.
+description: Understand how Observability Insights accounts are provisioned, who manages access, and what level of control customer teams have.
 feature: Operations
 role: Admin
 ---
 
 # Access and account management {#access-and-account-management}
 
-Adobe provisions and manages the Synoptryx account for your AEM Managed Services organization. Customer teams use Adobe IMS to sign in and receive read-only visibility into the monitored data.
+Adobe provisions and manages the Observability Insights account for your AEM Managed Services organization. Customer teams use Adobe IMS to sign in and receive read-only visibility into the monitored data.
 
 ## Account ownership model {#account-ownership-model}
 
-- Adobe Managed Services owns the Synoptryx account.
+- Adobe Managed Services owns the Observability Insights account.
 - Customer teams are granted read-only access.
 - Administrative changes, provisioning, and access updates are managed through Adobe.
 
 ## How users get access {#how-users-get-access}
 
-Access to Synoptryx requires Adobe IMS provisioning.
+Access to Observability Insights requires Adobe IMS provisioning.
 
 To request or update access:
 
@@ -25,7 +25,7 @@ To request or update access:
 2. Provide the user details required for Adobe IMS provisioning.
 3. Confirm that the correct organization and access scope have been assigned.
 
-After provisioning is complete, sign in at [synoptryx.adobecqms.net](https://synoptryx.adobecqms.net).
+After provisioning is complete, sign in at [synoptryx.adobecqms.net](https://insights.adobecqms.net).
 
 ## What users can do {#what-users-can-do}
 

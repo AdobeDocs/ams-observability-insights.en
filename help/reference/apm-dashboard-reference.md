@@ -1,13 +1,13 @@
 ---
 title: APM dashboard reference
-description: Panel-by-panel reference for Synoptryx APM dashboards, including screenshots, metrics, and units.
+description: Panel-by-panel reference for Observability Insights APM dashboards, including screenshots, metrics, and units.
 feature: Operations
 role: Admin
 ---
 
 # APM dashboard reference {#apm-dashboard-reference}
 
-This reference documents the main Synoptryx APM panels used in AEM Managed Services.
+This reference documents the main Observability Insights APM panels used in AEM Managed Services.
 
 ## Dashboard navigation
 

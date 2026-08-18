@@ -1,19 +1,19 @@
 ---
-title: Use Synoptryx
-description: Understand the four core monitoring and investigation experiences in Synoptryx and when to use each one.
+title: Use Observability Insights
+description: Understand the four core monitoring and investigation experiences in Observability Insights and when to use each one.
 feature: Operations
 role: Admin
 ---
 
-# Use Synoptryx {#use-synoptryx}
+# Use Observability Insights {#use-observability-insights}
 
 This section covers the day-to-day monitoring and investigation workflows your team uses most, organized around two monitoring areas: Application Performance Monitoring and Infrastructure monitoring.
 
-## The Synoptryx interface {#synoptryx-interface}
+## The Observability Insights interface {#observability-insights-interface}
 
-The Synoptryx left navigation panel gives you access to all monitoring areas for your AEM Managed Services environments.
+The Observability Insights left navigation panel gives you access to all monitoring areas for your AEM Managed Services environments.
 
-![Synoptryx interface showing left navigation with APM and Infrastructure options, and the Infrastructure Monitoring dashboard with host metrics and environment filters](assets/synoptryx-interface2.png)
+![Observability Insights interface showing left navigation with APM and Infrastructure options, and the Infrastructure Monitoring dashboard with host metrics and environment filters](assets/synoptryx-interface2.png)
 
 The navigation includes:
 

@@ -62,7 +62,7 @@ This documentation is designed primarily for:
 
 Adobe monitors AEM **Author** and **Publish** tiers with the Observability Insights APM Java plug-in. All hosted servers in your topology are monitored with the Observability Insights Infrastructure agent. Custom APM and Infrastructure monitoring is enabled in both non-production and production Managed Services environments.
 
-![Diagram showing  Observability Insights APM and Infrastructure monitoring across AEM Author, Publish, and hosted servers](assets/image6.png)
+![Diagram showing  Observability Insights APM and Infrastructure monitoring across AEM Author, Publish, and hosted servers](v2-assets/login-screen.png)
 
 ### Applications in your account {#applications-in-your-account}
 

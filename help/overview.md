@@ -11,12 +11,6 @@ Observability Insights provides visibility into application performance, infrast
 
 If you are responsible for service reliability, incident response, or performance analysis, Observability Insights helps you move from symptoms to evidence quickly. It combines application telemetry and host-level health signals so customer teams and Adobe Managed Services can investigate issues from a shared operational view.
 
-> [!VIDEO](https://video.tv.adobe.com/v/3496693)
-
-> [!NOTE]
->
-> An Observability Insights Product Overview Whitepaper is available for a comprehensive overview of AEM Managed Services observability and monitoring, ideal for sharing with stakeholders or reviewing offline.
-
 ## Why teams use Observability Insights? {#why-teams-use-observability-insights}
 
 Use Observability Insights to answer operational questions such as:

@@ -18,20 +18,25 @@ Infrastructure monitoring is most useful when you need to answer questions such 
 - Are network or disk patterns changing during the same interval as a customer-facing incident?
 - Are storage utilization trends pointing to an upcoming capacity problem?
 
-## Dashboard overview {#dashboard-overview}
+## Accessing Infrastructure Hosts {#infrastructure-host-overview}
 
-The host dashboard provides real-time visibility into compute, memory, storage, and network conditions across monitored infrastructure. Use it alongside APM when you want to distinguish between application-level regressions and underlying capacity constraints.
+Infrastructure Monitoring provides host-level visibility into the health and performance of the infrastructure supporting your managed AEM environments. From the **Observability Catalog**, you can browse infrastructure hosts and drill into an individual host to investigate CPU, memory, network, storage, and other system-level signals.
 
-The dashboard includes these major panels:
+## Accessing Infrastructure Hosts
 
-- Host CPU Utilization
-- Host Disk I/O
-- Host Network I/O
-- CPU I/O Wait
-- Storage Usage
-- Disk Usage
-- Host CPU Load Average
-- Host Memory Usage
+From **Catalog**, select the **Hosts** tab to view the infrastructure associated with the selected account.
+
+![Infrastructure hosts](v2-assets/1_host.png)
+
+The **Infrastructure hosts** view provides an inventory of monitored hosts and includes:
+
+- **Hostname** — Name of the monitored infrastructure host.
+- **Account** — Account associated with the host.
+- **Environment** — Environment classification, such as `DEV` or `STAGE`.
+- **Health** — Current health status of the host.
+- **Last seen** — How recently telemetry was received from the host.
+
+![HostsOverview](v2-assets/2_hostOverview.png)
 
 ## Suggested investigation flow {#suggested-investigation-flow}
 
@@ -50,9 +55,20 @@ For most incidents, review the host dashboard in this order:
 - **Network I/O** when traffic characteristics change or downstream dependencies are suspected.
 - **Storage usage** when incidents involve deployment failures, indexing pressure, or long-term capacity concerns.
 
-## Detailed dashboard reference {#detailed-dashboard-reference}
+Use the **Name contains** field and **Tier** filter to narrow the list of hosts. Select a hostname to open its infrastructure monitoring details.
 
-For panel-by-panel descriptions, screenshots, and metric definitions, see [Infrastructure dashboard reference](reference/infrastructure-dashboard-reference.md).
+## Host Monitoring
+
+After selecting a host, the **Infrastructure** view provides dedicated monitoring pages for that host.
+
+The host navigation includes:
+
+- **Overview** — Consolidated view of key infrastructure health and utilization signals.
+- **Metrics** — Detailed host performance metrics, including CPU, memory, load, disk I/O, and network throughput.
+- **Network** — Network traffic, interface activity, and transmit/receive errors.
+- **Process** — Host process-level monitoring.
+- **Storage** — Disk utilization, disk I/O, and filesystem usage.
+- **System** — Core system resource metrics such as CPU, memory, and load average.
 
 ## Questions to answer during investigation {#questions-to-answer}
 
@@ -68,10 +84,3 @@ For panel-by-panel descriptions, screenshots, and metric definitions, see [Infra
 - CPU, memory, disk, and network screenshots
 - Whether the anomaly is isolated or systemic
 - Related application symptoms from APM
-
-## Related content {#related-content}
-
-- [Application Performance Monitoring (APM)](application-performance-monitoring.md)
-- [Infrastructure dashboard reference](reference/infrastructure-dashboard-reference.md)
-- [Coverage, environments, and data retention](get-started/coverage-and-data.md)
-- [Infrastructure dashboard reference](reference/infrastructure-dashboard-reference.md)

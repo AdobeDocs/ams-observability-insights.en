@@ -17,10 +17,13 @@ The Observability Insights left navigation panel gives you access to all monitor
 
 The navigation includes:
 
-Catalog — Central inventory of monitored AEM applications and hosts. Browse resources across Author, Publish, and Dispatcher tiers, with at-a-glance health and key performance indicators such as response time, throughput, error rate, and Apdex.
-Explore — Investigate observability telemetry and drill into performance data across monitored resources.
-Traces — Analyze end-to-end application transactions and request traces to identify latency, errors, and performance bottlenecks.
-Dashboards — Access curated dashboards for deeper visualization and monitoring of application and infrastructure signals.
+- **Catalog** — Central inventory of monitored AEM applications and hosts. Browse resources across **Author, Publish, and Dispatcher** tiers, with at-a-glance health and key performance indicators such as response time, throughput, error rate, and Apdex.
+
+- **Explore** — Investigate observability telemetry and drill into performance data across monitored resources.
+
+- **Traces** — Analyze end-to-end application transactions and request traces to identify latency, errors, and performance bottlenecks.
+
+- **Dashboards** — Access curated dashboards for deeper visualization and monitoring of application and infrastructure signals.
 
 Resources can be filtered by account and tier, while the catalog provides a consolidated view of application and host health across the managed AEM topology.
 

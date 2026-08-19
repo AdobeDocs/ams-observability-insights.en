@@ -13,7 +13,6 @@ user-guide-description: Adobe Managed Services Observability Insights Documentat
   - [Coverage, environments, and data retention](/help/get-started/coverage-and-data.md)
 - [Use Observability Insights](/help/use-observability-insights.md)
   - [Application Performance Monitoring](/help/application-performance-monitoring.md)
-    - [APM dashboard reference](/help/reference/apm-dashboard-reference.md)
   - [Infrastructure monitoring](/help/infrastructure-monitoring.md)
     - [Infrastructure dashboard reference](/help/reference/infrastructure-dashboard-reference.md)
 - [Troubleshooting and FAQ](/help/troubleshooting/common-questions.md)

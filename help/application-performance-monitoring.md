@@ -89,8 +89,7 @@ application-level health and performance indicators, identify abnormal
 response times, errors, or throughput changes, and then narrow the
 investigation to the transactions contributing most to the issue.
 Transaction data can be correlated with host-level infrastructure
-metrics, while **Distributed tracing** can be used to continue the
-investigation across individual request paths and service interactions.
+metrics.
 
 This workflow helps teams move efficiently from **application health →
 performance trend → transaction → infrastructure**,

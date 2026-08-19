@@ -13,7 +13,7 @@ This section covers the essentials for new users: how to access your Observabili
 
 When you sign in at [insights.adobecqms.net](https://insights.adobecqms.net), the opening screen gives you an entry point into all monitoring areas for your AEM Managed Services environments.
 
-![Observability Insights opening screen showing APM and Infrastructure monitoring entry points](../assets/apm/1_opening_screen.png)
+![Observability Insights opening screen showing APM and Infrastructure monitoring entry points](v2-assets/observability-catalog-listing.png)
 
 The interface is organized around two core monitoring areas:
 

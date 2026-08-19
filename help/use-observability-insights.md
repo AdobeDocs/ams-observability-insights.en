@@ -13,14 +13,16 @@ This section covers the day-to-day monitoring and investigation workflows your t
 
 The Observability Insights left navigation panel gives you access to all monitoring areas for your AEM Managed Services environments.
 
-![Observability Insights interface showing left navigation with APM and Infrastructure options, and the Infrastructure Monitoring dashboard with host metrics and environment filters](assets/synoptryx-interface2.png)
+![Observability Insights interface showing left navigation with APM and Infrastructure options, and the Infrastructure Monitoring dashboard with host metrics and environment filters](v2-assets/navigation-panel-desc.png)
 
 The navigation includes:
 
-- **APM** — Application performance data for your Author and Publish tiers. Covers request throughput, error rates, latency, JVM behavior, and transaction traces.
-- **Infrastructure** — Host-level health data for all servers in your managed topology. Covers CPU, memory, disk, network, and storage signals, with filters for individual hosts or environment groups (such as aem-author, aem-dispatcher, aem-publish).
+Catalog — Central inventory of monitored AEM applications and hosts. Browse resources across Author, Publish, and Dispatcher tiers, with at-a-glance health and key performance indicators such as response time, throughput, error rate, and Apdex.
+Explore — Investigate observability telemetry and drill into performance data across monitored resources.
+Traces — Analyze end-to-end application transactions and request traces to identify latency, errors, and performance bottlenecks.
+Dashboards — Access curated dashboards for deeper visualization and monitoring of application and infrastructure signals.
 
-Both areas are read-only for customer users. Adobe Managed Services manages account provisioning, instrumentation, and administrative control.
+Resources can be filtered by account and tier, while the catalog provides a consolidated view of application and host health across the managed AEM topology.
 
 ## Application Performance Monitoring {#application-performance-monitoring}
 

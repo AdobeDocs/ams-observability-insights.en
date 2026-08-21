@@ -17,8 +17,8 @@ When you sign in at [insights.adobecqms.net](https://insights.adobecqms.net), th
 
 The interface is organized around two core monitoring areas:
 
-- **Applications** — Displays application performance data for your Author and Publish tiers. Use this to investigate request throughput, error rates, latency, JVM behavior, and trace-level execution details. See [Application Performance Monitoring](../application-performance-monitoring.md).
-- **Hosts** — Displays host-level health data across your managed topology. Use this to assess CPU, memory, disk, network, and storage signals on individual servers. See [Infrastructure monitoring](../infrastructure-monitoring.md).
+- **Applications** — Displays application performance data for your Author and Publish tiers. Use this to investigate request throughput, error rates, latency, JVM behavior, and trace-level execution details. See [Applications](../applications.md).
+- **Hosts** — Displays host-level health data across your managed topology. Use this to assess CPU, memory, disk, network, and storage signals on individual servers. See [Hosts](../hosts.md).
 
 Both areas are read-only for customer users. Adobe Managed Services manages account provisioning, instrumentation, and administrative control.
 
@@ -53,7 +53,5 @@ The documentation is organized into four areas. Use the descriptions below to go
 **Get started** — This section. Covers access, account provisioning, monitoring scope, and data retention.
 
 **[Use Observability Insights](../use-observability-insights.md)** — Task-oriented guidance for day-to-day investigation. Use [Applications](../applications.md) when the symptom is application-facing: slow pages, error spikes, or unstable transactions. Use [Hosts](../hosts.md) when you need to determine whether host-level resource pressure—CPU, memory, disk, or network—explains what you are seeing in Applications. Step-by-step investigation flows are available in [Investigate application issues](../use-cases/investigate-application-issues.md) and [Investigate infrastructure issues](../use-cases/investigate-infrastructure-issues.md).
-
-**Reference** — Panel-by-panel documentation for when you need exact metric names, units, retention periods, or screenshot-level detail. See the [APM dashboard reference](../reference/apm-dashboard-reference.md), [Infrastructure dashboard reference](../reference/infrastructure-dashboard-reference.md), and [Metrics, coverage, and retention](../reference/metrics-and-retention.md).
 
 **[Troubleshooting and FAQ](../troubleshooting/common-questions.md)** — Common questions and support-oriented entry points for when you are unsure where to begin or need quick answers during an active incident.

@@ -41,7 +41,7 @@ As part of AEM Managed Services, you receive:
 
 - **Dedicated Observability Insights account** — Provisioned and overseen by Adobe Managed Services, with read-only access for your team.
 - **Deep AEM transaction monitoring** — The Observability Insights APM agent traces meaningful transactions down to method calls (including line numbers), external dependencies, and repository operations.
-- **Unified application and infrastructure view** — Combine APM and host-level metrics to optimize performance holistically.
+- **Unified applications and hosts view** — Combine applications and host-level metrics to optimize performance holistically.
 
 ## Who this documentation is for {#who-this-documentation-is-for}
 

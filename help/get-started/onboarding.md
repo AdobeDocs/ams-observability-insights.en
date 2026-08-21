@@ -54,4 +54,4 @@ The documentation is organized into four areas. Use the descriptions below to go
 
 **[Use Observability Insights](../use-observability-insights.md)** — Task-oriented guidance for day-to-day investigation. Use [Applications](../applications.md) when the symptom is application-facing: slow pages, error spikes, or unstable transactions. Use [Hosts](../hosts.md) when you need to determine whether host-level resource pressure—CPU, memory, disk, or network—explains what you are seeing in Applications. Step-by-step investigation flows are available in [Investigate application issues](../use-cases/investigate-application-issues.md) and [Investigate infrastructure issues](../use-cases/investigate-infrastructure-issues.md).
 
-**[FAQ's](../troubleshooting/common-questions.md)** — Common questions and support-oriented entry points for when you are unsure where to begin or need quick answers during an active incident.
+**[Frequently Asked Questions](../troubleshooting/common-questions.md)** — Common questions and support-oriented entry points for when you are unsure where to begin or need quick answers during an active incident.

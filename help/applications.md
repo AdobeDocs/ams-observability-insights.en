@@ -4,11 +4,11 @@ Applications provides Application Performance Monitoring (APM) capabilities, off
 
 ## Application summary
 
-The **APM & Services** summary provides an at-a-glance view of the selected application. Key indicators such as p95 latency, server throughput, error rate, and Apdex make it easy to assess application health over the selected time range.
+The **applications** summary provides an at-a-glance view of the selected application. Key indicators such as p95 latency, server throughput, error rate, and Apdex make it easy to assess application health over the selected time range.
 
 Filters for transaction type, host, and resolution allow the view to be refined for a specific investigation. Response-time and throughput trends provide additional context, helping teams distinguish isolated spikes from sustained performance changes.
 
-![APM & Services summary](v2-assets/1_apm-services-landing-page.png)
+![applications summary](v2-assets/1_apm-services-landing-page.png)
 
 ## Response time, throughput, and Apdex
 
@@ -20,7 +20,7 @@ Apdex provides a complementary measure of application responsiveness by translat
 
 ## Errors and slow transactions
 
-APM continuously surfaces error-rate trends and slow transactions to help identify requests that may be affecting application performance. The error-rate view makes it easy to recognize changes over time, while the Apdex trend shows the corresponding impact on application responsiveness.
+Applications continuously surfaces error-rate trends and slow transactions to help identify requests that may be affecting application performance. The error-rate view makes it easy to recognize changes over time, while the Apdex trend shows the corresponding impact on application responsiveness.
 
 The **Slowest transactions** view highlights transactions with the highest average duration and includes call volume, making it easier to distinguish frequently executed workloads from isolated slow requests.
 
@@ -44,6 +44,6 @@ Time-series visualizations show how the most significant transactions contribute
 
 ## Investigating performance issues
 
-APM supports a progressive investigation workflow: begin with application-level health and performance indicators, identify abnormal response times, errors, or throughput changes, and then narrow the investigation to the transactions contributing most to the issue. Transaction data can be correlated with host-level infrastructure metrics.
+Applications supports a progressive investigation workflow: begin with application-level health and performance indicators, identify abnormal response times, errors, or throughput changes, and then narrow the investigation to the transactions contributing most to the issue. Transaction data can be correlated with host-level infrastructure metrics.
 
-This workflow helps teams move efficiently from **application health → performance trend → transaction → infrastructure**, reducing the time required to isolate the source of a performance problem.
+This workflow helps teams move efficiently from **application health → performance trend → transaction → hosts**, reducing the time required to isolate the source of a performance problem.

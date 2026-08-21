@@ -1,6 +1,6 @@
-# Application Performance Monitoring
+# Applications
 
-Application Performance Monitoring (APM) provides a unified view of application health, performance, transactions, and the infrastructure supporting each service. It helps operations and engineering teams understand how applications are behaving, identify performance bottlenecks, and move from high-level health indicators to individual transactions for deeper investigation.
+Applications provides Application Performance Monitoring (APM) capabilities, offering a unified view of application health, performance, transactions, and the underlying infrastructure supporting each service. It helps operations and engineering teams understand application behavior, identify performance bottlenecks, and move from high-level health indicators to individual transactions for deeper investigation.
 
 ## Application summary
 

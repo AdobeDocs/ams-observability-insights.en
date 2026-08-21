@@ -1,11 +1,11 @@
 ---
-title: Troubleshooting and FAQ
+title: FAQ's
 description: Common questions and investigation starting points for Observability Insights in AEM Managed Services.
 feature: Operations
 role: Admin
 ---
 
-# Troubleshooting and FAQ {#troubleshooting-and-faq}
+# FAQ's {#faq}
 
 Use this page as a starting point when you are unsure where to begin or need a quick answer during an active investigation.
 

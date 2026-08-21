@@ -27,30 +27,30 @@ The navigation includes:
 
 Resources can be filtered by account and tier, while the catalog provides a consolidated view of application and host health across the managed AEM topology.
 
-## Application Performance Monitoring {#application-performance-monitoring}
+## Applications{#applications}
 
-Use [Application Performance Monitoring (APM)](application-performance-monitoring.md) when the issue is application-facing — slow pages, rising error rates, unstable transactions, or unexpected latency on Author or Publish.
+Use [Applications](applications.md) when the issue is application-facing — slow pages, rising error rates, unstable transactions, or unexpected latency on Author or Publish.
 
-APM helps you answer:
+Applications helps you answer:
 
 - Is the issue isolated to Author, Publish, or affecting both tiers?
 - Which endpoints or transactions contribute most to traffic and slowdowns?
 - Did latency or errors change before or after a deployment or traffic spike?
 - Do traces point to repository operations, external dependencies, or JVM pressure?
 
-APM instruments AEM transactions down to method calls, external dependencies, and repository operations, so you can move quickly from a broad symptom to a specific execution path.
+Applications instruments AEM transactions down to method calls, external dependencies, and repository operations, so you can move quickly from a broad symptom to a specific execution path.
 
-## Infrastructure monitoring {#infrastructure-monitoring}
+## Hosts {#hosts}
 
-Use [Infrastructure monitoring](infrastructure-monitoring.md) when you need to determine whether application behavior is caused or compounded by host resource conditions — CPU saturation, memory pressure, disk I/O, network throughput, or storage capacity.
+Use [Hosts](hosts.md) when you need to determine whether application behavior is caused or compounded by host resource conditions — CPU saturation, memory pressure, disk I/O, network throughput, or storage capacity.
 
-Infrastructure monitoring helps you answer:
+Host monitoring helps you answer:
 
 - Is the application slowdown accompanied by CPU, memory, or I/O pressure at the host level?
 - Is one host behaving differently from others in the same environment?
 - Are disk or storage utilization trends pointing to an upcoming capacity problem?
 - Do infrastructure patterns explain the application behavior, or are they a downstream effect?
 
-Use infrastructure dashboards alongside APM to distinguish between application-level regressions and environment-level resource constraints.
+Use host dashboards alongside applications to distinguish between application-level regressions and environment-level resource constraints.
 
 Both articles include investigation workflows, questions to guide your triage, and a list of evidence to capture when escalating to Adobe Managed Services.

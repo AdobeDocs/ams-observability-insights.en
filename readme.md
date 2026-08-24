@@ -1,3 +1,3 @@
-# Adobe Managed Services Synoptryx Documentation
+# Adobe Managed Services Observability Insights Documentation
 
-This is the repository for Adobe Managed Services Synoptryx documentation.
+This is the repository for Adobe Managed Services Observability documentation.

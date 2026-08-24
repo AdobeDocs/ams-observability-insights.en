@@ -9,7 +9,8 @@ type: Documentation
 mini-toc-levels: 2
 git-repo: https://github.com/Adobe-Enterprise-Docs/ams-synoptryx.en
 recommendations: noDisplay
-index: true
+index: false
+hide: true
 ---
 
 # Metadata for internal use

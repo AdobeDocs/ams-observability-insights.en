@@ -60,4 +60,3 @@ Continue with the monitoring dashboards your team uses day to day:
 
 - [Application performance monitoring (APM)](application-performance-monitoring.md) — Trace AEM transactions, analyze JVM behavior, and inspect external services.
 - [Infrastructure monitoring](infrastructure-monitoring.md) — Review host-level system, network, process, and storage metrics.
-

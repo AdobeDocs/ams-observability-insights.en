@@ -78,7 +78,7 @@ Before you can sign in, confirm the following:
 - Your organization has an active **AEM Managed Services** subscription. Observability Insights is included at no additional cost.
 - Your Customer Success Engineer (CSE) has provisioned your Adobe IMS account and granted you access to the Observability Insights account for your organization.
 
-> [!NOTE]
+[!NOTE]
 >
 > **Getting access:** Access to Observability Insights requires Adobe IMS provisioning. Contact your Customer Success Engineer (CSE) to provision and manage user access for your organization.
 

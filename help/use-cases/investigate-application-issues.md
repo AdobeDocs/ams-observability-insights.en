@@ -8,6 +8,10 @@ redirect_url: /help/application-performance-monitoring.md
 
 # Investigate application issues
 
+Investigate.
+
+<!-- 
+
 This content has moved to [Application Performance Monitoring](../application-performance-monitoring.md).
 
 ## Investigation workflow {#investigation-workflow}
@@ -50,3 +54,6 @@ Expand this page later with product-specific runbooks such as:
 - Slow endpoint triage
 - Error spike analysis
 - External dependency troubleshooting
+
+-->
+

@@ -19,7 +19,7 @@ This typically indicates an issue with your user provisioning. Contact your Cust
 
 ## How do I determine whether an issue is application or infrastructure related? {#application-or-infrastructure}
 
-Start with [Application Performance Monitoring](../application-performance-monitoring.md) to review request rates, error rates, and latency on Author or Publish. If application signals are elevated, use [Infrastructure monitoring](../infrastructure-monitoring.md) to check whether host-level resource pressure—CPU, memory, disk, or network—explains or compounds what you are seeing.
+Start with [Application Performance Monitoring](/help/applications.md) to review request rates, error rates, and latency on Author or Publish. If application signals are elevated, use [Hosts](/help/hosts.md) to check whether host-level resource pressure—CPU, memory, disk, or network—explains or compounds what you are seeing.
 
 ## What data does Observability Insights actually collect? {#what-data-is-collected}
 

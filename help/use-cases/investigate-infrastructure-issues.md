@@ -8,6 +8,10 @@ redirect_url: /help/infrastructure-monitoring.md
 
 # Investigate infrastructure issues
 
+Investigate.
+
+<!-- 
+
 This content has moved to [Infrastructure monitoring](../infrastructure-monitoring.md).
 
 ## Investigation workflow {#investigation-workflow}
@@ -48,3 +52,5 @@ This page is ready to expand with:
 - Disk growth investigation patterns
 - Host comparison techniques
 - Escalation criteria for Adobe Managed Services
+
+-->

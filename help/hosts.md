@@ -5,7 +5,7 @@ feature: Operations
 role: Admin
 ---
 
-# Hosts {#infrastructure-monitoring}
+# Hosts {#hosts}
 
 Use Hosts in Observability Insights to monitor the health, performance, and resource utilization of the infrastructure supporting your applications and services. Use the infrastructure dashboards to identify issues related to host capacity, storage pressure, network throughput, or operating system resource contention.
 

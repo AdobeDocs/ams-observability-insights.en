@@ -21,13 +21,6 @@ This typically indicates an issue with your user provisioning. Contact your Cust
 
 Start with [Application Performance Monitoring](/help/applications.md) to review request rates, error rates, and latency on Author or Publish. If application signals are elevated, use [Hosts](/help/hosts.md) to check whether host-level resource pressure—CPU, memory, disk, or network—explains or compounds what you are seeing.
 
-## How should I understand a specific graph or metric? {#understand-graph-or-metric}
-
-Use the dashboard reference pages for panel-by-panel descriptions, metric names, units, and screenshots:
-
-- [APM dashboard reference](../reference/apm-dashboard-reference.md)
-- [Infrastructure dashboard reference](../reference/infrastructure-dashboard-reference.md)
-
 ## What data does Observability Insights actually collect? {#what-data-is-collected}
 
 See [Coverage, environments, and data retention](../get-started/coverage-and-data.md) for monitoring scope, application representation, retention periods, and operational implications.

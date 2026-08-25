@@ -7,9 +7,9 @@ role: Admin
 
 # Monitor your AEM Managed Services environment with Observability Insights {#observability-insights-monitoring}
 
-Observability Insights provides visibility into application performance, infrastructure health, and service behavior in Adobe Experience Manager Managed Services, without requiring a separate monitoring platform.
+**Observability Insights** provides visibility into application performance, infrastructure health, and service behavior in AEM Managed Services, without requiring a separate monitoring platform.
 
-If you are responsible for service reliability, incident response, or performance analysis, Observability Insights helps you move from symptoms to evidence quickly. It combines application telemetry and host-level health signals so customer teams and Adobe Managed Services can investigate issues from a shared operational view.
+If you are responsible for service reliability, incident response, or performance analysis, **Observability Insights** helps you move from symptoms to evidence quickly. It combines application telemetry and host-level health signals so customer teams and Adobe can investigate issues from a shared operational view.
 
 ## Why teams use Observability Insights? {#why-teams-use-observability-insights}
 

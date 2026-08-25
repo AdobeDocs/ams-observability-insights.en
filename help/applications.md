@@ -1,3 +1,10 @@
+---
+title: Applications
+description: Applications provides Application Performance Monitoring (APM) capabilities, offering a unified view of application health, performance, transactions, and the underlying infrastructure supporting each service.
+feature: Operations
+role: Admin
+---
+
 # Applications
 
 Applications provides Application Performance Monitoring (APM) capabilities, offering a unified view of application health, performance, transactions, and the underlying infrastructure supporting each service. It helps operations and engineering teams understand application behavior, identify performance bottlenecks, and move from high-level health indicators to individual transactions for deeper investigation.

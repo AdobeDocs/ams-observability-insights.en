@@ -8,10 +8,10 @@ user-guide-description: Adobe Managed Services Observability Insights Documentat
 # Adobe Managed Services Observability Insights {#content}
 
 - [Overview](/help/overview.md)
-- Get started with Observability Insights {#get-started}
-  - [Access and account management](/help/get-started/access-and-accounts.md)
-  - [Coverage, environments, and data retention](/help/get-started/coverage-and-data.md)
-- Use Observability Insights {#use-observability-insights}
-  - [Applications](/help/applications.md)
-  - [Hosts](/help/hosts.md)
+- [Get started with Observability Insights](/help/get-started/onboarding.md)
+- [Access and account management](/help/get-started/access-and-accounts.md)
+- [Coverage, environments, and data retention](/help/get-started/coverage-and-data.md)
+- [Use Observability Insights](/help/use-observability-insights.md)
+- [Applications](/help/applications.md)
+- [Hosts](/help/hosts.md)
 - [Frequently Asked Questions](/help/troubleshooting/common-questions.md)

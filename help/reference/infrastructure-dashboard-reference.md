@@ -1,15 +1,15 @@
 ---
-title: Infrastructure monitoring with [!DNL Synoptryx]
-description: Use [!DNL Synoptryx] Infrastructure monitoring to review host-level system, network, process, and storage metrics across your AEM Managed Services footprint.
+title: Infrastructure dashboard reference
+description: Panel-by-panel reference for Observability Insights infrastructure dashboards, including screenshots, metrics, and units.
 feature: Operations
 role: Admin
 ---
 
-# Host Infrastructure Monitoring Dashboard
+# Infrastructure dashboard reference {#infrastructure-dashboard-reference}
 
-This section describes each host-level infrastructure monitoring graph displayed on the infrastructure monitoring dashboard. Each section explains the purpose of the metric, the data being collected, the units of measurement, and the information presented in the visualization.
+This reference documents the host-level infrastructure panels used in Observability Insights for AEM Managed Services.
 
-## Dashboard Overview
+## Dashboard overview
 
 The Host Infrastructure Monitoring Dashboard provides real-time visibility into the utilization and performance of the underlying host. These metrics assist operators in monitoring compute, memory, storage, and network resources while identifying potential resource bottlenecks.
 
@@ -26,11 +26,11 @@ The dashboard includes the following monitoring panels:
 
 ## 1. Host CPU Utilization
 
-![Host CPU Utilization](assets/host-monitoring/host_cpu_utilization.png)
+![Host CPU Utilization](../assets/host-monitoring/host_cpu_utilization.png)
 
 ### Description
 
-The **[!UICONTROL Host CPU Utilization]** panel displays the percentage of CPU resources currently being consumed by the operating system and all running processes over time.
+The **Host CPU Utilization** panel displays the percentage of CPU resources currently being consumed by the operating system and all running processes over time.
 
 This metric represents the overall CPU usage across the host and provides a time-series visualization of processor activity.
 
@@ -65,11 +65,11 @@ The panel summarizes CPU utilization using three values:
 
 ## 2. Host Disk I/O
 
-![Host Disk I/O](assets/host-monitoring/host_disk_io.png)
+![Host Disk I/O](../assets/host-monitoring/host_disk_io.png)
 
 ### Description
 
-The **[!UICONTROL Host Disk I/O]** panel displays storage throughput for disk read and disk write operations performed by the host.
+The **Host Disk I/O** panel displays storage throughput for disk read and disk write operations performed by the host.
 
 The graph presents two independent time-series that represent data being transferred between the operating system and storage devices.
 
@@ -103,11 +103,11 @@ The displayed unit automatically scales based on throughput.
 
 ## 3. Host Network I/O
 
-![Host Network I/O](assets/host-monitoring/host_network_io.png)
+![Host Network I/O](../assets/host-monitoring/host_network_io.png)
 
 ### Description
 
-The **[!UICONTROL Host Network I/O]** panel displays the volume of network traffic transmitted and received by the host over time.
+The **Host Network I/O** panel displays the volume of network traffic transmitted and received by the host over time.
 
 The graph measures the rate at which data flows through the network interfaces and provides visibility into network bandwidth consumption.
 This metric represents aggregate network throughput.
@@ -146,11 +146,11 @@ depending on the observed traffic volume.
 
 ## 4. CPU I/O Wait
 
-![CPU I/O Wait](assets/host-monitoring/cpu_io_wait.png)
+![CPU I/O Wait](../assets/host-monitoring/cpu_io_wait.png)
 
 ### Description
 
-The **[!UICONTROL CPU I/O Wait]** panel displays the percentage of CPU time spent waiting for input/output operations to complete.
+The **CPU I/O Wait** panel displays the percentage of CPU time spent waiting for input/output operations to complete.
 
 This metric represents processor idle time that occurs because active processes are blocked while waiting for storage devices or other I/O operations.
 
@@ -183,11 +183,11 @@ The graph visualizes how I/O wait changes over time.
 
 ## 5. Storage Usage
 
-![Storage Usage](assets/host-monitoring/storage_disk_usage.png)
+![Storage Usage](../assets/host-monitoring/storage_disk_usage.png)
 
 ### Description
 
-The **[!UICONTROL Storage Usage]** panel displays the overall percentage of storage capacity currently utilized on the monitored host.
+The **Storage Usage** panel displays the overall percentage of storage capacity currently utilized on the monitored host.
 
 The graph provides a historical view of filesystem capacity utilization during the selected time interval.
 
@@ -209,11 +209,11 @@ The graph provides a historical view of filesystem capacity utilization during t
 
 ## 6. Disk Usage
 
-![Disk Usage](assets/host-monitoring/storage_disk_usage.png)
+![Disk Usage](../assets/host-monitoring/storage_disk_usage.png)
 
 ### Description
 
-The **[!UICONTROL Disk Usage]** panel displays storage utilization for each mounted filesystem or storage device.
+The **Disk Usage** panel displays storage utilization for each mounted filesystem or storage device.
 
 Each row corresponds to a specific block device or mounted partition and reports the percentage of space currently in use.
 
@@ -242,11 +242,11 @@ Each entry includes:
 
 ## 7. Host CPU Load Average
 
-![Host CPU Load Average](assets/host-monitoring/host_cpu_load_average.png)
+![Host CPU Load Average](../assets/host-monitoring/host_cpu_load_average.png)
 
 ### Description
 
-The **[!UICONTROL Host CPU Load Average]** panel displays the Linux system load averages over three rolling time windows.
+The **Host CPU Load Average** panel displays the Linux system load averages over three rolling time windows.
 
 Unlike CPU utilization, load average represents the average number of processes that are either actively running or waiting for CPU scheduling or I/O completion.
 
@@ -283,11 +283,11 @@ For each load average metric:
 
 ## 8. Host Memory Usage
 
-![Host Memory Usage](assets/host-monitoring/host_memory_usage.png)
+![Host Memory Usage](../assets/host-monitoring/host_memory_usage.png)
 
 ### Description
 
-The **[!UICONTROL Host Memory Usage]** panel displays the percentage of physical system memory currently allocated by the operating system.
+The **Host Memory Usage** panel displays the percentage of physical system memory currently allocated by the operating system.
 
 This metric represents overall RAM utilization across all running processes, kernel memory, buffers, and caches.
 
@@ -318,7 +318,7 @@ The graph provides a continuous view of memory consumption throughout the select
 - Historical utilization trend.
 - Summary statistics.
 
-## Summary of Dashboard Metrics
+## Summary of dashboard metrics
 
 | Dashboard Panel       | Primary Metric                   | Unit         |
 | --------------------- | -------------------------------- | ------------ |

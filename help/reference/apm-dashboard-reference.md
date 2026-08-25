@@ -1,70 +1,27 @@
 ---
-title: Application Performance Monitoring (APM) with [!DNL Synoptryx]
-description: Use the [!DNL Synoptryx] APM plug-in to trace AEM transactions, monitor the JVM, analyze transactions, and inspect transaction traces and external services on AEM Managed Services.
+title: APM dashboard reference
+description: Panel-by-panel reference for Observability Insights APM dashboards, including screenshots, metrics, and units.
 feature: Operations
 role: Admin
 ---
 
-# Application Performance Monitoring (APM) with [!DNL Synoptryx] {#application-performance-monitoring}
+# APM dashboard reference {#apm-dashboard-reference}
 
-[!DNL Synoptryx] Application Performance Monitoring (APM) provides real-time and historical insight into Adobe [!DNL Experience Manager] (AEM) performance and end-user experience. End-to-end transaction tracing, charts, and reports give visibility into application behavior down to the Java code level.
+This reference documents the main Observability Insights APM panels used in AEM Managed Services.
 
-## Managed Services [!DNL Synoptryx] APM plug-in {#apm-plugin}
+## Dashboard navigation
 
-AEM runs as a Java application on Jetty with Apache Felix OSGi modules, built on Apache Sling and Jackrabbit Oak. Adobe Managed Services, AEM Engineering, and [!DNL Synoptryx] Engineering jointly developed custom instrumentation for Managed Services environments.
-
-That instrumentation collects:
-
-- **Meaningful transaction naming** — Sling extensions align transaction names with page structure and add a `requestURL` attribute on Insights events so you can correlate Sling URLs across dashboards.
-
-![Synoptryx APM trace view showing a descriptive AEM transaction name with Sling health check route and span timeline](assets/image19a.png)
-
-- **JCR instrumentation** — Repository-level operations (including XPath and JCR-SQL2) are categorized and attached to transaction traces in the database section of APM.
-
-![Synoptryx APM trace view showing nested AEM component spans and execution timeline for a page request](assets/image19.png)
-
-## Using [!DNL Synoptryx] APM {#using-apm}
-
-Use APM to find application issues before they affect end-users. Author and Publish share a codebase but are monitored as **separate APM applications** so you can analyze each tier independently.
-
-Every Managed Services environment includes:
-
-- One APM application for Author
-- One APM application for Publish
-
-Select an application name in [!DNL Synoptryx] APM to open its overview and monitoring dashboard.
-
-![Synoptryx APM application list showing Author and Publish applications](assets/image1a.png)
-
-## Dashboard Sections
-
-The Application Performance Management dashboard contains the following sections:
-
-- Overview
-- RED Metrics (Rate • Errors • Duration)
-- Traffic
-- Latency & Performance
-- Error Details
-- Top Transactions
-- JVM Health
-- JVM Memory
-- Garbage Collection
-
-Only the sections shown below are documented in this guide.
-
-## Dashboard Navigation
-
-![Dashboard Navigation](assets/apm/1_opening_screen.png)
+![Dashboard Navigation](../assets/apm/1_opening_screen.png)
 
 The dashboard is organized into expandable sections that group related application performance metrics. Expanding a section reveals one or more charts associated with that category.
 
 ## Overview
 
-![Overview](assets/apm/1.1_apm_overview.png)
+![Overview](../assets/apm/1.1_apm_overview.png)
 
 ### Description
 
-The **[!UICONTROL Overview]** section presents high-level Key Performance Indicators (KPIs) summarizing the current state of the monitored application.
+The **Overview** section presents high-level Key Performance Indicators (KPIs) summarizing the current state of the monitored application.
 
 These KPIs provide an at-a-glance summary of application activity, throughput, request success, and overall user experience.
 
@@ -138,7 +95,7 @@ The RED methodology measures three primary characteristics of an application:
 
 ### Request Rate
 
-![Request Rate](assets/apm/2_red_metrics_request_rate.png)
+![Request Rate](../assets/apm/2_red_metrics_request_rate.png)
 
 #### Description
 
@@ -165,7 +122,7 @@ req_min
 
 ### Error Rate
 
-![Error Rate](assets/apm/3_error_rate.png)
+![Error Rate](../assets/apm/3_error_rate.png)
 
 #### Description
 
@@ -193,7 +150,7 @@ error_pct (1h ago)
 
 ### Request Duration
 
-![Request Duration](assets/apm/4_request_duration_p50_p95.png)
+![Request Duration](../assets/apm/4_request_duration_p50_p95.png)
 
 #### Description
 
@@ -236,7 +193,7 @@ For every percentile:
 
 ### Requests by HTTP Status Code
 
-![Requests by Status Code](assets/apm/5_requests_by_status_code.png)
+![Requests by Status Code](../assets/apm/5_requests_by_status_code.png)
 
 #### Description
 
@@ -271,7 +228,7 @@ depending on application activity.
 
 ### Request Rate by Endpoint
 
-![Request Rate by Endpoint](assets/apm/6_request_rate_by_end_point.png)
+![Request Rate by Endpoint](../assets/apm/6_request_rate_by_end_point.png)
 
 #### Description
 
@@ -296,11 +253,11 @@ endpoint_request_rate
 - Ranked endpoint list
 - Relative request volume
 
-## Latency & Performance
+## Latency and performance
 
 ### Response Time — P95 vs 1 Hour
 
-![Response Time P95](assets/apm/7_response_time_p95_1h.png)
+![Response Time P95](../assets/apm/7_response_time_p95_1h.png)
 
 #### Description
 
@@ -328,7 +285,7 @@ P95 (1 Hour Ago)
 
 ### APDEX Score Over Time
 
-![APDEX](assets/apm/8_apdex_score_overtime.png)
+![APDEX](../assets/apm/8_apdex_score_overtime.png)
 
 #### Description
 
@@ -354,7 +311,7 @@ APDEX Score
 
 ### Throughput vs P95 Latency
 
-![Throughput vs Latency](assets/apm/9_throughput_vs_p95latency.png)
+![Throughput vs Latency](../assets/apm/9_throughput_vs_p95latency.png)
 
 #### Description
 
@@ -382,11 +339,11 @@ P95 Latency
 - Time-series latency
 - Dual metric comparison
 
-## Error Details
+## Error details
 
 ### Error Rate % by Status Group
 
-![Error Rate by Status Group](assets/apm/10_error_rate_pct_by_status_group.png)
+![Error Rate by Status Group](../assets/apm/10_error_rate_pct_by_status_group.png)
 
 #### Description
 
@@ -418,10 +375,9 @@ depending on observed traffic.
 - Mean error percentage
 - Time-series trend
 
-
 ### Error Ratio Trend — Now vs 1 Hour Ago
 
-![Error Ratio 1 Hour](assets/apm/11_error_ratio_trend_1h.png)
+![Error Ratio 1 Hour](../assets/apm/11_error_ratio_trend_1h.png)
 
 #### Description
 
@@ -446,7 +402,7 @@ Current Error Ratio
 
 ### Error Ratio Trend — Now vs 6 Hours Ago
 
-![Error Ratio 6 Hours](assets/apm/12_error_ratio_trend_6h.png)
+![Error Ratio 6 Hours](../assets/apm/12_error_ratio_trend_6h.png)
 
 #### Description
 
@@ -469,7 +425,7 @@ Current Error Ratio
 - Historical comparison
 - Time-series visualization
 
-## Summary of Dashboard Metrics
+## Summary of dashboard metrics
 
 | Dashboard                  | Primary Metrics                               |
 | -------------------------- | --------------------------------------------- |

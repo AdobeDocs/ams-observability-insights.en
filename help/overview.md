@@ -13,14 +13,6 @@ If you are responsible for service reliability, incident response, or performanc
 
 ## Observability Insights Whitepaper
 
-<iframe
-  src="v2-assets/Observability_Insights_Overview.pdf"
-  title="Observability Insights Whitepaper"
-  width="100%"
-  height="800"
-  style="border: 0;"
-></iframe>
-
 [Download the Observability Insights Whitepaper](v2-assets/Observability_Insights_Overview.pdf)
 
 ## Why teams use Observability Insights? {#why-teams-use-observability-insights}

@@ -14,5 +14,5 @@ user-guide-description: Adobe Managed Services Observability Insights Documentat
 - [Use Observability Insights](/help/use-observability-insights.md)
 - [Applications](/help/applications.md)
 - [Hosts](/help/hosts.md)
-- [API Documentation](/help/api.md)
+- [API Documentation](/help/apiU.md)
 - [Frequently Asked Questions](/help/troubleshooting/common-questions.md)

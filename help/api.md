@@ -18,7 +18,9 @@ API keys are personal credentials tied to your account and scoped to a single or
 
 1. Sign in to the [Observability Insights dashboard](https://insights.adobecqms.net/).
 2. Open your profile menu (top right) → **API Keys**.
+   ![API Keys menu](v2-assets/api-key.png)
 3. In the **API Keys** tab, click **Generate key**.
+   ![Generate API key](v2-assets/api-key-gen.png)
 4. Give it a descriptive name (e.g. `CI pipeline`, `Grafana datasource`), choose the organization it should be scoped to, and optionally set an expiration date.
 5. Click **Generate key**. Your key is shown **once**, in the format:
 

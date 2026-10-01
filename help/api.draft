@@ -1,3 +1,8 @@
+---
+title: Observability Insights Public API
+description: "The Observability Insights Public API lets you pull your own observability data — request overviews, service catalogs, traces, and metrics — directly into your own tools, scripts, and dashboards."
+---
+
 # Observability Insights Public API
 
 The Observability Insights Public API lets you pull your own observability data — request overviews, service catalogs, traces, and metrics — directly into your own tools, scripts, and dashboards.
@@ -7,8 +12,6 @@ The Observability Insights Public API lets you pull your own observability data 
 - **Authentication:** API key (Bearer token)
 
 > Replace `{{API_BASE_URL}}` throughout this document with your Observability Insights instance's API host, e.g. `https://insights.adobecqms.net/`.
-
----
 
 ## 1. Getting an API key
 
@@ -41,7 +44,6 @@ The API Keys section lists every key you've created, including its organization,
 - Rotate keys periodically and revoke any key that's no longer in use.
 - If a key is compromised, revoke it immediately from **Org Settings → API Keys** and generate a replacement.
 
----
 
 ## 2. Authenticating requests
 

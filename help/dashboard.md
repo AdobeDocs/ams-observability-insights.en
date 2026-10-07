@@ -18,10 +18,10 @@
 
 | Section         | Doc                                                                                 | What you'll learn                                                                           |
 | --------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **Get started** | [1. Get started with SQL](#1-get-started-with-SQL-the-language-of-your-telemetry)   | What SQL is, what you can query, where to use it, the basic rules                           |
-|                 | [2. How to query with SQL](#2-how-to-query-with-SQL-the-mechanics-of-querying)      | How to explore data, how a query runs, worked examples                                      |
+| **Get started** | [1. Get started with SQL](#1-get-started-with-sql-the-language-of-your-telemetry)   | What SQL is, what you can query, where to use it, the basic rules                           |
+|                 | [2. How to query with SQL](#2-how-to-query-with-sql-the-mechanics-of-querying)      | How to explore data, how a query runs, worked examples                                      |
 |                 | [3. Charts and dashboards](#3-charts-and-dashboards-visualizing-your-data)          | How to turn queries into charts and build dashboards step by step                           |
-| **Reference**   | [4. SQL reference](#4-SQL-reference)                                                | Every clause, function and operator, with examples                                          |
+| **Reference**   | [4. SQL reference](#4-sql-reference)                                                | Every clause, function and operator, with examples                                          |
 |                 | [5. Data dictionary](#5-data-dictionary)                                            | Every entity and attribute you can query                                                    |
 | **Tutorials**   | [6. Tutorial 1: Your first queries](#6-tutorial-1-your-first-queries)               | `SELECT`, `FROM`, `LIMIT`, aggregates, time, `TIMESERIES`, `WHERE`, `FACET`                 |
 |                 | [7. Tutorial 2: Control your data](#7-tutorial-2-control-your-data)                 | Unique values, latest/earliest, percentages, percentiles, labels, wildcards, ordering       |
@@ -37,9 +37,11 @@
 
 # Get started
 
+<a id="1-get-started-with-sql-the-language-of-your-telemetry"></a>
+
 ## 1. Get started with SQL: the language of your telemetry
 
-SQL is a SQL-like query language for your Observability Insights data. It is the same language behind every custom dashboard widget and the **Explore** page, so you can build the views your team needs.
+Insights Query language is a SQL-like query language for your Observability Insights data. It is the same language behind every custom dashboard widget and the **Explore** page, so you can build the views your team needs.
 
 SQL works with **entities**, which are friendly logical views such as `Transaction`, `Span` or `CpuUtilization`. You never query storage tables directly. Observability Insights compiles each SQL query into a safe, parameterised warehouse query. It always scopes that query to your tenant and the selected time window.
 
@@ -122,18 +124,20 @@ Here are the rules SQL follows:
 | **Attribute names**          | Names can contain letters, digits, `_` and `.` (for example `http.statusCode`). No backticks are needed.                                                                             |
 | **Aggregates vs attributes** | A query either selects raw attributes (an event list) or aggregates, never both. To group, use `FACET`.                                                                              |
 | **Time window**              | The default is the last hour. The maximum is 31 days. On dashboards and in Explore, the **time picker** sets the window (see [Time window](#time-window-precedence)).                |
-| **Not supported**            | Semicolons, comments, subqueries, joins, `SELECT *`, math between attributes in `SELECT`, `HAVING`, `COMPARE WITH`. See [What SQL doesn't do](#what-SQL-doesnt-do) for alternatives. |
+| **Not supported**            | Semicolons, comments, subqueries, joins, `SELECT *`, math between attributes in `SELECT`, `HAVING`, `COMPARE WITH`. See [What SQL doesn't do](#what-sql-doesnt-do) for alternatives. |
 
 ### Next steps
 
-- [How to query with SQL](#2-how-to-query-with-SQL-the-mechanics-of-querying): explore data and understand how queries run.
+- [How to query with SQL](#2-how-to-query-with-sql-the-mechanics-of-querying): explore data and understand how queries run.
 - [Charts and dashboards](#3-charts-and-dashboards-visualizing-your-data): visualize your results.
 - [Tutorial 1: Your first queries](#6-tutorial-1-your-first-queries): a hands-on walkthrough.
-- [SQL reference](#4-SQL-reference): full syntax, clauses and functions.
+- [SQL reference](#4-sql-reference): full syntax, clauses and functions.
 
 [↑ Back to top](#top)
 
 ---
+
+<a id="2-how-to-query-with-sql-the-mechanics-of-querying"></a>
 
 ## 2. How to query with SQL: the mechanics of querying
 
@@ -304,7 +308,7 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 
 </details>
 
-<a id="what-SQL-doesnt-do"></a>
+<a id="what-sql-doesnt-do"></a>
 
 ### What SQL doesn't do
 
@@ -329,6 +333,8 @@ SQL is deliberately small. That keeps queries safe, fast and tenant-isolated. Wh
 [↑ Back to top](#top)
 
 ---
+
+<a id="3-charts-and-dashboards-visualizing-your-data"></a>
 
 ## 3. Charts and dashboards: visualizing your data
 
@@ -508,11 +514,13 @@ A formula combines 2–6 named SQL queries arithmetically, for example `(errors 
 
 # Reference
 
+<a id="4-sql-reference"></a>
+
 ## 4. SQL reference
 
 This reference covers SQL syntax, clauses, functions and operators. Expand each entry for details and examples.
 
-**In this doc:** [Query components](#41-query-components) · [Required clauses](#42-required-clauses) · [Optional clauses](#43-optional-clauses) · [Aggregator functions](#44-aggregator-functions) · [Operators and conditions](#45-operators-and-conditions) · [Type handling](#46-type-handling-blank-vs-null) · [SQL to SQL](#47-translate-sql-to-SQL) · [NRQL to SQL](#48-translate-nrql-to-SQL)
+**In this doc:** [Query components](#41-query-components) · [Required clauses](#42-required-clauses) · [Optional clauses](#43-optional-clauses) · [Aggregator functions](#44-aggregator-functions) · [Operators and conditions](#45-operators-and-conditions) · [Type handling](#46-type-handling-blank-vs-null) · [SQL to SQL](#47-translate-sql-to-sql) · [Importing existing dashboards](#48-importing-existing-dashboards-to-insights)
 
 ### 4.1 Query components
 
@@ -1044,7 +1052,7 @@ SELECT count(*) AS jcrCalls FROM Span WHERE jcr.operation != '' FACET jcr.operat
 | `JOIN` / subquery                                            | _Not supported_. Use a **Formula** widget.                          |
 | `CASE WHEN`                                                  | _Not supported_. Use `FILTER` columns, or `WHERE … LIKE` + `FACET`. |
 
-### 4.8 Imporing existing dashnoard to Insights
+### 4.8 Importing existing dashboards to Insights
 
 If you know the existing query, following is the migration detail
 
@@ -1073,6 +1081,8 @@ If you know the existing query, following is the migration detail
 [↑ Back to top](#top)
 
 ---
+
+<a id="5-data-dictionary"></a>
 
 ## 5. Data dictionary
 
@@ -1200,6 +1210,8 @@ Each curated entity wraps one OpenTelemetry metric with the right filter and uni
 ---
 
 # Tutorials
+
+<a id="6-tutorial-1-your-first-queries"></a>
 
 ## 6. Tutorial 1: Your first queries
 
@@ -1356,11 +1368,13 @@ You've built your first dashboard.
 ### What's next
 
 - [Tutorial 2: Control your data](#7-tutorial-2-control-your-data) covers unique values, percentages, percentiles, wildcards and sorting.
-- The [SQL reference](#4-SQL-reference) has every clause and function.
+- The [SQL reference](#4-sql-reference) has every clause and function.
 
 [↑ Back to top](#top)
 
 ---
+
+<a id="7-tutorial-2-control-your-data"></a>
 
 ## 7. Tutorial 2: Control your data
 
@@ -1501,6 +1515,8 @@ SELECT count(*) AS lastWeekSameHour FROM Transaction SINCE 169 hours ago UNTIL 1
 [↑ Back to top](#top)
 
 ---
+
+<a id="8-tutorial-3-advance-your-dashboarding"></a>
 
 ## 8. Tutorial 3: Advance your dashboarding
 
@@ -1705,6 +1721,8 @@ You now have every building block used in the [Dashboard blueprints](#11-dashboa
 
 ---
 
+<a id="9-tutorial-4-advanced-functions"></a>
+
 ## 9. Tutorial 4: Advanced functions
 
 This tutorial covers the functions and entities that power deeper investigations: variability, growth, "worst example" lookups, share of total, transaction composition and arbitrary OpenTelemetry metrics.
@@ -1842,6 +1860,8 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction FACET host ORDER BY p95 
 ---
 
 # Examples
+
+<a id="10-query-cookbook"></a>
 
 ## 10. Query cookbook
 
@@ -2346,6 +2366,8 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 [↑ Back to top](#top)
 
 ---
+
+<a id="11-dashboard-blueprints"></a>
 
 ## 11. Dashboard blueprints
 
@@ -3424,6 +3446,8 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 
 # Operate
 
+<a id="12-performance"></a>
+
 ## 12. Performance
 
 Every query runs with a 15-second timeout and a bytes-read budget. This doc explains how Observability Insights accelerates queries automatically, and how to design dashboards that stay fast at any time range.
@@ -3456,6 +3480,8 @@ Every query runs with a 15-second timeout and a bytes-read budget. This doc expl
 [↑ Back to top](#top)
 
 ---
+
+<a id="13-troubleshooting"></a>
 
 ## 13. Troubleshooting
 
@@ -3494,6 +3520,8 @@ Error messages appear under the editor when you **Validate** or **Run** a query,
 [↑ Back to top](#top)
 
 ---
+
+<a id="14-appendix"></a>
 
 ## 14. Appendix
 

@@ -37,9 +37,7 @@
 
 # Get started
 
-<a id="1-get-started-with-sql-the-language-of-your-telemetry"></a>
-
-## 1. Get started with SQL: the language of your telemetry
+## 1. Get started with SQL: the language of your telemetry {#1-get-started-with-sql-the-language-of-your-telemetry}
 
 Insights Query language is a SQL-like query language for your Observability Insights data. It is the same language behind every custom dashboard widget and the **Explore** page, so you can build the views your team needs.
 
@@ -137,9 +135,7 @@ Here are the rules SQL follows:
 
 ---
 
-<a id="2-how-to-query-with-sql-the-mechanics-of-querying"></a>
-
-## 2. How to query with SQL: the mechanics of querying
+## 2. How to query with SQL: the mechanics of querying {#2-how-to-query-with-sql-the-mechanics-of-querying}
 
 Before you use any tool, it helps to know how it works. This doc shows how to explore your data, explains what happens when a query runs, and walks through example queries from simple to complex.
 
@@ -334,9 +330,7 @@ SQL is deliberately small. That keeps queries safe, fast and tenant-isolated. Wh
 
 ---
 
-<a id="3-charts-and-dashboards-visualizing-your-data"></a>
-
-## 3. Charts and dashboards: visualizing your data
+## 3. Charts and dashboards: visualizing your data {#3-charts-and-dashboards-visualizing-your-data}
 
 Queries find the information you need. Charts and dashboards make that information useful to your organization. This doc shows how SQL results become charts, and how to build, organize and share dashboards.
 
@@ -514,9 +508,7 @@ A formula combines 2–6 named SQL queries arithmetically, for example `(errors 
 
 # Reference
 
-<a id="4-sql-reference"></a>
-
-## 4. SQL reference
+## 4. SQL reference {#4-sql-reference}
 
 This reference covers SQL syntax, clauses, functions and operators. Expand each entry for details and examples.
 
@@ -1082,9 +1074,7 @@ If you know the existing query, following is the migration detail
 
 ---
 
-<a id="5-data-dictionary"></a>
-
-## 5. Data dictionary
+## 5. Data dictionary {#5-data-dictionary}
 
 This is every entity and attribute you can query. The live catalog, with descriptions, is also in the **Query guide** panel in Explore and in the Add widget dialog.
 
@@ -1211,9 +1201,7 @@ Each curated entity wraps one OpenTelemetry metric with the right filter and uni
 
 # Tutorials
 
-<a id="6-tutorial-1-your-first-queries"></a>
-
-## 6. Tutorial 1: Your first queries
+## 6. Tutorial 1: Your first queries {#6-tutorial-1-your-first-queries}
 
 Welcome to SQL. In this tutorial you'll write your first queries, control the time window, plot trends, filter and group results, and put your first chart on a dashboard. Each step builds on the previous one.
 
@@ -1374,9 +1362,7 @@ You've built your first dashboard.
 
 ---
 
-<a id="7-tutorial-2-control-your-data"></a>
-
-## 7. Tutorial 2: Control your data
+## 7. Tutorial 2: Control your data {#7-tutorial-2-control-your-data}
 
 In this tutorial you'll learn the functions and clauses that turn raw counts into answers: distinct counts, latest values, percentages, percentiles, wildcards, sorting and multi-dimensional grouping.
 
@@ -1516,9 +1502,7 @@ SELECT count(*) AS lastWeekSameHour FROM Transaction SINCE 169 hours ago UNTIL 1
 
 ---
 
-<a id="8-tutorial-3-advance-your-dashboarding"></a>
-
-## 8. Tutorial 3: Advance your dashboarding
+## 8. Tutorial 3: Advance your dashboarding {#8-tutorial-3-advance-your-dashboarding}
 
 In this tutorial you'll build the components of a production-grade dashboard: user-experience scores, counter rates, case grouping, histograms, KPI tiles with thresholds, sections, formula widgets and variables.
 
@@ -1721,9 +1705,7 @@ You now have every building block used in the [Dashboard blueprints](#11-dashboa
 
 ---
 
-<a id="9-tutorial-4-advanced-functions"></a>
-
-## 9. Tutorial 4: Advanced functions
+## 9. Tutorial 4: Advanced functions {#9-tutorial-4-advanced-functions}
 
 This tutorial covers the functions and entities that power deeper investigations: variability, growth, "worst example" lookups, share of total, transaction composition and arbitrary OpenTelemetry metrics.
 
@@ -1861,9 +1843,7 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction FACET host ORDER BY p95 
 
 # Examples
 
-<a id="10-query-cookbook"></a>
-
-## 10. Query cookbook
+## 10. Query cookbook {#10-query-cookbook}
 
 The cookbook is a library of ready-to-use queries, grouped by topic. Each query is preceded by the chart type that suits it best, in **bold**. Time clauses are left out because the time picker controls the window.
 
@@ -2367,9 +2347,7 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 
 ---
 
-<a id="11-dashboard-blueprints"></a>
-
-## 11. Dashboard blueprints
+## 11. Dashboard blueprints {#11-dashboard-blueprints}
 
 Each blueprint is a complete, complex dashboard. It lists the goal, the tab and section layout, and every widget with its chart type, unit, thresholds, size and query. Sizes are `width×height` on the 12-column grid. Build each one from top to bottom, then drag to adjust.
 
@@ -3446,9 +3424,7 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 
 # Operate
 
-<a id="12-performance"></a>
-
-## 12. Performance
+## 12. Performance {#12-performance}
 
 Every query runs with a 15-second timeout and a bytes-read budget. This doc explains how Observability Insights accelerates queries automatically, and how to design dashboards that stay fast at any time range.
 
@@ -3481,9 +3457,7 @@ Every query runs with a 15-second timeout and a bytes-read budget. This doc expl
 
 ---
 
-<a id="13-troubleshooting"></a>
-
-## 13. Troubleshooting
+## 13. Troubleshooting {#13-troubleshooting}
 
 Error messages appear under the editor when you **Validate** or **Run** a query, and on the widget itself on a dashboard. Find the message in the first column.
 
@@ -3521,9 +3495,7 @@ Error messages appear under the editor when you **Validate** or **Run** a query,
 
 ---
 
-<a id="14-appendix"></a>
-
-## 14. Appendix
+## 14. Appendix {#14-appendix}
 
 **In this doc:** [14.1 Limits](#141-limits) · [14.2 Export file format](#142-export-file-format) · [14.3 One-page cheat sheet](#143-one-page-cheat-sheet)
 

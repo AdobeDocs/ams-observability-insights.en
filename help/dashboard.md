@@ -18,26 +18,26 @@
 
 | Section         | Doc                                                                                 | What you'll learn                                                                           |
 | --------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **Get started** | [1. Get started with SQL](#1-get-started-with-sql-the-language-of-your-telemetry)   | What SQL is, what you can query, where to use it, the basic rules                           |
-|                 | [2. How to query with SQL](#2-how-to-query-with-sql-the-mechanics-of-querying)      | How to explore data, how a query runs, worked examples                                      |
-|                 | [3. Charts and dashboards](#3-charts-and-dashboards-visualizing-your-data)          | How to turn queries into charts and build dashboards step by step                           |
-| **Reference**   | [4. SQL reference](#4-sql-reference)                                                | Every clause, function and operator, with examples                                          |
-|                 | [5. Data dictionary](#5-data-dictionary)                                            | Every entity and attribute you can query                                                    |
-| **Tutorials**   | [6. Tutorial 1: Your first queries](#6-tutorial-1-your-first-queries)               | `SELECT`, `FROM`, `LIMIT`, aggregates, time, `TIMESERIES`, `WHERE`, `FACET`                 |
-|                 | [7. Tutorial 2: Control your data](#7-tutorial-2-control-your-data)                 | Unique values, latest/earliest, percentages, percentiles, labels, wildcards, ordering       |
-|                 | [8. Tutorial 3: Advance your dashboarding](#8-tutorial-3-advance-your-dashboarding) | Conditional aggregates, Apdex, rates, histograms, formulas, variables, sections             |
-|                 | [9. Tutorial 4: Advanced functions](#9-tutorial-4-advanced-functions)               | `stddev`, `derivative`, ranked `latest`, share of total, span composition, metric discovery |
-| **Examples**    | [10. Query cookbook](#10-query-cookbook)                                            | 100+ ready-to-use queries by topic (including AEM)                                          |
-|                 | [11. Dashboard blueprints](#11-dashboard-blueprints)                                | Ten complete, complex dashboards with every widget's query                                  |
-| **Operate**     | [12. Performance](#12-performance)                                                  | Rollups, query budgets and how to keep dashboards fast                                      |
-|                 | [13. Troubleshooting](#13-troubleshooting)                                          | Every error message, what it means, and how to fix it                                       |
-|                 | [14. Appendix](#14-appendix)                                                        | Limits, export file format, one-page cheat sheet                                            |
+| **Get started** | [1. Get started with SQL](#get-started-with-sql-the-language-of-your-telemetry)   | What SQL is, what you can query, where to use it, the basic rules                           |
+|                 | [2. How to query with SQL](#how-to-query-with-sql-the-mechanics-of-querying)      | How to explore data, how a query runs, worked examples                                      |
+|                 | [3. Charts and dashboards](#charts-and-dashboards-visualizing-your-data)          | How to turn queries into charts and build dashboards step by step                           |
+| **Reference**   | [4. SQL reference](#sql-reference)                                                | Every clause, function and operator, with examples                                          |
+|                 | [5. Data dictionary](#data-dictionary)                                            | Every entity and attribute you can query                                                    |
+| **Tutorials**   | [6. Tutorial 1: Your first queries](#tutorial-1-your-first-queries)               | `SELECT`, `FROM`, `LIMIT`, aggregates, time, `TIMESERIES`, `WHERE`, `FACET`                 |
+|                 | [7. Tutorial 2: Control your data](#tutorial-2-control-your-data)                 | Unique values, latest/earliest, percentages, percentiles, labels, wildcards, ordering       |
+|                 | [8. Tutorial 3: Advance your dashboarding](#tutorial-3-advance-your-dashboarding) | Conditional aggregates, Apdex, rates, histograms, formulas, variables, sections             |
+|                 | [9. Tutorial 4: Advanced functions](#tutorial-4-advanced-functions)               | `stddev`, `derivative`, ranked `latest`, share of total, span composition, metric discovery |
+| **Examples**    | [10. Query cookbook](#query-cookbook)                                            | 100+ ready-to-use queries by topic (including AEM)                                          |
+|                 | [11. Dashboard blueprints](#dashboard-blueprints)                                | Ten complete, complex dashboards with every widget's query                                  |
+| **Operate**     | [12. Performance](#performance)                                                  | Rollups, query budgets and how to keep dashboards fast                                      |
+|                 | [13. Troubleshooting](#troubleshooting)                                          | Every error message, what it means, and how to fix it                                       |
+|                 | [14. Appendix](#appendix)                                                        | Limits, export file format, one-page cheat sheet                                            |
 
 ---
 
 # Get started
 
-## 1. Get started with SQL: the language of your telemetry {#1-get-started-with-sql-the-language-of-your-telemetry}
+## 1. Get started with SQL: the language of your telemetry {#get-started-with-sql-the-language-of-your-telemetry}
 
 Insights Query language is a SQL-like query language for your Observability Insights data. It is the same language behind every custom dashboard widget and the **Explore** page, so you can build the views your team needs.
 
@@ -64,7 +64,7 @@ SQL supports both **event queries**, which return individual request rows, and *
 
 ### What you can query
 
-SQL can query four families of data. The complete list is in the [Data dictionary](#5-data-dictionary).
+SQL can query four families of data. The complete list is in the [Data dictionary](#data-dictionary).
 
 | Family                               | Entities                                                                                                                                                           | Typical questions                                                    |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
@@ -126,16 +126,16 @@ Here are the rules SQL follows:
 
 ### Next steps
 
-- [How to query with SQL](#2-how-to-query-with-sql-the-mechanics-of-querying): explore data and understand how queries run.
-- [Charts and dashboards](#3-charts-and-dashboards-visualizing-your-data): visualize your results.
-- [Tutorial 1: Your first queries](#6-tutorial-1-your-first-queries): a hands-on walkthrough.
-- [SQL reference](#4-sql-reference): full syntax, clauses and functions.
+- [How to query with SQL](#how-to-query-with-sql-the-mechanics-of-querying): explore data and understand how queries run.
+- [Charts and dashboards](#charts-and-dashboards-visualizing-your-data): visualize your results.
+- [Tutorial 1: Your first queries](#tutorial-1-your-first-queries): a hands-on walkthrough.
+- [SQL reference](#sql-reference): full syntax, clauses and functions.
 
 [↑ Back to top](#top)
 
 ---
 
-## 2. How to query with SQL: the mechanics of querying {#2-how-to-query-with-sql-the-mechanics-of-querying}
+## 2. How to query with SQL: the mechanics of querying {#how-to-query-with-sql-the-mechanics-of-querying}
 
 Before you use any tool, it helps to know how it works. This doc shows how to explore your data, explains what happens when a query runs, and walks through example queries from simple to complex.
 
@@ -330,7 +330,7 @@ SQL is deliberately small. That keeps queries safe, fast and tenant-isolated. Wh
 
 ---
 
-## 3. Charts and dashboards: visualizing your data {#3-charts-and-dashboards-visualizing-your-data}
+## 3. Charts and dashboards: visualizing your data {#charts-and-dashboards-visualizing-your-data}
 
 Queries find the information you need. Charts and dashboards make that information useful to your organization. This doc shows how SQL results become charts, and how to build, organize and share dashboards.
 
@@ -399,7 +399,7 @@ Charts work well on their own, but dashboards bring them together. A dashboard i
 | **Widget header** (on hover) | Download CSV, Download PNG, Edit, Duplicate, Remove, drag handle                                          |
 
 > [!IMPORTANT]
-> **Saving is explicit.** Layout changes, new widgets, tabs and variables stay in your browser until you click **Save**. The button shows _Saving… → Saved_, or _Save failed_ (see [Troubleshooting](#13-troubleshooting)).
+> **Saving is explicit.** Layout changes, new widgets, tabs and variables stay in your browser until you click **Save**. The button shows _Saving… → Saved_, or _Save failed_ (see [Troubleshooting](#troubleshooting)).
 
 #### Step 4: Add a widget
 
@@ -500,7 +500,7 @@ A formula combines 2–6 named SQL queries arithmetically, for example `(errors 
 - **Always `LIMIT` faceted queries**, especially on high-cardinality attributes such as `urlPath`, `traceId` and `jcr.path`.
 - **Filter early** on low-cardinality attributes (`service`, `kind`, `status`).
 - **Prefer `TIMESERIES AUTO`** to fixed small buckets, and avoid `TIMESERIES MAX` except over a few minutes.
-- **Design long-range trends for rollups.** See [Performance](#12-performance).
+- **Design long-range trends for rollups.** See [Performance](#performance).
 
 [↑ Back to top](#top)
 
@@ -508,7 +508,7 @@ A formula combines 2–6 named SQL queries arithmetically, for example `(errors 
 
 # Reference
 
-## 4. SQL reference {#4-sql-reference}
+## 4. SQL reference {#sql-reference}
 
 This reference covers SQL syntax, clauses, functions and operators. Expand each entry for details and examples.
 
@@ -572,7 +572,7 @@ Rules:
 <details>
 <summary><code>FROM</code> — which entity to query</summary>
 
-`FROM` names exactly **one** entity from the [Data dictionary](#5-data-dictionary). The entity name isn't case sensitive.
+`FROM` names exactly **one** entity from the [Data dictionary](#data-dictionary). The entity name isn't case sensitive.
 
 ```sql
 SELECT count(*) FROM Transaction
@@ -1074,7 +1074,7 @@ If you know the existing query, following is the migration detail
 
 ---
 
-## 5. Data dictionary {#5-data-dictionary}
+## 5. Data dictionary {#data-dictionary}
 
 This is every entity and attribute you can query. The live catalog, with descriptions, is also in the **Query guide** panel in Explore and in the Add widget dialog.
 
@@ -1082,7 +1082,7 @@ This is every entity and attribute you can query. The live catalog, with descrip
 
 | Entity        | Contains                                                  | Fixed scope                  | Rollups                                       |
 | ------------- | --------------------------------------------------------- | ---------------------------- | --------------------------------------------- |
-| `Transaction` | Inbound server requests                                   | `kind = Server`              | 1m / 5m / 1h ([Performance](#12-performance)) |
+| `Transaction` | Inbound server requests                                   | `kind = Server`              | 1m / 5m / 1h ([Performance](#performance)) |
 | `AppRequest`  | Inbound server **and** message-consumer requests          | `kind IN (Server, Consumer)` | —                                             |
 | `Span`        | Every span (server, client, producer, consumer, internal) | —                            | —                                             |
 
@@ -1201,7 +1201,7 @@ Each curated entity wraps one OpenTelemetry metric with the right filter and uni
 
 # Tutorials
 
-## 6. Tutorial 1: Your first queries {#6-tutorial-1-your-first-queries}
+## 6. Tutorial 1: Your first queries {#tutorial-1-your-first-queries}
 
 Welcome to SQL. In this tutorial you'll write your first queries, control the time window, plot trends, filter and group results, and put your first chart on a dashboard. Each step builds on the previous one.
 
@@ -1230,7 +1230,7 @@ SELECT timestamp, service, name, duration FROM Transaction LIMIT 10
 Rows are sorted by the first column, descending, so putting `timestamp` first gives you the newest requests at the top.
 
 > [!NOTE]
-> SQL has no `SELECT *`. Listing attributes keeps results small and readable. The [Data dictionary](#5-data-dictionary), and the autocomplete in the editor, show what's available.
+> SQL has no `SELECT *`. Listing attributes keeps results small and readable. The [Data dictionary](#data-dictionary), and the autocomplete in the editor, show what's available.
 
 ### 6.2 Aggregate your data
 
@@ -1355,14 +1355,14 @@ You've built your first dashboard.
 
 ### What's next
 
-- [Tutorial 2: Control your data](#7-tutorial-2-control-your-data) covers unique values, percentages, percentiles, wildcards and sorting.
-- The [SQL reference](#4-sql-reference) has every clause and function.
+- [Tutorial 2: Control your data](#tutorial-2-control-your-data) covers unique values, percentages, percentiles, wildcards and sorting.
+- The [SQL reference](#sql-reference) has every clause and function.
 
 [↑ Back to top](#top)
 
 ---
 
-## 7. Tutorial 2: Control your data {#7-tutorial-2-control-your-data}
+## 7. Tutorial 2: Control your data {#tutorial-2-control-your-data}
 
 In this tutorial you'll learn the functions and clauses that turn raw counts into answers: distinct counts, latest values, percentages, percentiles, wildcards, sorting and multi-dimensional grouping.
 
@@ -1496,13 +1496,13 @@ SELECT count(*) AS lastWeekSameHour FROM Transaction SINCE 169 hours ago UNTIL 1
 
 ### What's next
 
-- [Tutorial 3: Advance your dashboarding](#8-tutorial-3-advance-your-dashboarding) covers conditional aggregates, Apdex, rates, histograms, formulas and variables.
+- [Tutorial 3: Advance your dashboarding](#tutorial-3-advance-your-dashboarding) covers conditional aggregates, Apdex, rates, histograms, formulas and variables.
 
 [↑ Back to top](#top)
 
 ---
 
-## 8. Tutorial 3: Advance your dashboarding {#8-tutorial-3-advance-your-dashboarding}
+## 8. Tutorial 3: Advance your dashboarding {#tutorial-3-advance-your-dashboarding}
 
 In this tutorial you'll build the components of a production-grade dashboard: user-experience scores, counter rates, case grouping, histograms, KPI tiles with thresholds, sections, formula widgets and variables.
 
@@ -1695,17 +1695,17 @@ Options refresh when the tenant or time picker changes, and they're sorted alpha
 
 ### 8.8 Put it together
 
-You now have every building block used in the [Dashboard blueprints](#11-dashboard-blueprints): KPI tiles with thresholds, sections, percentiles, Apdex, rates, case columns, histograms, formulas and variables. The blueprints show how to combine them into complete golden-signal, error-triage, AEM, infrastructure and JVM dashboards.
+You now have every building block used in the [Dashboard blueprints](#dashboard-blueprints): KPI tiles with thresholds, sections, percentiles, Apdex, rates, case columns, histograms, formulas and variables. The blueprints show how to combine them into complete golden-signal, error-triage, AEM, infrastructure and JVM dashboards.
 
 ### What's next
 
-- [Tutorial 4: Advanced functions](#9-tutorial-4-advanced-functions) covers `stddev`, `derivative`, ranked `latest`, `percentOfTotal`, span composition and metric discovery.
+- [Tutorial 4: Advanced functions](#tutorial-4-advanced-functions) covers `stddev`, `derivative`, ranked `latest`, `percentOfTotal`, span composition and metric discovery.
 
 [↑ Back to top](#top)
 
 ---
 
-## 9. Tutorial 4: Advanced functions {#9-tutorial-4-advanced-functions}
+## 9. Tutorial 4: Advanced functions {#tutorial-4-advanced-functions}
 
 This tutorial covers the functions and entities that power deeper investigations: variability, growth, "worst example" lookups, share of total, transaction composition and arbitrary OpenTelemetry metrics.
 
@@ -1834,8 +1834,8 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction FACET host ORDER BY p95 
 
 ### What's next
 
-- Browse the [Query cookbook](#10-query-cookbook) for ready-made queries.
-- Build a complete board from the [Dashboard blueprints](#11-dashboard-blueprints).
+- Browse the [Query cookbook](#query-cookbook) for ready-made queries.
+- Build a complete board from the [Dashboard blueprints](#dashboard-blueprints).
 
 [↑ Back to top](#top)
 
@@ -1843,7 +1843,7 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction FACET host ORDER BY p95 
 
 # Examples
 
-## 10. Query cookbook {#10-query-cookbook}
+## 10. Query cookbook {#query-cookbook}
 
 The cookbook is a library of ready-to-use queries, grouped by topic. Each query is preceded by the chart type that suits it best, in **bold**. Time clauses are left out because the time picker controls the window.
 
@@ -2347,7 +2347,7 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 
 ---
 
-## 11. Dashboard blueprints {#11-dashboard-blueprints}
+## 11. Dashboard blueprints {#dashboard-blueprints}
 
 Each blueprint is a complete, complex dashboard. It lists the goal, the tab and section layout, and every widget with its chart type, unit, thresholds, size and query. Sizes are `width×height` on the 12-column grid. Build each one from top to bottom, then drag to adjust.
 
@@ -3424,7 +3424,7 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 
 # Operate
 
-## 12. Performance {#12-performance}
+## 12. Performance {#performance}
 
 Every query runs with a 15-second timeout and a bytes-read budget. This doc explains how Observability Insights accelerates queries automatically, and how to design dashboards that stay fast at any time range.
 
@@ -3457,14 +3457,14 @@ Every query runs with a 15-second timeout and a bytes-read budget. This doc expl
 
 ---
 
-## 13. Troubleshooting {#13-troubleshooting}
+## 13. Troubleshooting {#troubleshooting}
 
 Error messages appear under the editor when you **Validate** or **Run** a query, and on the widget itself on a dashboard. Find the message in the first column.
 
 | Message / symptom                                                            | Cause                                                              | Fix                                                                                                                                    |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `Unknown entity 'X'`                                                         | Typo or non-catalog name                                           | Check [Data dictionary](#5-data-dictionary) / the Query guide panel.                                                                   |
-| `Attribute 'x' is not available on Entity`                                   | Attribute not on that entity (e.g. `duration` on `CpuUtilization`) | Trace attributes vs metric attributes — see [Data dictionary](#5-data-dictionary).                                                     |
+| `Unknown entity 'X'`                                                         | Typo or non-catalog name                                           | Check [Data dictionary](#data-dictionary) / the Query guide panel.                                                                   |
+| `Attribute 'x' is not available on Entity`                                   | Attribute not on that entity (e.g. `duration` on `CpuUtilization`) | Trace attributes vs metric attributes — see [Data dictionary](#data-dictionary).                                                     |
 | `Raw attributes cannot be mixed with aggregates; use FACET to group results` | `SELECT service, count(*)`                                         | `SELECT count(*) … FACET service`.                                                                                                     |
 | `FACET and TIMESERIES require an aggregate query`                            | Event query with FACET/TIMESERIES                                  | Use an aggregate.                                                                                                                      |
 | `FACET supports at most five attributes`                                     | > 5 facets                                                         | Reduce.                                                                                                                                |
@@ -3495,7 +3495,7 @@ Error messages appear under the editor when you **Validate** or **Run** a query,
 
 ---
 
-## 14. Appendix {#14-appendix}
+## 14. Appendix {#appendix}
 
 **In this doc:** [14.1 Limits](#141-limits) · [14.2 Export file format](#142-export-file-format) · [14.3 One-page cheat sheet](#143-one-page-cheat-sheet)
 

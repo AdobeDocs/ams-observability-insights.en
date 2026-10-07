@@ -1,6 +1,9 @@
 ---
 title: Observability Insights Public API
-description: "The Observability Insights Public API lets you pull your own observability data — request overviews, service catalogs, traces, and metrics — directly into your own tools, scripts, and dashboards."
+description: The Observability Insights Public API lets you pull your own observability data — request overviews, service catalogs, traces, and metrics — directly into your own tools, scripts, and dashboards.
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
 ---
 
 # Observability Insights Public API

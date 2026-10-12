@@ -21,7 +21,7 @@ user-guide-description: Adobe Managed Services Observability Insights Documentat
   - [SQL Query Examples ](/help/reference/query-charts/sql-query-examples.md)
 - [**Charts and Dashboards**] {#reference}
   - [Get Started With Charts & Dashboards](/help/reference/query-charts/get-started-charts-dashboard.md)
-  - [Create Charts & Dashboards](/help/reference/query-charts/get-started-charts-dashboard.md)
+  - [Create Charts & Dashboards](/help/reference/query-charts/create-dashboard.md)
 - [ **Reference** ] {#reference}
   - [SQL Reference](/help/reference/query-charts/sql-reference.md)
   - [Data Dictionary](/help/reference/query-charts/data-dictionary.md)

@@ -15,7 +15,7 @@ user-guide-description: Adobe Managed Services Observability Insights Documentat
 - [Applications](/help/applications.md)
 - [Hosts](/help/hosts.md)
 - [API Documentation](/help/api.md)
-- [Insights Query Language](/help/dashboard.md) {#reference}
+- [**Insights Query Language**] {#reference}
   - [Get Started With SQL](/help/reference/get-started-sql.md)
   - [How to Query With SQL ](/help/reference/how-to-query-sql.md)
   - [SQL Query Examples ](/help/reference/sql-query-examples.md)

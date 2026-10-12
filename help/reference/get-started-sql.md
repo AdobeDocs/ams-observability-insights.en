@@ -1,5 +1,15 @@
 # Get started
 
+**Adobe Observability Insights Query Language (SQL)** — query, chart and dashboard your telemetry in Adobe Observability Insights.
+
+|                |                                                                  |
+| -------------- | ---------------------------------------------------------------- |
+| **Applies to** | Insights UI → **Explore** and **Dashboards** (custom dashboards) |
+| **Audience**   | Engineers, SREs and power users who know SQL                     |
+
+> [!TIP]
+> Every code block marked `sql` is a SQL query that you can paste straight into **Explore → SQL** or into **Dashboards → Add widget → SQL**.
+
 ## Get started with SQL: the language of your telemetry {#get-started-with-sql-the-language-of-your-telemetry}
 
 Insights Query language is a SQL-like query language for your Observability Insights data. It is the same language behind every custom dashboard widget and the **Explore** page, so you can build the views your team needs.

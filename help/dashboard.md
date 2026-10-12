@@ -12,10 +12,6 @@
 > [!TIP]
 > Every code block marked `sql` is a SQL query that you can paste straight into **Explore → SQL** or into **Dashboards → Add widget → SQL**.
 
-[↑ Back to top](#top)
-
----
-
 ## 3. Charts and dashboards: visualizing your data {#charts-and-dashboards-visualizing-your-data}
 
 Queries find the information you need. Charts and dashboards make that information useful to your organization. This doc shows how SQL results become charts, and how to build, organize and share dashboards.

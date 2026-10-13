@@ -1,6 +1,9 @@
 ---
 title: Observability Insights Public API
-description: Learn how to authenticate and query observability data with the Observability Insights Public API.
+description: The Observability Insights Public API lets you pull your own observability data — request overviews, service catalogs, traces, and metrics — directly into your own tools, scripts, and dashboards.
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
 ---
 
 # Observability Insights Public API
@@ -12,8 +15,6 @@ The Observability Insights Public API lets you pull your own observability data 
 - **Authentication:** API key (Bearer token)
 
 > Replace `{{API_BASE_URL}}` throughout this document with your Observability Insights instance's API host, e.g. `https://insights.adobecqms.net/`.
-
-
 
 ## 1. Getting an API key
 
@@ -47,7 +48,6 @@ The API Keys section lists every key you've created, including its organization,
 - If a key is compromised, revoke it immediately from **Org Settings → API Keys** and generate a replacement.
 
 
-
 ## 2. Authenticating requests
 
 Every request to the Public API must include your key in the `Authorization` header:
@@ -57,8 +57,6 @@ Authorization: Bearer synx_9pQ2v6f1WYbLZk3n0aRtEo4jXcHsVmDgUiPq7B8l1yc
 ```
 
 Requests without a valid key, or with an expired/revoked key, receive `401 Unauthorized`. Session logins (browser cookies/tokens) are **not** accepted on this API .
-
-
 
 ## 3. Base concepts
 
@@ -108,8 +106,6 @@ Errors are returned as JSON with an `error` field and, usually, a human-readable
 | `429 Too Many Requests`   | Rate limit exceeded — see `Retry-After`                            |
 | `502 Bad Gateway`         | Upstream query failed — safe to retry                              |
 | `503 Service Unavailable` | Data backend temporarily unavailable                               |
-
-
 
 ## 4. Endpoints
 
@@ -345,15 +341,11 @@ curl -s "{{API_BASE_URL}}/public/v1/pages?tenant_id=<tenant_id>&limit=50" \
 }
 ```
 
-
-
 ## 5. What this API does not do
 
 - **No raw SQL access.** All endpoints return curated, purpose-built data shapes — you cannot query the underlying data store directly.
 - **No cross-tenant queries.** Every request is scoped to exactly one `tenant_id`.
 - **No write access.** The Public API is read-only.
-
-
 
 ## 6. Support
 

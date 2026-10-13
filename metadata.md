@@ -7,7 +7,7 @@ product_v2:
 usetq: true
 type: Documentation
 mini-toc-levels: 2
-git-repo: https://github.com/Adobe-Enterprise-Docs/ams-synoptryx.en
+git-repo: https://github.com/Adobe-Enterprise-Docs/ams-observability-insights.en
 recommendations: noDisplay
 index: true
 ---

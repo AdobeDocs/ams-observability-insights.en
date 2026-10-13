@@ -15,13 +15,14 @@ user-guide-description: Adobe Managed Services Observability Insights Documentat
 - [Applications](/help/applications.md)
 - [Hosts](/help/hosts.md)
 - [API Documentation](/help/api.md)
+- [Frequently Asked Questions](/help/troubleshooting/common-questions.md)
 - [**Dashboard and Query Language**] {#reference}
-  - [Get Started With SQL](/help/reference/query-charts/get-started-sql.md)
-  - [How to Query With SQL ](/help/reference/query-charts/how-to-query-sql.md)
-  - [SQL Query Examples ](/help/reference/query-charts/sql-query-examples.md)
-- [**Charts and Dashboard**] {#reference}
-  - [Get Started With Charts & Dashboards](/help/reference/query-charts/get-started-charts-dashboard.md)
-  - [Create Charts & Dashboards](/help/reference/query-charts/create-dashboard.md)
+  - [Get Started With SQL](/help/reference/query/get-started-sql.md)
+  - [How to Query With SQL ](/help/reference/query/how-to-query-sql.md)
+  - [SQL Query Examples ](/help/reference/query/sql-query-examples.md)
+- [**Charts and Dashboard**] {#charts-dashboard}
+  - [Get Started With Charts & Dashboards](/help/charts-dashboard/get-started-charts-dashboard.md)
+  - [Create Charts & Dashboards](/help/charts-dashboard/create-dashboard.md)
 - [ **Reference** ] {#reference}
   - [SQL Reference](/help/reference/query-charts/sql-reference.md)
   - [Data Dictionary](/help/reference/query-charts/data-dictionary.md)
@@ -33,4 +34,3 @@ user-guide-description: Adobe Managed Services Observability Insights Documentat
 - [ **Examples** ] {#reference}
   - [Query Cookbook](/help/reference/query-charts/query-cookbook.md)
   - [Dashboard Blueprint](/help/reference/query-charts/dashboard-blueprint.md)
-- [Frequently Asked Questions](/help/troubleshooting/common-questions.md)

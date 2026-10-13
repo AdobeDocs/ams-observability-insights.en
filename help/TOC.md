@@ -23,7 +23,7 @@ user-guide-description: Adobe Managed Services Observability Insights Documentat
 - [**Charts and Dashboard**] {#charts-dashboard}
   - [Get Started With Charts & Dashboards](/help/charts-dashboard/get-started-charts-dashboard.md)
   - [Create Charts & Dashboards](/help/charts-dashboard/create-dashboard.md)
-- [ **Reference** ] {#reference}
+- [ **SQL Reference** ] {#reference}
   - [SQL Reference](/help/reference/sql-reference.md)
   - [Data Dictionary](/help/reference/data-dictionary.md)
 - [ **Tutorials** ] {#tutorials}

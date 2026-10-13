@@ -16,7 +16,7 @@ user-guide-description: Adobe Managed Services Observability Insights Documentat
 - [Hosts](/help/hosts.md)
 - [API Documentation](/help/api.md)
 - [Frequently Asked Questions](/help/troubleshooting/common-questions.md)
-- [**Dashboard and Query Language**] {#reference}
+- [**Dashboard and Query Language**] {#insights-query}
   - [Get Started With SQL](/help/insights-query/query/get-started-sql.md)
   - [How to Query With SQL ](/help/insights-query/query/how-to-query-sql.md)
   - [SQL Query Examples ](/help/insights-query/query/sql-query-examples.md)
@@ -24,8 +24,8 @@ user-guide-description: Adobe Managed Services Observability Insights Documentat
   - [Get Started With Charts & Dashboards](/help/charts-dashboard/get-started-charts-dashboard.md)
   - [Create Charts & Dashboards](/help/charts-dashboard/create-dashboard.md)
 - [ **Reference** ] {#reference}
-  - [SQL Reference](/help/reference/query-charts/sql-reference.md)
-  - [Data Dictionary](/help/reference/query-charts/data-dictionary.md)
+  - [SQL Reference](/help/reference/sql-reference.md)
+  - [Data Dictionary](/help/reference/data-dictionary.md)
 - [ **Tutorials** ] {#reference}
   - [Tutorial 1: Your first queries](/help/reference/query-charts/tutorial-1.md)
   - [Tutorial 2: Control your data](/help/reference/query-charts/tutorial-2.md)

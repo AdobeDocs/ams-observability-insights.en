@@ -1,3 +1,8 @@
+---
+title: SQL reference
+description: Reference the SQL syntax, clauses, and functions supported by Observability Insights.
+---
+
 ## SQL reference {#sql-reference}
 
 This reference covers SQL syntax, clauses, functions and operators. Expand each entry for details and examples.
@@ -22,7 +27,8 @@ FROM   <Entity>
 <unit>        := second | seconds | minute | minutes | hour | hours | day | days | week | weeks
 ```
 
-> [!NOTE]
+>[!NOTE]
+>
 > The `--` annotations above are documentation only. SQL itself doesn't accept comments.
 
 ### Required clauses
@@ -148,7 +154,8 @@ SELECT count(*) AS total, count(*) FILTER (WHERE status = 'Error') AS errors, pe
 SELECT count(*) FROM Transaction FACET urlPath LIMIT 50
 ```
 
-> [!TIP]
+>[!TIP]
+>
 > Always set a `LIMIT` on query-driven variables and on high-cardinality facets (`urlPath`, `traceId`, `jcr.path`, `url`).
 
 </details>
@@ -188,7 +195,8 @@ SELECT count(*) FROM Transaction SINCE 6 hours ago
 - The window can't exceed **31 days** (_Time range cannot exceed 31 days_).
 - Absolute dates (`SINCE '2026-01-01'`) and `TODAY` / `YESTERDAY` aren't supported.
 
-> [!IMPORTANT]
+>[!IMPORTANT]
+>
 > On dashboards and in Explore, the **time picker overrides** `SINCE` and `UNTIL`. See [Time window precedence](#time-window-precedence).
 
 </details>
@@ -218,7 +226,8 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction TIMESERIES AUTO
 SELECT count(*) FROM Transaction TIMESERIES 1 hour SINCE 1 day ago
 ```
 
-> [!TIP]
+>[!TIP]
+>
 > Prefer `AUTO` on dashboards. It keeps about 120 points whatever the time picker says. It also avoids "shattered" per-host lines, because host metrics are scraped about every 90 seconds.
 
 </details>
@@ -428,7 +437,8 @@ SELECT rate(value) AS bytesPerSec FROM NetworkReceiveRate FACET host TIMESERIES 
 - Works only on counter entities (marked ✔ in the [Data dictionary](#53-curated-metric-entities)).
 - Requires `TIMESERIES`, and must be the **only** aggregate. `FILTER` isn't allowed.
 
-> [!WARNING]
+>[!WARNING]
+>
 > Always `FACET host`, or filter to a single host. An unfaceted `rate()` across many hosts compares different hosts' counters and produces meaningless numbers. Disk counters are per device, so `FACET host, device` is the most precise.
 
 </details>
@@ -502,14 +512,16 @@ Function constraints at a glance:
 SELECT count(*) FROM Transaction WHERE (status = 'Error' OR duration > 2000) AND NOT host LIKE '%dispatcher%' AND http.method IN ('GET', 'POST')
 ```
 
-> [!WARNING]
+>[!WARNING]
+>
 > `attr = NULL` is an error. Use `attr IS NULL`.
 
 ### Type handling: blank vs NULL
 
 Every attribute has a type in the catalog: `string`, `number`, `boolean` or `timestamp`. SQL type-checks functions against it (for example, `average(service)` is rejected). No type conversion functions are needed or available.
 
-> [!IMPORTANT]
+>[!IMPORTANT]
+>
 > **Blank vs NULL.** Most string attributes come from OpenTelemetry attribute maps, where a _missing_ key reads as an empty string `''`, not `NULL`. To keep only spans that carry an attribute, use **`attr != ''`** rather than `IS NOT NULL`. Numeric attributes such as `http.statusCode` are genuinely `NULL` when absent, so `IS NOT NULL` works for them.
 
 ```sql

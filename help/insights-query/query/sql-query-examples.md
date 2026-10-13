@@ -1,4 +1,9 @@
-### SQL query examples
+---
+title: SQL query examples
+description: Explore SQL query examples for Observability Insights telemetry.
+---
+
+## SQL query examples
 
 Here's a more complete example. For this query:
 
@@ -83,7 +88,7 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 
 <a id="what-sql-doesnt-do"></a>
 
-### What SQL doesn't do
+## What SQL doesn't do
 
 SQL is deliberately small. That keeps queries safe, fast and tenant-isolated. When you need one of these capabilities, use the alternative.
 

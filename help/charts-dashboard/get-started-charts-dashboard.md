@@ -1,3 +1,8 @@
+---
+title: Get started with charts and dashboards
+description: Learn how to visualize Observability Insights data with charts and dashboards.
+---
+
 ## Charts and dashboards: visualizing your data {#charts-and-dashboards-visualizing-your-data}
 
 Queries find the information you need. Charts and dashboards make that information useful to your organization. This doc shows how SQL results become charts, and how to build, organize and share dashboards.

@@ -1,3 +1,8 @@
+---
+title: "Tutorial 1: Your first queries"
+description: Write your first SQL queries against Observability Insights telemetry.
+---
+
 ## Tutorial 1: Your first queries {#tutorial-1-your-first-queries}
 
 Welcome to SQL. In this tutorial you'll write your first queries, control the time window, plot trends, filter and group results, and put your first chart on a dashboard. Each step builds on the previous one.
@@ -26,7 +31,8 @@ SELECT timestamp, service, name, duration FROM Transaction LIMIT 10
 
 Rows are sorted by the first column, descending, so putting `timestamp` first gives you the newest requests at the top.
 
-> [!NOTE]
+>[!NOTE]
+>
 > SQL has no `SELECT *`. Listing attributes keeps results small and readable. The [Data dictionary](#data-dictionary), and the autocomplete in the editor, show what's available.
 
 ### Aggregate your data
@@ -59,7 +65,8 @@ Separate aggregates with commas, and name each one with `AS`:
 SELECT count(*) AS requests, average(duration) AS avgMs, max(duration) AS maxMs FROM Transaction
 ```
 
-> [!TIP]
+>[!TIP]
+>
 > Aliases become column headers and legend labels, and they're what you reference in `ORDER BY`. Get into the habit of naming every aggregate.
 
 ### Set the time window
@@ -78,7 +85,8 @@ SELECT count(*) AS requests FROM Transaction SINCE 2 days ago UNTIL 1 day ago
 
 Units can be `second`, `minute`, `hour`, `day` or `week`. The window can be at most 31 days.
 
-> [!IMPORTANT]
+>[!IMPORTANT]
+>
 > In **Explore** and on **dashboards**, the **time picker** at the top of the page controls the window and overrides `SINCE`/`UNTIL`. To look at another period, change the picker. The rest of this guide leaves `SINCE` out of dashboard queries for that reason.
 
 ### Plot trends with `TIMESERIES`
@@ -115,7 +123,8 @@ Use `LIKE` with `%` for partial matches:
 SELECT count(*) AS contentRequests FROM Transaction WHERE urlPath LIKE '/content/%'
 ```
 
-> [!NOTE]
+>[!NOTE]
+>
 > String values are case sensitive and use single quotes: `'Error'`, not `"Error"` or `'error'`. Replace `checkout` with a service from your tenant. The next step shows how to list them.
 
 ### Group with `FACET`

@@ -1,3 +1,8 @@
+---
+title: Troubleshooting
+description: Troubleshoot SQL queries, charts, and dashboards in Observability Insights.
+---
+
 ## Troubleshooting {#troubleshooting}
 
 Error messages appear under the editor when you **Validate** or **Run** a query, and on the widget itself on a dashboard. Find the message in the first column.

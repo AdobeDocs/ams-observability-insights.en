@@ -1,3 +1,8 @@
+---
+title: "Tutorial 2: Control your data"
+description: Learn how to filter, group, and control query results in Observability Insights.
+---
+
 ## Tutorial 2: Control your data {#tutorial-2-control-your-data}
 
 In this tutorial you'll learn the functions and clauses that turn raw counts into answers: distinct counts, latest values, percentages, percentiles, wildcards, sorting and multi-dimensional grouping.
@@ -60,7 +65,8 @@ Averages hide outliers. Percentiles show what most users experience (p50) and wh
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
-> [!TIP]
+>[!TIP]
+>
 > p50, p95 and p99 of `Transaction.duration` are served from rollups over long windows, so they stay fast for weekly views.
 
 ### Make results readable with labels
@@ -71,7 +77,8 @@ Use `AS` with single quotes for labels that contain spaces:
 SELECT count(*) AS 'Requests', percentile(duration, 95) AS 'p95 (ms)' FROM Transaction FACET service
 ```
 
-> [!NOTE]
+>[!NOTE]
+>
 > Aliases apply only to `SELECT` items. Facet columns are always labelled with the attribute name.
 
 ### Match patterns and lists
@@ -94,7 +101,8 @@ Match against a list with `IN` and `NOT IN` (up to 100 values):
 SELECT count(*) AS requests FROM Transaction WHERE http.method IN ('POST', 'PUT', 'DELETE') FACET service
 ```
 
-> [!NOTE]
+>[!NOTE]
+>
 > SQL has no regular expressions (`RLIKE`). Combine `LIKE` patterns with `OR`, or use `IN`.
 
 ### Sort and rank with `ORDER BY`
@@ -111,7 +119,8 @@ Or the least-used services first:
 SELECT count(*) AS requests FROM Transaction FACET service ORDER BY requests ASC LIMIT 10
 ```
 
-> [!TIP]
+>[!TIP]
+>
 > There's no `HAVING`. To find only "busy" operations, rank by `requests` and keep the top N, or add a `WHERE` that removes noise (for example `WHERE http.method != 'OPTIONS'`).
 
 ### Group by several attributes

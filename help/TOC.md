@@ -34,3 +34,7 @@ user-guide-description: Adobe Managed Services Observability Insights Documentat
 - [ **Examples** ] {#examples}
   - [Query Cookbook](/help/examples/query-cookbook.md)
   - [Dashboard Blueprint](/help/examples/dashboard-blueprint.md)
+- [ **Operate** ]{#operate}
+  - [Performance](/help/operate/performance.md)
+  - [Troubleshooting](/help/operate/troubleshooting.md)
+  - [Appendix](/help/operate/appendix.md)

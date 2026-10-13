@@ -1,3 +1,8 @@
+---
+title: Data dictionary
+description: Reference the entities and attributes available for Observability Insights SQL queries.
+---
+
 ## Data dictionary {#data-dictionary}
 
 This is every entity and attribute you can query. The live catalog, with descriptions, is also in the **Query guide** panel in Explore and in the Add widget dialog.
@@ -103,7 +108,8 @@ Each curated entity wraps one OpenTelemetry metric with the right filter and uni
 | `JvmCpuRecentUtilization`                                                      | JVM process CPU                     | %         |         | 1-minute rollup                              |
 | `DispatcherRequestRate`                                                        | AEM dispatcher HTTP requests        | req/s     | ✔       |                                              |
 
-> [!NOTE]
+>[!NOTE]
+>
 > JVM memory metrics are reported **per memory pool**, so `average(value)` on `JvmHeapUsed` / `JvmHeapLimit` averages across pools. Use `FACET host, pool` for an exact per-pool view.
 
 ### `SpanBreakdown`: pre-aggregated transaction composition

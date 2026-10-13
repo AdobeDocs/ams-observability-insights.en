@@ -1,3 +1,8 @@
+---
+title: "Tutorial 3: Advance your dashboarding"
+description: Build dashboards with variables, formulas, and multiple widgets in Observability Insights.
+---
+
 ## Tutorial 3: Advance your dashboarding {#tutorial-3-advance-your-dashboarding}
 
 In this tutorial you'll build the components of a production-grade dashboard: user-experience scores, counter rates, case grouping, histograms, KPI tiles with thresholds, sections, formula widgets and variables.
@@ -32,7 +37,8 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
-> [!WARNING]
+>[!WARNING]
+>
 > Always facet `rate()` by `host` (and by `device` for disks), or filter to one host. Without that, the readings from different hosts get mixed together and the result is meaningless.
 
 To get a **request** rate from traces, count requests in fixed buckets instead. This gives requests per minute:
@@ -140,7 +146,8 @@ Rules for formula queries:
 | One metric each | Each query returns exactly one aggregate and no `FACET`                                                              |
 | Missing data    | A missing value or a division by zero produces an empty point, never `Infinity` or `NaN`                             |
 
-> [!TIP]
+>[!TIP]
+>
 > Use `TIMESERIES AUTO` in every query of a time-series formula. Because the queries share one window, they always resolve to the same bucket size.
 
 ### Make dashboards reusable with variables
@@ -181,8 +188,9 @@ SELECT count(*) FROM Transaction FACET service LIMIT 200
 
 Options refresh when the tenant or time picker changes, and they're sorted alphabetically. When the current selection is no longer valid, the first value (single select) or all values (multiple select) are selected automatically. A variable's query can't reference other variables.
 
-> [!WARNING]
-> **Current build limitation.** Substitution happens in the dashboard grid, but the **Add widget** preview and the **server-side save check** receive the raw `{{name}}` token and reject it with _Unexpected character '{'_. In practice:
+>[!WARNING]
+>
+> **Current build limitation.** Substitution happens in the dashboard grid, but the **Add widget** preview and the **server-side save check** receive the raw `{{name}}` token and reject it with `Unexpected character '{'`. In practice:
 >
 > - `{{variables}}` in **widget titles** and **text widgets** work end to end.
 > - `{{variables}}` inside **widget SQL** render correctly after an **Import**, but the dashboard can't be **saved** while such widgets exist.

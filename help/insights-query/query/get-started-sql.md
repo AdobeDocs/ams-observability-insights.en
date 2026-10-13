@@ -1,3 +1,8 @@
+---
+title: Get started with SQL
+description: Learn how to query Observability Insights telemetry using SQL.
+---
+
 # Get started
 
 **Adobe Observability Insights Query Language (SQL)** — query, chart and dashboard your telemetry in Adobe Observability Insights.
@@ -7,7 +12,8 @@
 | **Applies to** | Insights UI → **Explore** and **Dashboards** (custom dashboards) |
 | **Audience**   | Engineers, SREs and power users who know SQL                     |
 
-> [!TIP]
+>[!TIP]
+>
 > Every code block marked `sql` is a SQL query that you can paste straight into **Explore → SQL** or into **Dashboards → Add widget → SQL**.
 
 ## Get started with SQL: the language of your telemetry {#get-started-with-sql-the-language-of-your-telemetry}
@@ -32,7 +38,8 @@ Use SQL to:
 
 SQL supports both **event queries**, which return individual request rows, and **aggregate queries**, which return totals, percentiles, rates, breakdowns and time series.
 
-> [!TIP]
+>[!TIP]
+>
 > The templates in **Dashboards → Create dashboard** are built entirely from SQL. Open any template widget with the pencil icon to see, and learn from, its query.
 
 ### What you can query
@@ -46,7 +53,8 @@ SQL can query four families of data. The complete list is in the [Data dictionar
 | **Generic metrics**                  | `MetricGauge`, `MetricSum`                                                                                                                                         | Any OpenTelemetry metric by name, metric discovery                   |
 | **Pre-aggregated span composition**  | `SpanBreakdown`                                                                                                                                                    | Which child operations make up a transaction                         |
 
-> [!NOTE]
+>[!NOTE]
+>
 > Logs, alert definitions and inventory relationships aren't available.
 
 ### Where to use SQL

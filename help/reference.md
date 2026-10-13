@@ -11,5 +11,5 @@ This section provides detailed reference documentation for the dashboards availa
 
 ## Dashboard references
 
-- [APM dashboard reference](/help/reference/apm-dashboard-reference.md)
-- [Infrastructure dashboard reference](/help/reference/infrastructure-dashboard-reference.md)
+- [APM application monitoring](/help/applications.md)
+- [Infrastructure monitoring](/help/hosts.md)

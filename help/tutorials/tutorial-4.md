@@ -1,3 +1,8 @@
+---
+title: "Tutorial 4: Advanced functions"
+description: Learn how to use advanced SQL functions to analyze Observability Insights telemetry.
+---
+
 ## Tutorial 4: Advanced functions {#tutorial-4-advanced-functions}
 
 This tutorial covers the functions and entities that power deeper investigations: variability, growth, "worst example" lookups, share of total, transaction composition and arbitrary OpenTelemetry metrics.
@@ -58,7 +63,8 @@ Trend one segment over time:
 SELECT average(avgDurationMs) AS avgMs FROM SpanBreakdown FACET segment TIMESERIES AUTO LIMIT 8
 ```
 
-> [!NOTE]
+>[!NOTE]
+>
 > `avgDurationMs` isn't auto-tagged with a unit. Set the widget **Unit** to `ms`.
 
 ### Discover and query any metric
@@ -85,7 +91,8 @@ To see which **span attributes** are populated for each service, count non-blank
 SELECT count(*) FILTER (WHERE http.route != '') AS withRoute, count(*) FILTER (WHERE db.system != '') AS dbCalls, count(*) FILTER (WHERE peer.service != '') AS withPeer, count(*) FILTER (WHERE error.type != '') AS withErrorType FROM Span FACET service LIMIT 50
 ```
 
-> [!TIP]
+>[!TIP]
+>
 > When a curated entity exists (for example `CpuUtilization`), prefer it over `MetricGauge`. It applies the right filter and unit conversion, and it may be rollup-accelerated.
 
 ### Choose the right trace entity

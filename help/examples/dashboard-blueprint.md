@@ -1,3 +1,8 @@
+---
+title: Dashboard blueprints
+description: Build Observability Insights dashboards using blueprints for application and infrastructure monitoring.
+---
+
 ## Dashboard blueprints {#dashboard-blueprints}
 
 Each blueprint is a complete, complex dashboard. It lists the goal, the tab and section layout, and every widget with its chart type, unit, thresholds, size and query. Sizes are `width×height` on the 12-column grid. Build each one from top to bottom, then drag to adjust.
@@ -17,7 +22,7 @@ Each blueprint is a complete, complex dashboard. It lists the goal, the tab and 
 
 **Chart legend:** **N** = Number, **L** = Line, **A** = Area, **B** = Bar, **P** = Pie, **T** = Table.
 
----
+
 
 ### Golden Signals / SLO board
 
@@ -114,7 +119,7 @@ SELECT average(value) AS memory FROM MemoryUtilization FACET host TIMESERIES AUT
 SELECT average(value) AS load5m FROM LoadAverage5m FACET host TIMESERIES AUTO LIMIT 10
 ```
 
----
+
 
 ### Error Triage board
 
@@ -201,7 +206,7 @@ SELECT count(*) AS failures, percentile(duration, 95) AS p95 FROM Span WHERE kin
 SELECT timestamp, service, host, name, urlPath, http.statusCode, duration, statusMessage, traceId FROM Transaction WHERE status = 'Error' LIMIT 200
 ```
 
----
+
 
 ### Latency Deep-Dive board
 
@@ -270,7 +275,7 @@ SELECT sum(callCount) AS calls, average(avgDurationMs) AS avgMs FROM SpanBreakdo
 SELECT count(*) AS calls, max(duration) AS slowestMs, latest(traceId, duration) AS slowestTraceId, latest(host, duration) AS slowestHost FROM Transaction FACET name ORDER BY slowestMs DESC LIMIT 50
 ```
 
----
+
 
 ### Downstream Dependencies board
 
@@ -351,7 +356,7 @@ SELECT count(*) FILTER (WHERE kind = 'Producer') AS produced, count(*) FILTER (W
 SELECT count(*) AS calls, percentile(duration, 95) AS p95, percentage(*, WHERE status = 'Error') AS errorPct FROM Span WHERE rpc.system != '' FACET service, rpc.system, rpc.method ORDER BY calls DESC LIMIT 50
 ```
 
----
+
 
 ### AEM Author / Publish / Dispatcher board
 
@@ -508,7 +513,7 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 SELECT percentOfTotal(duration) AS timeShare FROM Span WHERE sling.servlet != '' FACET sling.servlet LIMIT 20
 ```
 
----
+
 
 ### Infrastructure Capacity board
 
@@ -655,7 +660,7 @@ Formula:
 netRx + netTx
 ```
 
----
+
 
 ### JVM Health board
 
@@ -727,7 +732,8 @@ Formula:
 (used / limit) * 100
 ```
 
-> [!NOTE]
+>[!NOTE]
+>
 > To scope a formula to one host, add `WHERE host = 'my-publish-01'` to **both** queries.
 
 **W6 · Heap used by host** — L, `MB`, 6×4
@@ -760,7 +766,7 @@ SELECT average(value) AS jvmCpu FROM JvmCpuRecentUtilization FACET host TIMESERI
 SELECT latest(value) AS bytesUsed, max(value) AS peakBytes FROM MetricSum WHERE metric = 'jvm.memory.used' FACET host, pool ORDER BY peakBytes DESC LIMIT 100
 ```
 
----
+
 
 ### 11.8 Executive / NOC wall board
 
@@ -843,7 +849,7 @@ SELECT count(*) AS requests FROM Transaction WHERE hostTierPrefix != '' FACET ho
 
 **W10 · SLO note** — Text widget, 12×1.
 
----
+
 
 ### Ratios & Headroom board (Formula showcase)
 
@@ -989,13 +995,14 @@ Formula (burn rate: 1.0 = consuming budget exactly on schedule):
 (errors / total) / 0.001
 ```
 
----
+
 
 ### Service Explorer (variable-driven)
 
 **Goal:** one board that any team can point at _their_ service and environment.
 
-> [!WARNING]
+>[!WARNING]
+>
 > See the **current build limitation** in [Tutorial 3, step 8.7](#87-make-dashboards-reusable-with-variables): `{{variables}}` inside widget SQL cannot yet be previewed or saved. Until that is fixed, replace each `{{…}}` with a literal (e.g. `'checkout'`) and use _Duplicate_ to clone the board per service. The design below is ready for when substitution is supported end-to-end.
 
 **Variables**

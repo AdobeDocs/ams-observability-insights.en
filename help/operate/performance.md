@@ -1,3 +1,8 @@
+---
+title: Performance
+description: Improve query, chart, and dashboard performance in Observability Insights.
+---
+
 ## Performance {#performance}
 
 Every query runs with a 15-second timeout and a bytes-read budget. This doc explains how Observability Insights accelerates queries automatically, and how to design dashboards that stay fast at any time range.

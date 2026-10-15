@@ -96,18 +96,18 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 
 SQL is deliberately small. That keeps queries safe, fast and tenant-isolated. When you need one of these capabilities, use the alternative.
 
-| Capability                                  | Status        | Alternative                                                                                                  |
-| ------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------ |
-| `SELECT *`                                  | Not supported | List the attributes you want: `SELECT timestamp, name, duration, traceId …`.                                 |
-| Mixing raw attributes and aggregates        | Not supported | Use `FACET attr`, or `latest(attr)` / `earliest(attr)`.                                                      |
-| Math in `SELECT` (`a - b`, `count(*) / 60`) | Not supported | **Formula** widget (dashboards).                                                                             |
-| Joins and subqueries                        | Not supported | **Formula** widget, or two widgets side by side.                                                             |
-| `HAVING`                                    | Not supported | `ORDER BY alias` + `LIMIT`.                                                                                  |
-| `COMPARE WITH`                              | Not supported | Change the time picker, or put two widgets on different tabs.                                                |
-| `FACET CASES`                               | Not supported | One `count(*) FILTER (WHERE …)` column per case (see [Tutorial 3](#83-group-values-into-cases-with-filter)). |
-| `histogram()`                               | Not supported | Bucketed `FILTER` columns (see [Tutorial 3](#84-build-a-latency-histogram)).                                 |
-| `uniques()` / `keyset()`                    | Not supported | `FACET attr LIMIT n` lists distinct values. Discovery queries list metrics and populated attributes.         |
-| `RLIKE` (regex)                             | Not supported | `LIKE` / `NOT LIKE` with `%` and `_` wildcards, or `IN (…)`.                                                 |
-| Comments (`--`, `//`, `/* */`)              | Not supported | Put notes in the widget title or a **Text** widget.                                                          |
-| Absolute dates in `SINCE`                   | Not supported | Use the time picker's absolute range.                                                                        |
-| Type conversion (`numeric()`, `string()`)   | Not needed    | Attributes are typed in the catalog.                                                                         |
+| Capability                                  | Status        | Alternative                                                                                                                            |
+| ------------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `SELECT *`                                  | Not supported | List the attributes you want: `SELECT timestamp, name, duration, traceId …`.                                                           |
+| Mixing raw attributes and aggregates        | Not supported | Use `FACET attr`, or `latest(attr)` / `earliest(attr)`.                                                                                |
+| Math in `SELECT` (`a - b`, `count(*) / 60`) | Not supported | **Formula** widget (dashboards).                                                                                                       |
+| Joins and subqueries                        | Not supported | **Formula** widget, or two widgets side by side.                                                                                       |
+| `HAVING`                                    | Not supported | `ORDER BY alias` + `LIMIT`.                                                                                                            |
+| `COMPARE WITH`                              | Not supported | Change the time picker, or put two widgets on different tabs.                                                                          |
+| `FACET CASES`                               | Not supported | One `count(*) FILTER (WHERE …)` column per case (see [Tutorial 3](../../tutorials/tutorial-3.md#group-values-into-cases-with-filter)). |
+| `histogram()`                               | Not supported | Bucketed `FILTER` columns (see [Tutorial 3](../../tutorials/tutorial-3.md#build-a-latency-histogram)).                                 |
+| `uniques()` / `keyset()`                    | Not supported | `FACET attr LIMIT n` lists distinct values. Discovery queries list metrics and populated attributes.                                   |
+| `RLIKE` (regex)                             | Not supported | `LIKE` / `NOT LIKE` with `%` and `_` wildcards, or `IN (…)`.                                                                           |
+| Comments (`--`, `//`, `/* */`)              | Not supported | Put notes in the widget title or a **Text** widget.                                                                                    |
+| Absolute dates in `SINCE`                   | Not supported | Use the time picker's absolute range.                                                                                                  |
+| Type conversion (`numeric()`, `string()`)   | Not needed    | Attributes are typed in the catalog.                                                                                                   |

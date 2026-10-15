@@ -158,7 +158,7 @@ SELECT count(*) AS total, count(*) FILTER (WHERE status = 'Error') AS errors, pe
 SELECT count(*) FROM Transaction FACET urlPath LIMIT 50
 ```
 
-> [!TIP]
+>[!TIP]
 >
 > Always set a `LIMIT` on query-driven variables and on high-cardinality facets (`urlPath`, `traceId`, `jcr.path`, `url`).
 
@@ -201,7 +201,7 @@ SELECT count(*) FROM Transaction SINCE 6 hours ago
 - The window can't exceed **31 days** (_Time range cannot exceed 31 days_).
 - Absolute dates (`SINCE '2026-01-01'`) and `TODAY` / `YESTERDAY` aren't supported.
 
-> [!IMPORTANT]
+>[!IMPORTANT]
 >
 > On dashboards and in Explore, the **time picker overrides** `SINCE` and `UNTIL`. See [Time window precedence](#time-window-precedence).
 
@@ -233,7 +233,7 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction TIMESERIES AUTO
 SELECT count(*) FROM Transaction TIMESERIES 1 hour SINCE 1 day ago
 ```
 
-> [!TIP]
+>[!TIP]
 >
 > Prefer `AUTO` on dashboards. It keeps about 120 points whatever the time picker says. It also avoids "shattered" per-host lines, because host metrics are scraped about every 90 seconds.
 
@@ -456,7 +456,7 @@ SELECT rate(value) AS bytesPerSec FROM NetworkReceiveRate FACET host TIMESERIES 
 - Works only on counter entities (marked ✔ in the [Data dictionary](#53-curated-metric-entities)).
 - Requires `TIMESERIES`, and must be the **only** aggregate. `FILTER` isn't allowed.
 
-> [!WARNING]
+>[!WARNING]
 >
 > Always `FACET host`, or filter to a single host. An unfaceted `rate()` across many hosts compares different hosts' counters and produces meaningless numbers. Disk counters are per device, so `FACET host, device` is the most precise.
 

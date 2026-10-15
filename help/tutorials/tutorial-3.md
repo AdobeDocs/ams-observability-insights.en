@@ -144,7 +144,7 @@ Rules for formula queries:
 | One metric each | Each query returns exactly one aggregate and no `FACET`                                                              |
 | Missing data    | A missing value or a division by zero produces an empty point, never `Infinity` or `NaN`                             |
 
-> [!TIP]
+>[!TIP]
 >
 > Use `TIMESERIES AUTO` in every query of a time-series formula. Because the queries share one window, they always resolve to the same bucket size.
 

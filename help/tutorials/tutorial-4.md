@@ -61,7 +61,7 @@ Trend one segment over time:
 SELECT average(avgDurationMs) AS avgMs FROM SpanBreakdown FACET segment TIMESERIES AUTO LIMIT 8
 ```
 
-> [!NOTE]
+>[!NOTE]
 >
 > `avgDurationMs` isn't auto-tagged with a unit. Set the widget **Unit** to `ms`.
 
@@ -89,7 +89,7 @@ To see which **span attributes** are populated for each service, count non-blank
 SELECT count(*) FILTER (WHERE http.route != '') AS withRoute, count(*) FILTER (WHERE db.system != '') AS dbCalls, count(*) FILTER (WHERE peer.service != '') AS withPeer, count(*) FILTER (WHERE error.type != '') AS withErrorType FROM Span FACET service LIMIT 50
 ```
 
-> [!TIP]
+>[!TIP]
 >
 > When a curated entity exists (for example `CpuUtilization`), prefer it over `MetricGauge`. It applies the right filter and unit conversion, and it may be rollup-accelerated.
 

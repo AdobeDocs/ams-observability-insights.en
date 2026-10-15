@@ -1,3 +1,8 @@
+---
+title: Dashboard and query documentation
+description: Reference documentation for Observability Insights SQL queries and dashboards.
+---
+
 <a id="top"></a>
 
 # Adobe Observability Insights Dashboard/Query documentation
@@ -9,10 +14,8 @@
 | **Applies to** | Insights UI → **Explore** and **Dashboards** (custom dashboards) |
 | **Audience**   | Engineers, SREs and power users who know SQL                     |
 
-> [!TIP]
+>[!TIP]
 > Every code block marked `sql` is a SQL query that you can paste straight into **Explore → SQL** or into **Dashboards → Add widget → SQL**.
-
----
 
 ## Documentation map
 
@@ -32,8 +35,6 @@
 | **Operate**     | [12. Performance](#12-performance)                                                  | Rollups, query budgets and how to keep dashboards fast                                      |
 |                 | [13. Troubleshooting](#13-troubleshooting)                                          | Every error message, what it means, and how to fix it                                       |
 |                 | [14. Appendix](#14-appendix)                                                        | Limits, export file format, one-page cheat sheet                                            |
-
----
 
 # Get started
 
@@ -59,7 +60,7 @@ Use SQL to:
 
 SQL supports both **event queries**, which return individual request rows, and **aggregate queries**, which return totals, percentiles, rates, breakdowns and time series.
 
-> [!TIP]
+>[!TIP]
 > The templates in **Dashboards → Create dashboard** are built entirely from SQL. Open any template widget with the pencil icon to see, and learn from, its query.
 
 ### What you can query
@@ -73,7 +74,7 @@ SQL can query four families of data. The complete list is in the [Data dictionar
 | **Generic metrics**                  | `MetricGauge`, `MetricSum`                                                                                                                                         | Any OpenTelemetry metric by name, metric discovery                   |
 | **Pre-aggregated span composition**  | `SpanBreakdown`                                                                                                                                                    | Which child operations make up a transaction                         |
 
-> [!NOTE]
+>[!NOTE]
 > Logs, alert definitions and inventory relationships aren't available.
 
 ### Where to use SQL
@@ -133,8 +134,6 @@ Here are the rules SQL follows:
 
 [↑ Back to top](#top)
 
----
-
 ## 2. How to query with SQL: the mechanics of querying
 
 Before you use any tool, it helps to know how it works. This doc shows how to explore your data, explains what happens when a query runs, and walks through example queries from simple to complex.
@@ -143,7 +142,7 @@ Before you use any tool, it helps to know how it works. This doc shows how to ex
 
 The best way to use SQL is to open **Explore** and try it on your own data.
 
-> [!TIP]
+>[!TIP]
 > SQL is read-only. It can't change or delete data, and every query is scoped to your tenant.
 
 1. **Pick a customer** in the tenant switcher at the top of the app, SQL needs a single tenant.
@@ -168,7 +167,7 @@ FROM Transaction SELECT count(*) FACET service
 
 This counts requests per service, which shows you which services are reporting.
 
-> [!IMPORTANT]
+>[!IMPORTANT]
 > **Discover before you build.** Attribute availability depends on how each service is instrumented. Run the [discovery queries](#101-data-discovery) on a new tenant first to see which services, hosts, attributes and metrics actually contain data.
 
 ### How a query runs
@@ -218,7 +217,7 @@ Every query returns one of four shapes. The shape decides which charts make sens
 | **Explore**                       | The global time picker. `SINCE`/`UNTIL` are ignored when a picker range is active. |
 | **API without an explicit range** | `SINCE`/`UNTIL` in the query, defaulting to the last hour.                         |
 
-> [!NOTE]
+>[!NOTE]
 > Because the picker wins on dashboards and in Explore, this guide usually leaves `SINCE` out of dashboard queries. One should always define a time picker for the queries.
 
 ### SQL query examples
@@ -328,8 +327,6 @@ SQL is deliberately small. That keeps queries safe, fast and tenant-isolated. Wh
 
 [↑ Back to top](#top)
 
----
-
 ## 3. Charts and dashboards: visualizing your data
 
 Queries find the information you need. Charts and dashboards make that information useful to your organization. This doc shows how SQL results become charts, and how to build, organize and share dashboards.
@@ -398,7 +395,7 @@ Charts work well on their own, but dashboards bring them together. A dashboard i
 | **Grid**                     | 12 columns. Drag widgets by the grip, resize from the corner (minimum 2×2).                               |
 | **Widget header** (on hover) | Download CSV, Download PNG, Edit, Duplicate, Remove, drag handle                                          |
 
-> [!IMPORTANT]
+>[!IMPORTANT]
 > **Saving is explicit.** Layout changes, new widgets, tabs and variables stay in your browser until you click **Save**. The button shows _Saving… → Saved_, or _Save failed_ (see [Troubleshooting](#13-troubleshooting)).
 
 #### Step 4: Add a widget
@@ -422,7 +419,7 @@ Click **Add widget**. The dialog has three modes: **Single query**, **Formula** 
 3. Use the **Query guide** panel to browse entities, attributes and examples.
 4. Click **Run query**. You'll see _`<Entity>` query is valid_, a live preview and a summary (`N rows · N time points · N groups`). A _Sparse series_ warning appears when there are fewer than three time points.
 
-> [!TIP]
+>[!TIP]
 > The Builder covers the most common queries. Switch to SQL for `apdex`, `percentage`, `rate`, `FILTER`, multiple aggregates, `OR`, `IN`, several facets or `ORDER BY`.
 
 #### Step 5: Configure how it looks
@@ -458,7 +455,7 @@ When a Number widget's single row carries a text value (for example `latest(host
 - **Note**: plain text (up to 4,000 characters, blank lines preserved). Use it for runbook links, owners and SLO definitions. `{{variables}}` are rendered.
 - **Section header**: tick _Make this a section header_. It spans the full width, and its chevron collapses every widget below it, up to the next section header. Use it for groupings such as **PUBLISH**, **AUTHOR** and **DISPATCHER**.
 
-> [!TIP]
+>[!TIP]
 > Widget titles ending in `- PUBLISH` or `- AUTHOR` get a subtle colour cue, which makes AEM dashboards easier to scan by tier.
 
 ### The time picker
@@ -474,8 +471,8 @@ When a Number widget's single row carries a text value (for example `latest(host
 
 Variables let one dashboard serve many contexts, such as one service, environment or threshold at a time. They are covered in depth in [Tutorial 3](#87-make-dashboards-reusable-with-variables).
 
-> [!WARNING]
-> **Known limitation in the current build:** `{{variables}}` work in widget **titles** and **text widgets**. Inside widget **SQL**, they render on the dashboard, but the **Add widget** preview and the server-side **Save** check reject the raw `{{name}}` token with _Unexpected character '{'_. Until this is fixed, use literal values in widget queries and use **Duplicate** to make variants.
+>[!WARNING]
+> **Known limitation in the current build:** `{{variables}}` work in widget **titles** and **text widgets**. Inside widget **SQL**, they render on the dashboard, but the **Add widget** preview and the server-side **Save** check reject the raw `{{name}}` token with `Unexpected character '{'`. Until this is fixed, use literal values in widget queries and use **Duplicate** to make variants.
 
 ### Formula widgets
 
@@ -490,7 +487,7 @@ A formula combines 2–6 named SQL queries arithmetically, for example `(errors 
 | **Import**    | Loads a JSON export **into the dashboard that's open**, replacing its tabs and variables. Then click **Save**. Tip: create an empty dashboard first, then import into it. |
 | **CSV / PNG** | Per-widget downloads from the widget header.                                                                                                                              |
 
-> [!TIP]
+>[!TIP]
 > Export and Import let you version-control dashboards in Git, and promote a dashboard from one customer to another. The file format is described in the [Appendix](#142-export-file-format).
 
 ### Tips for dashboard and chart performance
@@ -503,8 +500,6 @@ A formula combines 2–6 named SQL queries arithmetically, for example `(errors 
 - **Design long-range trends for rollups.** See [Performance](#12-performance).
 
 [↑ Back to top](#top)
-
----
 
 # Reference
 
@@ -532,7 +527,7 @@ FROM   <Entity>
 <unit>        := second | seconds | minute | minutes | hour | hours | day | days | week | weeks
 ```
 
-> [!NOTE]
+>[!NOTE]
 > The `--` annotations above are documentation only. SQL itself doesn't accept comments.
 
 ### 4.2 Required clauses
@@ -658,7 +653,7 @@ SELECT count(*) AS total, count(*) FILTER (WHERE status = 'Error') AS errors, pe
 SELECT count(*) FROM Transaction FACET urlPath LIMIT 50
 ```
 
-> [!TIP]
+>[!TIP]
 > Always set a `LIMIT` on query-driven variables and on high-cardinality facets (`urlPath`, `traceId`, `jcr.path`, `url`).
 
 </details>
@@ -698,7 +693,7 @@ SELECT count(*) FROM Transaction SINCE 6 hours ago
 - The window can't exceed **31 days** (_Time range cannot exceed 31 days_).
 - Absolute dates (`SINCE '2026-01-01'`) and `TODAY` / `YESTERDAY` aren't supported.
 
-> [!IMPORTANT]
+>[!IMPORTANT]
 > On dashboards and in Explore, the **time picker overrides** `SINCE` and `UNTIL`. See [Time window precedence](#time-window-precedence).
 
 </details>
@@ -728,7 +723,7 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction TIMESERIES AUTO
 SELECT count(*) FROM Transaction TIMESERIES 1 hour SINCE 1 day ago
 ```
 
-> [!TIP]
+>[!TIP]
 > Prefer `AUTO` on dashboards. It keeps about 120 points whatever the time picker says. It also avoids "shattered" per-host lines, because host metrics are scraped about every 90 seconds.
 
 </details>
@@ -938,7 +933,7 @@ SELECT rate(value) AS bytesPerSec FROM NetworkReceiveRate FACET host TIMESERIES 
 - Works only on counter entities (marked ✔ in the [Data dictionary](#53-curated-metric-entities)).
 - Requires `TIMESERIES`, and must be the **only** aggregate. `FILTER` isn't allowed.
 
-> [!WARNING]
+>[!WARNING]
 > Always `FACET host`, or filter to a single host. An unfaceted `rate()` across many hosts compares different hosts' counters and produces meaningless numbers. Disk counters are per device, so `FACET host, device` is the most precise.
 
 </details>
@@ -1012,14 +1007,14 @@ Function constraints at a glance:
 SELECT count(*) FROM Transaction WHERE (status = 'Error' OR duration > 2000) AND NOT host LIKE '%dispatcher%' AND http.method IN ('GET', 'POST')
 ```
 
-> [!WARNING]
+>[!WARNING]
 > `attr = NULL` is an error. Use `attr IS NULL`.
 
 ### 4.6 Type handling: blank vs NULL
 
 Every attribute has a type in the catalog: `string`, `number`, `boolean` or `timestamp`. SQL type-checks functions against it (for example, `average(service)` is rejected). No type conversion functions are needed or available.
 
-> [!IMPORTANT]
+>[!IMPORTANT]
 > **Blank vs NULL.** Most string attributes come from OpenTelemetry attribute maps, where a _missing_ key reads as an empty string `''`, not `NULL`. To keep only spans that carry an attribute, use **`attr != ''`** rather than `IS NOT NULL`. Numeric attributes such as `http.statusCode` are genuinely `NULL` when absent, so `IS NOT NULL` works for them.
 
 ```sql
@@ -1071,8 +1066,6 @@ If you know the existing query, following is the migration detail
 | `WITH TIMEZONE`, `EXTRAPOLATE`, `SLIDE BY`  | Not supported                                                      |                                                              |
 
 [↑ Back to top](#top)
-
----
 
 ## 5. Data dictionary
 
@@ -1179,7 +1172,7 @@ Each curated entity wraps one OpenTelemetry metric with the right filter and uni
 | `JvmCpuRecentUtilization`                                                      | JVM process CPU                     | %         |         | 1-minute rollup                              |
 | `DispatcherRequestRate`                                                        | AEM dispatcher HTTP requests        | req/s     | ✔       |                                              |
 
-> [!NOTE]
+>[!NOTE]
 > JVM memory metrics are reported **per memory pool**, so `average(value)` on `JvmHeapUsed` / `JvmHeapLimit` averages across pools. Use `FACET host, pool` for an exact per-pool view.
 
 ### 5.4 `SpanBreakdown`: pre-aggregated transaction composition
@@ -1196,8 +1189,6 @@ Each curated entity wraps one OpenTelemetry metric with the right filter and uni
 | `avgDurationMs` | number    | Average segment duration in the bucket (set the unit to `ms` manually) |
 
 [↑ Back to top](#top)
-
----
 
 # Tutorials
 
@@ -1229,7 +1220,7 @@ SELECT timestamp, service, name, duration FROM Transaction LIMIT 10
 
 Rows are sorted by the first column, descending, so putting `timestamp` first gives you the newest requests at the top.
 
-> [!NOTE]
+>[!NOTE]
 > SQL has no `SELECT *`. Listing attributes keeps results small and readable. The [Data dictionary](#5-data-dictionary), and the autocomplete in the editor, show what's available.
 
 ### 6.2 Aggregate your data
@@ -1262,7 +1253,7 @@ Separate aggregates with commas, and name each one with `AS`:
 SELECT count(*) AS requests, average(duration) AS avgMs, max(duration) AS maxMs FROM Transaction
 ```
 
-> [!TIP]
+>[!TIP]
 > Aliases become column headers and legend labels, and they're what you reference in `ORDER BY`. Get into the habit of naming every aggregate.
 
 ### 6.4 Set the time window
@@ -1281,7 +1272,7 @@ SELECT count(*) AS requests FROM Transaction SINCE 2 days ago UNTIL 1 day ago
 
 Units can be `second`, `minute`, `hour`, `day` or `week`. The window can be at most 31 days.
 
-> [!IMPORTANT]
+>[!IMPORTANT]
 > In **Explore** and on **dashboards**, the **time picker** at the top of the page controls the window and overrides `SINCE`/`UNTIL`. To look at another period, change the picker. The rest of this guide leaves `SINCE` out of dashboard queries for that reason.
 
 ### 6.5 Plot trends with `TIMESERIES`
@@ -1318,7 +1309,7 @@ Use `LIKE` with `%` for partial matches:
 SELECT count(*) AS contentRequests FROM Transaction WHERE urlPath LIKE '/content/%'
 ```
 
-> [!NOTE]
+>[!NOTE]
 > String values are case sensitive and use single quotes: `'Error'`, not `"Error"` or `'error'`. Replace `checkout` with a service from your tenant. The next step shows how to list them.
 
 ### 6.7 Group with `FACET`
@@ -1359,8 +1350,6 @@ You've built your first dashboard.
 - The [SQL reference](#4-SQL-reference) has every clause and function.
 
 [↑ Back to top](#top)
-
----
 
 ## 7. Tutorial 2: Control your data
 
@@ -1424,7 +1413,7 @@ Averages hide outliers. Percentiles show what most users experience (p50) and wh
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
-> [!TIP]
+>[!TIP]
 > p50, p95 and p99 of `Transaction.duration` are served from rollups over long windows, so they stay fast for weekly views.
 
 ### 7.5 Make results readable with labels
@@ -1435,7 +1424,7 @@ Use `AS` with single quotes for labels that contain spaces:
 SELECT count(*) AS 'Requests', percentile(duration, 95) AS 'p95 (ms)' FROM Transaction FACET service
 ```
 
-> [!NOTE]
+>[!NOTE]
 > Aliases apply only to `SELECT` items. Facet columns are always labelled with the attribute name.
 
 ### 7.6 Match patterns and lists
@@ -1458,7 +1447,7 @@ Match against a list with `IN` and `NOT IN` (up to 100 values):
 SELECT count(*) AS requests FROM Transaction WHERE http.method IN ('POST', 'PUT', 'DELETE') FACET service
 ```
 
-> [!NOTE]
+>[!NOTE]
 > SQL has no regular expressions (`RLIKE`). Combine `LIKE` patterns with `OR`, or use `IN`.
 
 ### 7.7 Sort and rank with `ORDER BY`
@@ -1475,7 +1464,7 @@ Or the least-used services first:
 SELECT count(*) AS requests FROM Transaction FACET service ORDER BY requests ASC LIMIT 10
 ```
 
-> [!TIP]
+>[!TIP]
 > There's no `HAVING`. To find only "busy" operations, rank by `requests` and keep the top N, or add a `WHERE` that removes noise (for example `WHERE http.method != 'OPTIONS'`).
 
 ### 7.8 Group by several attributes
@@ -1499,8 +1488,6 @@ SELECT count(*) AS lastWeekSameHour FROM Transaction SINCE 169 hours ago UNTIL 1
 - [Tutorial 3: Advance your dashboarding](#8-tutorial-3-advance-your-dashboarding) covers conditional aggregates, Apdex, rates, histograms, formulas and variables.
 
 [↑ Back to top](#top)
-
----
 
 ## 8. Tutorial 3: Advance your dashboarding
 
@@ -1536,7 +1523,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
-> [!WARNING]
+>[!WARNING]
 > Always facet `rate()` by `host` (and by `device` for disks), or filter to one host. Without that, the readings from different hosts get mixed together and the result is meaningless.
 
 To get a **request** rate from traces, count requests in fixed buckets instead. This gives requests per minute:
@@ -1644,7 +1631,7 @@ Rules for formula queries:
 | One metric each | Each query returns exactly one aggregate and no `FACET`                                                              |
 | Missing data    | A missing value or a division by zero produces an empty point, never `Infinity` or `NaN`                             |
 
-> [!TIP]
+>[!TIP]
 > Use `TIMESERIES AUTO` in every query of a time-series formula. Because the queries share one window, they always resolve to the same bucket size.
 
 ### 8.7 Make dashboards reusable with variables
@@ -1685,8 +1672,8 @@ SELECT count(*) FROM Transaction FACET service LIMIT 200
 
 Options refresh when the tenant or time picker changes, and they're sorted alphabetically. When the current selection is no longer valid, the first value (single select) or all values (multiple select) are selected automatically. A variable's query can't reference other variables.
 
-> [!WARNING]
-> **Current build limitation.** Substitution happens in the dashboard grid, but the **Add widget** preview and the **server-side save check** receive the raw `{{name}}` token and reject it with _Unexpected character '{'_. In practice:
+>[!WARNING]
+> **Current build limitation.** Substitution happens in the dashboard grid, but the **Add widget** preview and the **server-side save check** receive the raw `{{name}}` token and reject it with `Unexpected character '{'`. In practice:
 >
 > - `{{variables}}` in **widget titles** and **text widgets** work end to end.
 > - `{{variables}}` inside **widget SQL** render correctly after an **Import**, but the dashboard can't be **saved** while such widgets exist.
@@ -1702,8 +1689,6 @@ You now have every building block used in the [Dashboard blueprints](#11-dashboa
 - [Tutorial 4: Advanced functions](#9-tutorial-4-advanced-functions) covers `stddev`, `derivative`, ranked `latest`, `percentOfTotal`, span composition and metric discovery.
 
 [↑ Back to top](#top)
-
----
 
 ## 9. Tutorial 4: Advanced functions
 
@@ -1765,7 +1750,7 @@ Trend one segment over time:
 SELECT average(avgDurationMs) AS avgMs FROM SpanBreakdown FACET segment TIMESERIES AUTO LIMIT 8
 ```
 
-> [!NOTE]
+>[!NOTE]
 > `avgDurationMs` isn't auto-tagged with a unit. Set the widget **Unit** to `ms`.
 
 ### 9.6 Discover and query any metric
@@ -1792,7 +1777,7 @@ To see which **span attributes** are populated for each service, count non-blank
 SELECT count(*) FILTER (WHERE http.route != '') AS withRoute, count(*) FILTER (WHERE db.system != '') AS dbCalls, count(*) FILTER (WHERE peer.service != '') AS withPeer, count(*) FILTER (WHERE error.type != '') AS withErrorType FROM Span FACET service LIMIT 50
 ```
 
-> [!TIP]
+>[!TIP]
 > When a curated entity exists (for example `CpuUtilization`), prefer it over `MetricGauge`. It applies the right filter and unit conversion, and it may be rollup-accelerated.
 
 ### 9.7 Choose the right trace entity
@@ -1839,8 +1824,6 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction FACET host ORDER BY p95 
 
 [↑ Back to top](#top)
 
----
-
 # Examples
 
 ## 10. Query cookbook
@@ -1849,7 +1832,7 @@ The cookbook is a library of ready-to-use queries, grouped by topic. Each query 
 
 **In this doc:** [10.1 Data discovery](#101-data-discovery) · [10.2 Throughput](#102-throughput) · [10.3 Latency](#103-latency) · [10.4 Errors](#104-errors) · [10.5 Apdex](#105-apdex--user-experience) · [10.6 Services and hosts](#106-services-hosts--instances) · [10.7 Dependencies](#107-downstream-dependencies) · [10.8 AEM](#108-aem-adobe-experience-manager) · [10.9 Infrastructure](#109-infrastructure) · [10.10 JVM](#1010-jvm--runtime)
 
-> [!TIP]
+>[!TIP]
 > Replace example values such as `'checkout'` or `'web-publish-01'` with real values from your tenant. The data discovery queries below list them.
 
 ### 10.1 Data discovery
@@ -2224,7 +2207,7 @@ SELECT average(value) AS cpu FROM CpuUtilization FACET host TIMESERIES AUTO
 SELECT average(value) AS userPct FROM CpuUserPercent TIMESERIES AUTO
 ```
 
-> [!NOTE]
+>[!NOTE]
 > SQL reads one entity per query, so user/system/iowait/steal need four side-by-side widgets (see [blueprint 11.6](#116-infrastructure-capacity-board) W7–W10). A Formula would collapse them into one number, not four series.
 
 **Bar** — CPU p95 by host:
@@ -2345,8 +2328,6 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 
 [↑ Back to top](#top)
 
----
-
 ## 11. Dashboard blueprints
 
 Each blueprint is a complete, complex dashboard. It lists the goal, the tab and section layout, and every widget with its chart type, unit, thresholds, size and query. Sizes are `width×height` on the 12-column grid. Build each one from top to bottom, then drag to adjust.
@@ -2365,8 +2346,6 @@ Each blueprint is a complete, complex dashboard. It lists the goal, the tab and 
 | [11.10 Service Explorer](#1110-service-explorer-variable-driven)                     | Every team            | Variable-driven, reusable                                                          |
 
 **Chart legend:** **N** = Number, **L** = Line, **A** = Area, **B** = Bar, **P** = Pie, **T** = Table.
-
----
 
 ### 11.1 Golden Signals / SLO board
 
@@ -2463,8 +2442,6 @@ SELECT average(value) AS memory FROM MemoryUtilization FACET host TIMESERIES AUT
 SELECT average(value) AS load5m FROM LoadAverage5m FACET host TIMESERIES AUTO LIMIT 10
 ```
 
----
-
 ### 11.2 Error Triage board
 
 **Goal:** from "error rate is up" to "this endpoint, this exception, this trace" in three clicks.
@@ -2550,8 +2527,6 @@ SELECT count(*) AS failures, percentile(duration, 95) AS p95 FROM Span WHERE kin
 SELECT timestamp, service, host, name, urlPath, http.statusCode, duration, statusMessage, traceId FROM Transaction WHERE status = 'Error' LIMIT 200
 ```
 
----
-
 ### 11.3 Latency Deep-Dive board
 
 **Goal:** find _where_ time goes — which operations, which segments, how consistent.
@@ -2618,8 +2593,6 @@ SELECT sum(callCount) AS calls, average(avgDurationMs) AS avgMs FROM SpanBreakdo
 ```sql
 SELECT count(*) AS calls, max(duration) AS slowestMs, latest(traceId, duration) AS slowestTraceId, latest(host, duration) AS slowestHost FROM Transaction FACET name ORDER BY slowestMs DESC LIMIT 50
 ```
-
----
 
 ### 11.4 Downstream Dependencies board
 
@@ -2699,8 +2672,6 @@ SELECT count(*) FILTER (WHERE kind = 'Producer') AS produced, count(*) FILTER (W
 ```sql
 SELECT count(*) AS calls, percentile(duration, 95) AS p95, percentage(*, WHERE status = 'Error') AS errorPct FROM Span WHERE rpc.system != '' FACET service, rpc.system, rpc.method ORDER BY calls DESC LIMIT 50
 ```
-
----
 
 ### 11.5 AEM Author / Publish / Dispatcher board
 
@@ -2857,8 +2828,6 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 SELECT percentOfTotal(duration) AS timeShare FROM Span WHERE sling.servlet != '' FACET sling.servlet LIMIT 20
 ```
 
----
-
 ### 11.6 Infrastructure Capacity board
 
 **Goal:** capacity planning and saturation hunting across hosts.
@@ -3004,8 +2973,6 @@ Formula:
 netRx + netTx
 ```
 
----
-
 ### 11.7 JVM Health board
 
 **Goal:** catch heap pressure, thread leaks and JVM CPU spikes before they become outages.
@@ -3076,7 +3043,7 @@ Formula:
 (used / limit) * 100
 ```
 
-> [!NOTE]
+>[!NOTE]
 > To scope a formula to one host, add `WHERE host = 'my-publish-01'` to **both** queries.
 
 **W6 · Heap used by host** — L, `MB`, 6×4
@@ -3108,8 +3075,6 @@ SELECT average(value) AS jvmCpu FROM JvmCpuRecentUtilization FACET host TIMESERI
 ```sql
 SELECT latest(value) AS bytesUsed, max(value) AS peakBytes FROM MetricSum WHERE metric = 'jvm.memory.used' FACET host, pool ORDER BY peakBytes DESC LIMIT 100
 ```
-
----
 
 ### 11.8 Executive / NOC wall board
 
@@ -3191,8 +3156,6 @@ SELECT count(*) AS requests FROM Transaction WHERE hostTierPrefix != '' FACET ho
 ```
 
 **W10 · SLO note** — Text widget, 12×1.
-
----
 
 ### 11.9 Ratios & Headroom board (Formula showcase)
 
@@ -3338,13 +3301,11 @@ Formula (burn rate: 1.0 = consuming budget exactly on schedule):
 (errors / total) / 0.001
 ```
 
----
-
 ### 11.10 Service Explorer (variable-driven)
 
 **Goal:** one board that any team can point at _their_ service and environment.
 
-> [!WARNING]
+>[!WARNING]
 > See the **current build limitation** in [Tutorial 3, step 8.7](#87-make-dashboards-reusable-with-variables): `{{variables}}` inside widget SQL cannot yet be previewed or saved. Until that is fixed, replace each `{{…}}` with a literal (e.g. `'checkout'`) and use _Duplicate_ to clone the board per service. The design below is ready for when substitution is supported end-to-end.
 
 **Variables**
@@ -3420,8 +3381,6 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 
 [↑ Back to top](#top)
 
----
-
 # Operate
 
 ## 12. Performance
@@ -3454,8 +3413,6 @@ Every query runs with a 15-second timeout and a bytes-read budget. This doc expl
 - A widget that hits the 15-second timeout or the bytes-read budget errors out — narrow the window, add filters, or reduce facets.
 
 [↑ Back to top](#top)
-
----
 
 ## 13. Troubleshooting
 
@@ -3492,8 +3449,6 @@ Error messages appear under the editor when you **Validate** or **Run** a query,
 | _This legacy SQL panel is no longer run_                                     | Panel from the old raw-SQL builder                                 | Edit → rebuild in SQL.                                                                                                                 |
 
 [↑ Back to top](#top)
-
----
 
 ## 14. Appendix
 

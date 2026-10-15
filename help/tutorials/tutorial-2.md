@@ -75,7 +75,7 @@ Use `AS` with single quotes for labels that contain spaces:
 SELECT count(*) AS 'Requests', percentile(duration, 95) AS 'p95 (ms)' FROM Transaction FACET service
 ```
 
-> [!NOTE]
+>[!NOTE]
 >
 > Aliases apply only to `SELECT` items. Facet columns are always labelled with the attribute name.
 
@@ -99,7 +99,7 @@ Match against a list with `IN` and `NOT IN` (up to 100 values):
 SELECT count(*) AS requests FROM Transaction WHERE http.method IN ('POST', 'PUT', 'DELETE') FACET service
 ```
 
-> [!NOTE]
+>[!NOTE]
 >
 > SQL has no regular expressions (`RLIKE`). Combine `LIKE` patterns with `OR`, or use `IN`.
 

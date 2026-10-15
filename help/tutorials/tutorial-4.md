@@ -7,8 +7,6 @@ description: Learn how to use advanced SQL functions to analyze Observability In
 
 This tutorial covers the functions and entities that power deeper investigations: variability, growth, "worst example" lookups, share of total, transaction composition and arbitrary OpenTelemetry metrics.
 
-**In this tutorial:** [9.1 stddev](#91-measure-consistency-with-stddev) · [9.2 derivative](#92-spot-growth-with-derivative) · [9.3 Ranked latest](#93-find-the-worst-example-with-ranked-latest) · [9.4 percentOfTotal](#94-find-where-time-goes-with-percentoftotal) · [9.5 SpanBreakdown](#95-break-down-transactions-with-spanbreakdown) · [9.6 Any metric](#96-discover-and-query-any-metric) · [9.7 Choose the entity](#97-choose-the-right-trace-entity) · [9.8 Nested aggregation](#98-work-around-nested-aggregation)
-
 ### Measure consistency with `stddev`
 
 Two operations can share an average and still behave very differently. The standard deviation shows how much latency varies:
@@ -119,12 +117,12 @@ SELECT count(*) AS calls, percentage(*, WHERE status = 'Error') AS errorPct, per
 
 NRQL lets you aggregate an aggregate with a subquery, for example "the average of per-host maximums". SQL doesn't. Here are the alternatives:
 
-| Goal                                    | SQL approach                                               |
-| --------------------------------------- | ---------------------------------------------------------- |
-| A per-group value, then rank the groups | `FACET group` + `ORDER BY alias` + `LIMIT`                 |
-| A ratio of two aggregates               | [Formula widget](#86-combine-queries-with-formula-widgets) |
-| A value per host, then the "worst host" | `FACET host ORDER BY alias DESC LIMIT 1`                   |
-| A per-host average over time            | `FACET host TIMESERIES AUTO`, and read the series          |
+| Goal                                    | SQL approach                                                         |
+| --------------------------------------- | -------------------------------------------------------------------- |
+| A per-group value, then rank the groups | `FACET group` + `ORDER BY alias` + `LIMIT`                           |
+| A ratio of two aggregates               | [Formula widget](tutorial-3.md#combine-queries-with-formula-widgets) |
+| A value per host, then the "worst host" | `FACET host ORDER BY alias DESC LIMIT 1`                             |
+| A per-host average over time            | `FACET host TIMESERIES AUTO`, and read the series                    |
 
 Example: the worst host by p95:
 

@@ -7,8 +7,6 @@ description: Learn how to filter, group, and control query results in Observabil
 
 In this tutorial you'll learn the functions and clauses that turn raw counts into answers: distinct counts, latest values, percentages, percentiles, wildcards, sorting and multi-dimensional grouping.
 
-**In this tutorial:** [7.1 uniqueCount](#71-count-distinct-values-with-uniquecount) · [7.2 latest/earliest](#72-find-the-latest-and-earliest-values) · [7.3 percentage](#73-calculate-percentages) · [7.4 percentile](#74-understand-latency-with-percentile) · [7.5 Labels](#75-make-results-readable-with-labels) · [7.6 Wildcards and lists](#76-match-patterns-and-lists) · [7.7 Sorting](#77-sort-and-rank-with-order-by) · [7.8 Multiple facets](#78-group-by-several-attributes) · [7.9 Past windows](#79-look-at-a-past-window)
-
 ### Count distinct values with `uniqueCount`
 
 How many hosts and distinct traces does each service have?
@@ -65,7 +63,7 @@ Averages hide outliers. Percentiles show what most users experience (p50) and wh
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
->[!TIP]
+> **Tip**
 >
 > p50, p95 and p99 of `Transaction.duration` are served from rollups over long windows, so they stay fast for weekly views.
 
@@ -119,7 +117,7 @@ Or the least-used services first:
 SELECT count(*) AS requests FROM Transaction FACET service ORDER BY requests ASC LIMIT 10
 ```
 
->[!TIP]
+> **Tip**
 >
 > There's no `HAVING`. To find only "busy" operations, rank by `requests` and keep the top N, or add a `WHERE` that removes noise (for example `WHERE http.method != 'OPTIONS'`).
 

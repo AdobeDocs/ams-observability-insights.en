@@ -12,7 +12,7 @@ description: Learn how to query Observability Insights telemetry using SQL.
 | **Applies to** | Insights UI → **Explore** and **Dashboards** (custom dashboards) |
 | **Audience**   | Engineers, SREs and power users who know SQL                     |
 
->[!TIP]
+> **Tip**
 >
 > Every code block marked `sql` is a SQL query that you can paste straight into **Explore → SQL** or into **Dashboards → Add widget → SQL**.
 
@@ -38,13 +38,13 @@ Use SQL to:
 
 SQL supports both **event queries**, which return individual request rows, and **aggregate queries**, which return totals, percentiles, rates, breakdowns and time series.
 
->[!TIP]
+> **Tip**
 >
 > The templates in **Dashboards → Create dashboard** are built entirely from SQL. Open any template widget with the pencil icon to see, and learn from, its query.
 
 ### What you can query
 
-SQL can query four families of data. The complete list is in the [Data dictionary](#data-dictionary).
+SQL can query four families of data. The complete list is in the [Data dictionary](/help/references/data-dictionary.md).
 
 | Family                               | Entities                                                                                                                                                           | Typical questions                                                    |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
@@ -53,7 +53,7 @@ SQL can query four families of data. The complete list is in the [Data dictionar
 | **Generic metrics**                  | `MetricGauge`, `MetricSum`                                                                                                                                         | Any OpenTelemetry metric by name, metric discovery                   |
 | **Pre-aggregated span composition**  | `SpanBreakdown`                                                                                                                                                    | Which child operations make up a transaction                         |
 
->[!NOTE]
+> **Note**
 >
 > Logs, alert definitions and inventory relationships aren't available.
 
@@ -92,15 +92,15 @@ FROM    Entity
 
 Here are the rules SQL follows:
 
-| Rule                         | Details                                                                                                                                                                              |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Required clauses**         | `SELECT` and `FROM` are required. Every other clause is optional. You can start with either: `FROM Transaction SELECT count(*)` is also valid.                                       |
-| **Clause order**             | Clauses after `FROM` can appear in any order. Each clause may appear only once.                                                                                                      |
-| **Query size**               | A query must be 4 KB or less.                                                                                                                                                        |
-| **Case sensitivity**         | Keywords, function names, entity names and attribute names are **not** case sensitive. String values **are** case sensitive (`'Error'` ≠ `'error'`).                                 |
-| **Strings**                  | Use single quotes: `WHERE status = 'Error'`. To include a quote, double it: `'O''Brien'`. Double quotes aren't accepted.                                                             |
-| **Literals**                 | Strings, numbers (including negative and decimal), `TRUE`, `FALSE`, `NULL`.                                                                                                          |
-| **Attribute names**          | Names can contain letters, digits, `_` and `.` (for example `http.statusCode`). No backticks are needed.                                                                             |
-| **Aggregates vs attributes** | A query either selects raw attributes (an event list) or aggregates, never both. To group, use `FACET`.                                                                              |
-| **Time window**              | The default is the last hour. The maximum is 31 days. On dashboards and in Explore, the **time picker** sets the window (see [Time window](#time-window-precedence)).                |
-| **Not supported**            | Semicolons, comments, subqueries, joins, `SELECT *`, math between attributes in `SELECT`, `HAVING`, `COMPARE WITH`. See [What SQL doesn't do](#what-sql-doesnt-do) for alternatives. |
+| Rule                         | Details                                                                                                                                                                                                   |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Required clauses**         | `SELECT` and `FROM` are required. Every other clause is optional. You can start with either: `FROM Transaction SELECT count(*)` is also valid.                                                            |
+| **Clause order**             | Clauses after `FROM` can appear in any order. Each clause may appear only once.                                                                                                                           |
+| **Query size**               | A query must be 4 KB or less.                                                                                                                                                                             |
+| **Case sensitivity**         | Keywords, function names, entity names and attribute names are **not** case sensitive. String values **are** case sensitive (`'Error'` ≠ `'error'`).                                                      |
+| **Strings**                  | Use single quotes: `WHERE status = 'Error'`. To include a quote, double it: `'O''Brien'`. Double quotes aren't accepted.                                                                                  |
+| **Literals**                 | Strings, numbers (including negative and decimal), `TRUE`, `FALSE`, `NULL`.                                                                                                                               |
+| **Attribute names**          | Names can contain letters, digits, `_` and `.` (for example `http.statusCode`). No backticks are needed.                                                                                                  |
+| **Aggregates vs attributes** | A query either selects raw attributes (an event list) or aggregates, never both. To group, use `FACET`.                                                                                                   |
+| **Time window**              | The default is the last hour. The maximum is 31 days. On dashboards and in Explore, the **time picker** sets the window (see [Time window](how-to-query-sql.md#time-window-precedence)).                  |
+| **Not supported**            | Semicolons, comments, subqueries, joins, `SELECT *`, math between attributes in `SELECT`, `HAVING`, `COMPARE WITH`. See [What SQL doesn't do](sql-query-examples.md#what-sql-doesnt-do) for alternatives. |

@@ -11,7 +11,7 @@ Before you use any tool, it helps to know how it works. This doc shows how to ex
 
 The best way to use SQL is to open **Explore** and try it on your own data.
 
->[!TIP]
+> **Tip**
 >
 > SQL is read-only. It can't change or delete data, and every query is scoped to your tenant.
 
@@ -37,7 +37,7 @@ FROM Transaction SELECT count(*) FACET service
 
 This counts requests per service, which shows you which services are reporting.
 
->[!IMPORTANT]
+> **Important**
 >
 > **Discover before you build.** Attribute availability depends on how each service is instrumented. Run the [discovery queries](#101-data-discovery) on a new tenant first to see which services, hosts, attributes and metrics actually contain data.
 
@@ -88,6 +88,6 @@ Every query returns one of four shapes. The shape decides which charts make sens
 | **Explore**                       | The global time picker. `SINCE`/`UNTIL` are ignored when a picker range is active. |
 | **API without an explicit range** | `SINCE`/`UNTIL` in the query, defaulting to the last hour.                         |
 
->[!NOTE]
+> **Note**
 >
 > Because the picker wins on dashboards and in Explore, this guide usually leaves `SINCE` out of dashboard queries. One should always define a time picker for the queries.

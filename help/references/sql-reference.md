@@ -572,24 +572,24 @@ SELECT count(*) AS jcrCalls FROM Span WHERE jcr.operation != '' FACET jcr.operat
 
 If you know the existing query, following is the migration detail
 
-| Existing Query                              | SQL                                                                | Notes                                                        |
-| ------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------ |
-| `FROM Transaction SELECT count(*)`          | Same                                                               | `FROM`-first order is supported                              |
-| `SINCE 1 day ago`                           | Same                                                               | Ignored on dashboards; the picker wins                       |
-| `TIMESERIES AUTO` / `MAX` / `5 minutes`     | Same                                                               | `AUTO` floor is 2 minutes                                    |
-| `FACET appName`                             | `FACET appName` / `FACET service`                                  |                                                              |
-| `percentage(count(*), WHERE error IS true)` | `percentage(*, WHERE status = 'Error')`                            |                                                              |
-| `filter(count(*), WHERE …)`                 | `count(*) FILTER (WHERE …)`                                        | SQL-standard form                                            |
-| `apdex(duration, t: 0.5)`                   | `apdex(duration, 500)`                                             | `duration` is in **ms**                                      |
-| `latest(x)` / `earliest(x)`                 | Same                                                               | Plus a ranked form: `latest(x, rankAttr)`                    |
-| `uniqueCount(x)`                            | Same                                                               | Exact                                                        |
-| `rate(count(*), 1 minute)`                  | `count(*)` with `TIMESERIES 1 minute`                              | SQL `rate()` is for counters only                            |
-| `derivative(x, 1 minute)`                   | `derivative(x)` + `TIMESERIES`                                     | Per second                                                   |
-| `uniques(x)`                                | `count(*) … FACET x LIMIT n`                                       |                                                              |
-| `keyset()` / `SHOW EVENT TYPES`             | [Discovery queries](#101-data-discovery), or the Query guide panel |                                                              |
-| `histogram(duration, …)`                    | `FILTER` buckets                                                   | See [Tutorial 3](#84-build-a-latency-histogram)              |
-| `FACET CASES (…)`                           | `FILTER` columns                                                   | See [Tutorial 3](#83-group-values-into-cases-with-filter)    |
-| `COMPARE WITH 1 week ago`                   | Not supported                                                      | Change the time picker, or use `SINCE … UNTIL …` via the API |
-| `RLIKE`                                     | `LIKE` / `IN`                                                      |                                                              |
-| Math in `SELECT` / nested aggregation       | **Formula** widget                                                 |                                                              |
-| `WITH TIMEZONE`, `EXTRAPOLATE`, `SLIDE BY`  | Not supported                                                      |                                                              |
+| Existing Query                              | SQL                                                                                         | Notes                                                                            |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `FROM Transaction SELECT count(*)`          | Same                                                                                        | `FROM`-first order is supported                                                  |
+| `SINCE 1 day ago`                           | Same                                                                                        | Ignored on dashboards; the picker wins                                           |
+| `TIMESERIES AUTO` / `MAX` / `5 minutes`     | Same                                                                                        | `AUTO` floor is 2 minutes                                                        |
+| `FACET appName`                             | `FACET appName` / `FACET service`                                                           |                                                                                  |
+| `percentage(count(*), WHERE error IS true)` | `percentage(*, WHERE status = 'Error')`                                                     |                                                                                  |
+| `filter(count(*), WHERE …)`                 | `count(*) FILTER (WHERE …)`                                                                 | SQL-standard form                                                                |
+| `apdex(duration, t: 0.5)`                   | `apdex(duration, 500)`                                                                      | `duration` is in **ms**                                                          |
+| `latest(x)` / `earliest(x)`                 | Same                                                                                        | Plus a ranked form: `latest(x, rankAttr)`                                        |
+| `uniqueCount(x)`                            | Same                                                                                        | Exact                                                                            |
+| `rate(count(*), 1 minute)`                  | `count(*)` with `TIMESERIES 1 minute`                                                       | SQL `rate()` is for counters only                                                |
+| `derivative(x, 1 minute)`                   | `derivative(x)` + `TIMESERIES`                                                              | Per second                                                                       |
+| `uniques(x)`                                | `count(*) … FACET x LIMIT n`                                                                |                                                                                  |
+| `keyset()` / `SHOW EVENT TYPES`             | [Discovery queries](../examples/query-cookbook.md#data-discovery), or the Query guide panel |                                                                                  |
+| `histogram(duration, …)`                    | `FILTER` buckets                                                                            | See [Tutorial 3](../tutorials/tutorial-3.md#build-a-latency-histogram)           |
+| `FACET CASES (…)`                           | `FILTER` columns                                                                            | See [Tutorial 3](../tutorials/tutorial-3.md#group-values-into-cases-with-filter) |
+| `COMPARE WITH 1 week ago`                   | Not supported                                                                               | Change the time picker, or use `SINCE … UNTIL …` via the API                     |
+| `RLIKE`                                     | `LIKE` / `IN`                                                                               |                                                                                  |
+| Math in `SELECT` / nested aggregation       | **Formula** widget                                                                          |                                                                                  |
+| `WITH TIMEZONE`, `EXTRAPOLATE`, `SLIDE BY`  | Not supported                                                                               |                                                                                  |

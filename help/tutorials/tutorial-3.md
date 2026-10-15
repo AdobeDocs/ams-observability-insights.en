@@ -7,8 +7,6 @@ description: Build dashboards with variables, formulas, and multiple widgets in 
 
 In this tutorial you'll build the components of a production-grade dashboard: user-experience scores, counter rates, case grouping, histograms, KPI tiles with thresholds, sections, formula widgets and variables.
 
-**In this tutorial:** [8.1 apdex](#81-score-user-experience-with-apdex) · [8.2 rate](#82-turn-counters-into-rates-with-rate) · [8.3 Cases](#83-group-values-into-cases-with-filter) · [8.4 Histograms](#84-build-a-latency-histogram) · [8.5 KPI tiles and sections](#85-build-kpi-tiles-and-sections) · [8.6 Formulas](#86-combine-queries-with-formula-widgets) · [8.7 Variables](#87-make-dashboards-reusable-with-variables) · [8.8 Put it together](#88-put-it-together)
-
 ### Score user experience with `apdex`
 
 Apdex turns latency and errors into one score from 0 to 1. With a 500 ms threshold, a request is _satisfied_ at or below 500 ms, _tolerating_ up to 2,000 ms, and _frustrated_ above that **or if it failed**:
@@ -25,7 +23,7 @@ SELECT apdex(duration, 500) AS apdex FROM Transaction FACET service TIMESERIES A
 
 Put it in a **Number** widget with thresholds `0 → Red`, `0.7 → Amber`, `0.85 → Green`. The highest matching band wins, so low scores stay red.
 
-### 8.2 Turn counters into rates with `rate`
+### Turn counters into rates with `rate`
 
 Counter entities (✔ in the [Data dictionary](#53-curated-metric-entities)) store ever-increasing totals. `rate(value)` converts them to per-second values. It needs `TIMESERIES`, and it must be the only aggregate:
 
@@ -37,7 +35,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
->[!WARNING]
+> **Warning**
 >
 > Always facet `rate()` by `host` (and by `device` for disks), or filter to one host. Without that, the readings from different hosts get mixed together and the result is meaningless.
 
@@ -146,7 +144,7 @@ Rules for formula queries:
 | One metric each | Each query returns exactly one aggregate and no `FACET`                                                              |
 | Missing data    | A missing value or a division by zero produces an empty point, never `Infinity` or `NaN`                             |
 
->[!TIP]
+> [!TIP]
 >
 > Use `TIMESERIES AUTO` in every query of a time-series formula. Because the queries share one window, they always resolve to the same bucket size.
 
@@ -188,7 +186,7 @@ SELECT count(*) FROM Transaction FACET service LIMIT 200
 
 Options refresh when the tenant or time picker changes, and they're sorted alphabetically. When the current selection is no longer valid, the first value (single select) or all values (multiple select) are selected automatically. A variable's query can't reference other variables.
 
->[!WARNING]
+> **Warning**
 >
 > **Current build limitation.** Substitution happens in the dashboard grid, but the **Add widget** preview and the **server-side save check** receive the raw `{{name}}` token and reject it with `Unexpected character '{'`. In practice:
 >
@@ -199,4 +197,4 @@ Options refresh when the tenant or time picker changes, and they're sorted alpha
 
 ### Put it together
 
-You now have every building block used in the [Dashboard blueprints](#dashboard-blueprints): KPI tiles with thresholds, sections, percentiles, Apdex, rates, case columns, histograms, formulas and variables. The blueprints show how to combine them into complete golden-signal, error-triage, AEM, infrastructure and JVM dashboards.
+You now have every building block used in the [Dashboard blueprints](../examples/dashboard-blueprint.md): KPI tiles with thresholds, sections, percentiles, Apdex, rates, case columns, histograms, formulas and variables. The blueprints show how to combine them into complete golden-signal, error-triage, AEM, infrastructure and JVM dashboards.

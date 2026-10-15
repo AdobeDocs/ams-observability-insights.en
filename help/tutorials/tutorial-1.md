@@ -7,8 +7,6 @@ description: Write your first SQL queries against Observability Insights telemet
 
 Welcome to SQL. In this tutorial you'll write your first queries, control the time window, plot trends, filter and group results, and put your first chart on a dashboard. Each step builds on the previous one.
 
-**In this tutorial:** [Before you begin](#before-you-begin) · [6.1 Query events](#61-query-events-with-select-from-and-limit) · [6.2 Aggregate](#62-aggregate-your-data) · [6.3 Several aggregates](#63-return-several-aggregates-at-once) · [6.4 Time window](#64-set-the-time-window) · [6.5 TIMESERIES](#65-plot-trends-with-timeseries) · [6.6 WHERE](#66-filter-with-where) · [6.7 FACET](#67-group-with-facet) · [6.8 Save to a dashboard](#68-save-your-query-to-a-dashboard)
-
 ### Before you begin
 
 - You need access to Observability Insights, and at least one customer tenant sending traces or metrics.
@@ -31,7 +29,7 @@ SELECT timestamp, service, name, duration FROM Transaction LIMIT 10
 
 Rows are sorted by the first column, descending, so putting `timestamp` first gives you the newest requests at the top.
 
->[!NOTE]
+> **Note**
 >
 > SQL has no `SELECT *`. Listing attributes keeps results small and readable. The [Data dictionary](#data-dictionary), and the autocomplete in the editor, show what's available.
 
@@ -65,7 +63,7 @@ Separate aggregates with commas, and name each one with `AS`:
 SELECT count(*) AS requests, average(duration) AS avgMs, max(duration) AS maxMs FROM Transaction
 ```
 
->[!TIP]
+> **Tip**
 >
 > Aliases become column headers and legend labels, and they're what you reference in `ORDER BY`. Get into the habit of naming every aggregate.
 
@@ -85,7 +83,7 @@ SELECT count(*) AS requests FROM Transaction SINCE 2 days ago UNTIL 1 day ago
 
 Units can be `second`, `minute`, `hour`, `day` or `week`. The window can be at most 31 days.
 
->[!IMPORTANT]
+> **Important**
 >
 > In **Explore** and on **dashboards**, the **time picker** at the top of the page controls the window and overrides `SINCE`/`UNTIL`. To look at another period, change the picker. The rest of this guide leaves `SINCE` out of dashboard queries for that reason.
 
@@ -123,7 +121,7 @@ Use `LIKE` with `%` for partial matches:
 SELECT count(*) AS contentRequests FROM Transaction WHERE urlPath LIKE '/content/%'
 ```
 
->[!NOTE]
+> **Note**
 >
 > String values are case sensitive and use single quotes: `'Error'`, not `"Error"` or `'error'`. Replace `checkout` with a service from your tenant. The next step shows how to list them.
 

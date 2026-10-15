@@ -18,10 +18,9 @@ FROM Transaction SELECT percentile(duration, 95) AS p95 FACET service TIMESERIES
 
 This produces one line per service on a Line chart, with the 10 busiest services shown by default.
 
-Click each example below to expand it.
+### Basic query of inbound requests
 
-<details>
-<summary><strong>Basic query of inbound requests</strong></summary>
++++View query
 
 Average response time, in milliseconds, of all inbound requests:
 
@@ -29,10 +28,11 @@ Average response time, in milliseconds, of all inbound requests:
 SELECT average(duration) FROM Transaction
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Attribute names that contain dots</strong></summary>
+### Attribute names that contain dots
+
++++View query
 
 Dotted names don't need quoting:
 
@@ -40,10 +40,11 @@ Dotted names don't need quoting:
 SELECT count(*) FROM Transaction WHERE http.statusCode >= 500 FACET http.route
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Query returning multiple columns</strong></summary>
+### Query returning multiple columns
+
++++View query
 
 Several aggregates in one query become columns in a Table:
 
@@ -51,10 +52,11 @@ Several aggregates in one query become columns in a Table:
 SELECT count(*) AS requests, average(duration) AS avgMs, percentile(duration, 95) AS p95, max(duration) AS maxMs FROM Transaction FACET service
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Conditional aggregates in one pass</strong></summary>
+### Conditional aggregates in one pass
+
++++View query
 
 Total, errors and 5xx side by side:
 
@@ -62,10 +64,11 @@ Total, errors and 5xx side by side:
 SELECT count(*) AS total, count(*) FILTER (WHERE status = 'Error') AS errors, count(*) FILTER (WHERE http.statusCode >= 500) AS http5xx FROM Transaction FACET service
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Querying a curated metric</strong></summary>
+### Querying a curated metric
+
++++View query
 
 Average CPU per host over time:
 
@@ -73,10 +76,11 @@ Average CPU per host over time:
 SELECT average(value) AS cpu FROM CpuUtilization FACET host TIMESERIES AUTO
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Querying any OpenTelemetry metric by name</strong></summary>
+### Querying any OpenTelemetry metric by name
+
++++View query
 
 Use `MetricGauge` / `MetricSum` for metrics without a curated entity:
 
@@ -84,7 +88,7 @@ Use `MetricGauge` / `MetricSum` for metrics without a curated entity:
 SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used' FACET host, pool
 ```
 
-</details>
++++
 
 <a id="what-sql-doesnt-do"></a>
 

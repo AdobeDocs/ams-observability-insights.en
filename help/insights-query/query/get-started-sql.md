@@ -53,7 +53,7 @@ SQL can query four families of data. The complete list is in the [Data dictionar
 | **Generic metrics**                  | `MetricGauge`, `MetricSum`                                                                                                                                         | Any OpenTelemetry metric by name, metric discovery                   |
 | **Pre-aggregated span composition**  | `SpanBreakdown`                                                                                                                                                    | Which child operations make up a transaction                         |
 
-> [!NOTE]
+> **Note**
 >
 > Logs, alert definitions and inventory relationships aren't available.
 

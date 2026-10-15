@@ -25,7 +25,7 @@ FROM   <Entity>
 <unit>        := second | seconds | minute | minutes | hour | hours | day | days | week | weeks
 ```
 
-> [!NOTE]
+> **Note**
 >
 > The `--` annotations above are documentation only. SQL itself doesn't accept comments.
 
@@ -534,7 +534,7 @@ Function constraints at a glance:
 SELECT count(*) FROM Transaction WHERE (status = 'Error' OR duration > 2000) AND NOT host LIKE '%dispatcher%' AND http.method IN ('GET', 'POST')
 ```
 
-> [!WARNING]
+> **Warning**
 >
 > `attr = NULL` is an error. Use `attr IS NULL`.
 
@@ -542,7 +542,7 @@ SELECT count(*) FROM Transaction WHERE (status = 'Error' OR duration > 2000) AND
 
 Every attribute has a type in the catalog: `string`, `number`, `boolean` or `timestamp`. SQL type-checks functions against it (for example, `average(service)` is rejected). No type conversion functions are needed or available.
 
-> [!IMPORTANT]
+> **Important**
 >
 > **Blank vs NULL.** Most string attributes come from OpenTelemetry attribute maps, where a _missing_ key reads as an empty string `''`, not `NULL`. To keep only spans that carry an attribute, use **`attr != ''`** rather than `IS NOT NULL`. Numeric attributes such as `http.statusCode` are genuinely `NULL` when absent, so `IS NOT NULL` works for them.
 

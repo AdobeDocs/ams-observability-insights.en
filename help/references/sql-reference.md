@@ -7,8 +7,6 @@ description: Reference the SQL syntax, clauses, and functions supported by Obser
 
 This reference covers SQL syntax, clauses, functions and operators. Expand each entry for details and examples.
 
-**In this doc:** [Query components](#41-query-components) · [Required clauses](#42-required-clauses) · [Optional clauses](#43-optional-clauses) · [Aggregator functions](#44-aggregator-functions) · [Operators and conditions](#45-operators-and-conditions) · [Type handling](#46-type-handling-blank-vs-null) · [SQL to SQL](#47-translate-sql-to-sql) · [Importing existing dashboards](#48-importing-existing-dashboards-to-insights)
-
 ### Query components
 
 ```text
@@ -27,14 +25,15 @@ FROM   <Entity>
 <unit>        := second | seconds | minute | minutes | hour | hours | day | days | week | weeks
 ```
 
->[!NOTE]
+> [!NOTE]
 >
 > The `--` annotations above are documentation only. SQL itself doesn't accept comments.
 
 ### Required clauses
 
-<details>
-<summary><code>SELECT</code> — what to return</summary>
+#### `SELECT` — what to return
+
++++View details
 
 `SELECT` lists either **raw attributes** (an event query) or **aggregator functions** (an aggregate query). You can't mix the two.
 
@@ -63,10 +62,11 @@ Rules:
 - Math between attributes or aggregates (`sum(a) / count(*)`) isn't supported. Use a [Formula widget](#86-combine-queries-with-formula-widgets).
 - Mixing attributes and aggregates fails with _Raw attributes cannot be mixed with aggregates; use FACET to group results_.
 
-</details>
++++
 
-<details>
-<summary><code>FROM</code> — which entity to query</summary>
+#### `FROM` — which entity to query
+
++++View details
 
 `FROM` names exactly **one** entity from the [Data dictionary](#data-dictionary). The entity name isn't case sensitive.
 
@@ -80,12 +80,13 @@ FROM Span SELECT count(*) FACET kind
 
 Each entity carries a fixed scope. For example, `Transaction` is always server spans, and `CpuUtilization` is always the CPU-busy metric with `value` converted to percent. You can't query more than one entity in a single query. To combine entities, use a [Formula widget](#86-combine-queries-with-formula-widgets).
 
-</details>
++++
 
 ### Optional clauses
 
-<details>
-<summary><code>AS</code> — label a column</summary>
+#### `AS` — label a column
+
++++View details
 
 Use `AS` to give an aggregate or attribute a readable name. The alias becomes the column header, legend label and the name you reference in `ORDER BY`.
 
@@ -99,10 +100,11 @@ Use a single-quoted string for labels with spaces:
 SELECT percentile(duration, 95) AS 'p95 latency (ms)' FROM Transaction TIMESERIES AUTO
 ```
 
-</details>
++++
 
-<details>
-<summary><code>FACET</code> — group results</summary>
+#### `FACET` — group results
+
++++View details
 
 `FACET` groups results by up to **5** attributes, like SQL `GROUP BY`.
 
@@ -123,10 +125,11 @@ SELECT count(*) AS requests FROM Transaction FACET service TIMESERIES AUTO LIMIT
 
 Facet values can be strings or numbers. Blank strings form their own group. Exclude them with `WHERE attr != ''`.
 
-</details>
++++
 
-<details>
-<summary><code>FILTER</code> — conditional aggregates</summary>
+#### `FILTER` — conditional aggregates
+
++++View details
 
 Append `FILTER (WHERE condition)` to any aggregate to compute it over a subset of rows. This lets you compare several conditions in one pass.
 
@@ -136,10 +139,11 @@ SELECT count(*) AS total, count(*) FILTER (WHERE status = 'Error') AS errors, pe
 
 `FILTER` isn't allowed with `apdex`, `rate` or `derivative`. `percentage` already takes its own condition.
 
-</details>
++++
 
-<details>
-<summary><code>LIMIT</code> — how many rows or series</summary>
+#### `LIMIT` — how many rows or series
+
++++View details
 
 `LIMIT` takes a positive integer. Values above 5,000 are clamped to 5,000.
 
@@ -154,14 +158,15 @@ SELECT count(*) AS total, count(*) FILTER (WHERE status = 'Error') AS errors, pe
 SELECT count(*) FROM Transaction FACET urlPath LIMIT 50
 ```
 
->[!TIP]
+> [!TIP]
 >
 > Always set a `LIMIT` on query-driven variables and on high-cardinality facets (`urlPath`, `traceId`, `jcr.path`, `url`).
 
-</details>
++++
 
-<details>
-<summary><code>ORDER BY</code> — sort results</summary>
+#### `ORDER BY` — sort results
+
++++View details
 
 `ORDER BY` sorts by a **selected alias or selected attribute**. The default direction is `DESC`.
 
@@ -180,10 +185,11 @@ Rules:
 - Referencing something that isn't selected fails with _ORDER BY 'x' must reference a selected value or alias_.
 - Don't add `ORDER BY` to a `TIMESERIES` query. It overrides the time ordering that charts need.
 
-</details>
++++
 
-<details>
-<summary><code>SINCE</code> — start of the window</summary>
+#### `SINCE` — start of the window
+
++++View details
 
 `SINCE n unit [AGO]` sets how far back the window begins. Units: `second`, `minute`, `hour`, `day`, `week` (singular or plural). `AGO` is optional.
 
@@ -195,14 +201,15 @@ SELECT count(*) FROM Transaction SINCE 6 hours ago
 - The window can't exceed **31 days** (_Time range cannot exceed 31 days_).
 - Absolute dates (`SINCE '2026-01-01'`) and `TODAY` / `YESTERDAY` aren't supported.
 
->[!IMPORTANT]
+> [!IMPORTANT]
 >
 > On dashboards and in Explore, the **time picker overrides** `SINCE` and `UNTIL`. See [Time window precedence](#time-window-precedence).
 
-</details>
++++
 
-<details>
-<summary><code>TIMESERIES</code> — plot over time</summary>
+#### `TIMESERIES` — plot over time
+
++++View details
 
 `TIMESERIES` returns one row per time bucket (per facet value), which is ready for Line, Area or Bar charts.
 
@@ -226,14 +233,15 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction TIMESERIES AUTO
 SELECT count(*) FROM Transaction TIMESERIES 1 hour SINCE 1 day ago
 ```
 
->[!TIP]
+> [!TIP]
 >
 > Prefer `AUTO` on dashboards. It keeps about 120 points whatever the time picker says. It also avoids "shattered" per-host lines, because host metrics are scraped about every 90 seconds.
 
-</details>
++++
 
-<details>
-<summary><code>UNTIL</code> — end of the window</summary>
+#### `UNTIL` — end of the window
+
++++View details
 
 `UNTIL NOW` (default) or `UNTIL n unit [AGO]`. Combine it with `SINCE` to look at a past window:
 
@@ -243,10 +251,11 @@ SELECT count(*) AS yesterday FROM Transaction SINCE 2 days ago UNTIL 1 day ago
 
 `SINCE` must be earlier than `UNTIL`. Otherwise the query fails with _SINCE must be earlier than UNTIL_.
 
-</details>
++++
 
-<details>
-<summary><code>WHERE</code> — filter rows</summary>
+#### `WHERE` — filter rows
+
++++View details
 
 `WHERE` keeps only rows that match a condition. Combine conditions with `AND`, `OR`, `NOT` and parentheses. See [Operators and conditions](#45-operators-and-conditions).
 
@@ -256,7 +265,7 @@ SELECT count(*) FROM Transaction WHERE service = 'checkout' AND (status = 'Error
 
 `WHERE` can appear only once. Put all conditions in it.
 
-</details>
++++
 
 ### Aggregator functions
 
@@ -279,8 +288,9 @@ SELECT count(*) FROM Transaction WHERE service = 'checkout' AND (status = 'Error
 
 <a id="fn-apdex"></a>
 
-<details>
-<summary><code>apdex(attribute, T)</code></summary>
+#### `apdex(attribute, T)`
+
++++View details
 
 Calculates an [Apdex](https://www.apdex.org/) score from 0 (frustrated) to 1 (satisfied), using threshold `T` in the attribute's unit (milliseconds for `duration`).
 
@@ -298,12 +308,13 @@ SELECT apdex(duration, 500) AS apdex FROM Transaction FACET service
 - `T` must be greater than 0. `FILTER` isn't allowed.
 - `apdex(duration, 500)` on `Transaction` is rollup-accelerated over long windows.
 
-</details>
++++
 
 <a id="fn-average"></a>
 
-<details>
-<summary><code>average(attribute)</code> / <code>avg(attribute)</code></summary>
+#### `average(attribute)` / `avg(attribute)`
+
++++View details
 
 The arithmetic mean of a numeric attribute.
 
@@ -311,12 +322,13 @@ The arithmetic mean of a numeric attribute.
 SELECT average(duration) AS avgMs FROM Transaction FACET service TIMESERIES AUTO
 ```
 
-</details>
++++
 
 <a id="fn-count"></a>
 
-<details>
-<summary><code>count(*)</code> / <code>count(attribute)</code></summary>
+#### `count(*)` / `count(attribute)`
+
++++View details
 
 - `count(*)` counts rows.
 - `count(attribute)` counts rows where the attribute is **not NULL**. For string attributes, missing values are blank (`''`) rather than NULL, so they are still counted (see [Type handling](#46-type-handling-blank-vs-null)).
@@ -325,12 +337,13 @@ SELECT average(duration) AS avgMs FROM Transaction FACET service TIMESERIES AUTO
 SELECT count(*) AS requests, count(http.statusCode) AS withStatusCode FROM Transaction
 ```
 
-</details>
++++
 
 <a id="fn-derivative"></a>
 
-<details>
-<summary><code>derivative(attribute)</code></summary>
+#### `derivative(attribute)`
+
++++View details
 
 The per-second change of `average(attribute)` between consecutive buckets: (this bucket − previous bucket) ÷ bucket seconds. The result can be negative. Use it on gauges to see whether a value is growing or shrinking.
 
@@ -341,12 +354,13 @@ SELECT derivative(value) AS heapGrowthPerSec FROM JvmHeapUsed WHERE host = 'publ
 - Requires `TIMESERIES`, and must be the **only** aggregate. `FILTER` isn't allowed.
 - The first bucket has no predecessor.
 
-</details>
++++
 
 <a id="fn-latest"></a>
 
-<details>
-<summary><code>latest(attribute [, rankAttribute])</code> / <code>earliest(…)</code></summary>
+#### `latest(attribute [, rankAttribute])` / `earliest(…)`
+
++++View details
 
 - `latest(attr)` returns the value from the most recent row. `earliest(attr)` returns the value from the oldest row.
 - With a second argument, the row is chosen by that attribute instead of time. `latest(traceId, duration)` returns the trace ID of the **slowest** request. `earliest(traceId, duration)` returns the fastest.
@@ -359,12 +373,13 @@ SELECT latest(value) AS current FROM MemoryUtilization FACET host
 SELECT max(duration) AS slowestMs, latest(traceId, duration) AS slowestTrace FROM Transaction FACET name ORDER BY slowestMs DESC LIMIT 10
 ```
 
-</details>
++++
 
 <a id="fn-minmax"></a>
 
-<details>
-<summary><code>max(attribute)</code> / <code>min(attribute)</code></summary>
+#### `max(attribute)` / `min(attribute)`
+
++++View details
 
 The largest or smallest value. Works on numbers, strings and timestamps.
 
@@ -372,12 +387,13 @@ The largest or smallest value. Works on numbers, strings and timestamps.
 SELECT min(duration) AS fastestMs, max(duration) AS slowestMs, max(timestamp) AS lastSeen FROM Transaction FACET service
 ```
 
-</details>
++++
 
 <a id="fn-percentage"></a>
 
-<details>
-<summary><code>percentage(*, WHERE condition)</code></summary>
+#### `percentage(*, WHERE condition)`
+
++++View details
 
 The share of rows that match `condition`, from 0 to 100.
 
@@ -391,12 +407,13 @@ SELECT percentage(*, WHERE duration > 2000) AS slowPct FROM Transaction
 
 `percentage` has its own condition, so it doesn't take `FILTER`.
 
-</details>
++++
 
 <a id="fn-percentile"></a>
 
-<details>
-<summary><code>percentile(attribute, p)</code></summary>
+#### `percentile(attribute, p)`
+
++++View details
 
 The approximate p-th percentile, where `0 < p ≤ 100`. Use one `percentile` per level.
 
@@ -406,12 +423,13 @@ SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percent
 
 p50, p95 and p99 on `Transaction` are rollup-accelerated over long windows.
 
-</details>
++++
 
 <a id="fn-percentoftotal"></a>
 
-<details>
-<summary><code>percentOfTotal(attribute)</code></summary>
+#### `percentOfTotal(attribute)`
+
++++View details
 
 Each facet row's share of the **total sum** of a numeric attribute. The rows add up to 100%.
 
@@ -421,12 +439,13 @@ SELECT sum(duration) AS totalMs, percentOfTotal(duration) AS shareOfTime FROM Tr
 
 Not allowed with `TIMESERIES`.
 
-</details>
++++
 
 <a id="fn-rate"></a>
 
-<details>
-<summary><code>rate(attribute)</code></summary>
+#### `rate(attribute)`
+
++++View details
 
 The per-second rate of a **cumulative counter**. In each bucket, `rate` takes the highest counter reading per series and diffs it against the previous bucket. Counter resets are floored at 0, and the first bucket is 0.
 
@@ -437,16 +456,17 @@ SELECT rate(value) AS bytesPerSec FROM NetworkReceiveRate FACET host TIMESERIES 
 - Works only on counter entities (marked ✔ in the [Data dictionary](#53-curated-metric-entities)).
 - Requires `TIMESERIES`, and must be the **only** aggregate. `FILTER` isn't allowed.
 
->[!WARNING]
+> [!WARNING]
 >
 > Always `FACET host`, or filter to a single host. An unfaceted `rate()` across many hosts compares different hosts' counters and produces meaningless numbers. Disk counters are per device, so `FACET host, device` is the most precise.
 
-</details>
++++
 
 <a id="fn-stddev"></a>
 
-<details>
-<summary><code>stddev(attribute)</code></summary>
+#### `stddev(attribute)`
+
++++View details
 
 The sample standard deviation. Use it with `average` to judge how consistent latency is.
 
@@ -454,12 +474,13 @@ The sample standard deviation. Use it with `average` to judge how consistent lat
 SELECT average(duration) AS avgMs, stddev(duration) AS stddevMs FROM Transaction FACET name LIMIT 20
 ```
 
-</details>
++++
 
 <a id="fn-sum"></a>
 
-<details>
-<summary><code>sum(attribute)</code></summary>
+#### `sum(attribute)`
+
++++View details
 
 The total of a numeric attribute.
 
@@ -467,12 +488,13 @@ The total of a numeric attribute.
 SELECT sum(callCount) AS calls FROM SpanBreakdown FACET segment LIMIT 20
 ```
 
-</details>
++++
 
 <a id="fn-uniquecount"></a>
 
-<details>
-<summary><code>uniqueCount(attribute)</code></summary>
+#### `uniqueCount(attribute)`
+
++++View details
 
 The **exact** number of distinct values.
 
@@ -480,7 +502,7 @@ The **exact** number of distinct values.
 SELECT uniqueCount(host) AS hosts, uniqueCount(traceId) AS traces FROM Transaction FACET service
 ```
 
-</details>
++++
 
 Function constraints at a glance:
 
@@ -512,7 +534,7 @@ Function constraints at a glance:
 SELECT count(*) FROM Transaction WHERE (status = 'Error' OR duration > 2000) AND NOT host LIKE '%dispatcher%' AND http.method IN ('GET', 'POST')
 ```
 
->[!WARNING]
+> [!WARNING]
 >
 > `attr = NULL` is an error. Use `attr IS NULL`.
 
@@ -520,7 +542,7 @@ SELECT count(*) FROM Transaction WHERE (status = 'Error' OR duration > 2000) AND
 
 Every attribute has a type in the catalog: `string`, `number`, `boolean` or `timestamp`. SQL type-checks functions against it (for example, `average(service)` is rejected). No type conversion functions are needed or available.
 
->[!IMPORTANT]
+> [!IMPORTANT]
 >
 > **Blank vs NULL.** Most string attributes come from OpenTelemetry attribute maps, where a _missing_ key reads as an empty string `''`, not `NULL`. To keep only spans that carry an attribute, use **`attr != ''`** rather than `IS NOT NULL`. Numeric attributes such as `http.statusCode` are genuinely `NULL` when absent, so `IS NOT NULL` works for them.
 

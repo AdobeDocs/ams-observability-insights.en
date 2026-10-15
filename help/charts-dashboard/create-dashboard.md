@@ -133,7 +133,7 @@ A formula combines 2–6 named SQL queries arithmetically, for example `(errors 
 
 > **Tip**
 >
-> Export and Import let you version-control dashboards in Git, and promote a dashboard from one customer to another. The file format is described in the [Appendix](../operate/troubleshooting.md).
+> Export and Import let you version-control dashboards in Git, and promote a dashboard from one customer to another. The file format is described in the [Appendix](../operate/appendix.md).
 
 ## Tips for dashboard and chart performance
 

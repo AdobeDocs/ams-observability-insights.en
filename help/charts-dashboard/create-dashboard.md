@@ -35,9 +35,9 @@ description: Learn how to create, configure, save, and share Observability Insig
 | **Grid**                     | 12 columns. Drag widgets by the grip, resize from the corner (minimum 2×2).                               |
 | **Widget header** (on hover) | Download CSV, Download PNG, Edit, Duplicate, Remove, drag handle                                          |
 
->[!IMPORTANT]
+> **Important**
 >
-> **Saving is explicit.** Layout changes, new widgets, tabs and variables stay in your browser until you click **Save**. The button shows _Saving… → Saved_, or _Save failed_ (see [Troubleshooting](#troubleshooting)).
+> **Saving is explicit.** Layout changes, new widgets, tabs and variables stay in your browser until you click **Save**. The button shows _Saving… → Saved_, or _Save failed_ (see [Troubleshooting](../operate/troubleshooting.md)).
 
 ### Step 4: Add a widget
 
@@ -60,7 +60,7 @@ Click **Add widget**. The dialog has three modes: **Single query**, **Formula** 
 3. Use the **Query guide** panel to browse entities, attributes and examples.
 4. Click **Run query**. You'll see _`<Entity>` query is valid_, a live preview and a summary (`N rows · N time points · N groups`). A _Sparse series_ warning appears when there are fewer than three time points.
 
->[!TIP]
+> **Tip**
 >
 > The Builder covers the most common queries. Switch to SQL for `apdex`, `percentage`, `rate`, `FILTER`, multiple aggregates, `OR`, `IN`, several facets or `ORDER BY`.
 
@@ -97,7 +97,7 @@ When a Number widget's single row carries a text value (for example `latest(host
 - **Note**: plain text (up to 4,000 characters, blank lines preserved). Use it for runbook links, owners and SLO definitions. `{{variables}}` are rendered.
 - **Section header**: tick _Make this a section header_. It spans the full width, and its chevron collapses every widget below it, up to the next section header. Use it for groupings such as **PUBLISH**, **AUTHOR** and **DISPATCHER**.
 
->[!TIP]
+> **Tip**
 >
 > Widget titles ending in `- PUBLISH` or `- AUTHOR` get a subtle colour cue, which makes AEM dashboards easier to scan by tier.
 
@@ -112,15 +112,15 @@ When a Number widget's single row carries a text value (for example `latest(host
 
 ## Variables
 
-Variables let one dashboard serve many contexts, such as one service, environment or threshold at a time. They are covered in depth in [Tutorial 3](#87-make-dashboards-reusable-with-variables).
+Variables let one dashboard serve many contexts, such as one service, environment or threshold at a time. They are covered in depth in [Tutorial 3](../tutorials/tutorial-3.md#make-dashboards-reusable-with-variables).
 
->[!WARNING]
+> **Warning**
 >
 > **Known limitation in the current build:** `{{variables}}` work in widget **titles** and **text widgets**. Inside widget **SQL**, they render on the dashboard, but the **Add widget** preview and the server-side **Save** check reject the raw `{{name}}` token with `Unexpected character '{'`. Until this is fixed, use literal values in widget queries and use **Duplicate** to make variants.
 
 ## Formula widgets
 
-A formula combines 2–6 named SQL queries arithmetically, for example `(errors / total) * 100`. Use one when a KPI needs more than one query, such as a ratio, headroom, a sum of rates or a burn rate. See [Tutorial 3](#86-combine-queries-with-formula-widgets).
+A formula combines 2–6 named SQL queries arithmetically, for example `(errors / total) * 100`. Use one when a KPI needs more than one query, such as a ratio, headroom, a sum of rates or a burn rate. See [Tutorial 3](../tutorials/tutorial-3.md#combine-queries-with-formula-widgets).
 
 ## Share, export and import
 
@@ -131,9 +131,9 @@ A formula combines 2–6 named SQL queries arithmetically, for example `(errors 
 | **Import**    | Loads a JSON export **into the dashboard that's open**, replacing its tabs and variables. Then click **Save**. Tip: create an empty dashboard first, then import into it. |
 | **CSV / PNG** | Per-widget downloads from the widget header.                                                                                                                              |
 
->[!TIP]
+> **Tip**
 >
-> Export and Import let you version-control dashboards in Git, and promote a dashboard from one customer to another. The file format is described in the [Appendix](#142-export-file-format).
+> Export and Import let you version-control dashboards in Git, and promote a dashboard from one customer to another. The file format is described in the [Appendix](../operate/troubleshooting.md).
 
 ## Tips for dashboard and chart performance
 
@@ -142,4 +142,4 @@ A formula combines 2–6 named SQL queries arithmetically, for example `(errors 
 - **Always `LIMIT` faceted queries**, especially on high-cardinality attributes such as `urlPath`, `traceId` and `jcr.path`.
 - **Filter early** on low-cardinality attributes (`service`, `kind`, `status`).
 - **Prefer `TIMESERIES AUTO`** to fixed small buckets, and avoid `TIMESERIES MAX` except over a few minutes.
-- **Design long-range trends for rollups.** See [Performance](#performance).
+- **Design long-range trends for rollups.** See [Performance](../operate/performance.md).

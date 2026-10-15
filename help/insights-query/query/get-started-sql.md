@@ -102,5 +102,5 @@ Here are the rules SQL follows:
 | **Literals**                 | Strings, numbers (including negative and decimal), `TRUE`, `FALSE`, `NULL`.                                                                                                          |
 | **Attribute names**          | Names can contain letters, digits, `_` and `.` (for example `http.statusCode`). No backticks are needed.                                                                             |
 | **Aggregates vs attributes** | A query either selects raw attributes (an event list) or aggregates, never both. To group, use `FACET`.                                                                              |
-| **Time window**              | The default is the last hour. The maximum is 31 days. On dashboards and in Explore, the **time picker** sets the window (see [Time window](#time-window-precedence)).                |
+| **Time window**              | The default is the last hour. The maximum is 31 days. On dashboards and in Explore, the **time picker** sets the window (see [Time window](how-to-query-sql.md#time-window-precedence)).                |
 | **Not supported**            | Semicolons, comments, subqueries, joins, `SELECT *`, math between attributes in `SELECT`, `HAVING`, `COMPARE WITH`. See [What SQL doesn't do](#what-sql-doesnt-do) for alternatives. |

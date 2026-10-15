@@ -9,11 +9,11 @@ This is every entity and attribute you can query. The live catalog, with descrip
 
 ### Trace entities
 
-| Entity        | Contains                                                  | Fixed scope                  | Rollups                                    |
-| ------------- | --------------------------------------------------------- | ---------------------------- | ------------------------------------------ |
-| `Transaction` | Inbound server requests                                   | `kind = Server`              | 1m / 5m / 1h ([Performance](#performance)) |
-| `AppRequest`  | Inbound server **and** message-consumer requests          | `kind IN (Server, Consumer)` | —                                          |
-| `Span`        | Every span (server, client, producer, consumer, internal) | —                            | —                                          |
+| Entity        | Contains                                                  | Fixed scope                  | Rollups                                                 |
+| ------------- | --------------------------------------------------------- | ---------------------------- | ------------------------------------------------------- |
+| `Transaction` | Inbound server requests                                   | `kind = Server`              | 1m / 5m / 1h ([Performance](../operate/performance.md)) |
+| `AppRequest`  | Inbound server **and** message-consumer requests          | `kind IN (Server, Consumer)` | —                                                       |
+| `Span`        | Every span (server, client, producer, consumer, internal) | —                            | —                                                       |
 
 <details open>
 <summary><strong>Trace attributes</strong> (identical on all three entities)</summary>
@@ -108,7 +108,7 @@ Each curated entity wraps one OpenTelemetry metric with the right filter and uni
 | `JvmCpuRecentUtilization`                                                      | JVM process CPU                     | %         |         | 1-minute rollup                              |
 | `DispatcherRequestRate`                                                        | AEM dispatcher HTTP requests        | req/s     | ✔       |                                              |
 
->[!NOTE]
+> [!NOTE]
 >
 > JVM memory metrics are reported **per memory pool**, so `average(value)` on `JvmHeapUsed` / `JvmHeapLimit` averages across pools. Use `FACET host, pool` for an exact per-pool view.
 

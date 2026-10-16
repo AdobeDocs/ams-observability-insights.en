@@ -7,7 +7,7 @@ description: Use SQL query recipes to investigate application and infrastructure
 
 The cookbook is a library of ready-to-use queries, grouped by topic. Each query is preceded by the chart type that suits it best, in **bold**. Time clauses are left out because the time picker controls the window.
 
-> [!TIP]
+>[!TIP]
 >
 > Replace example values such as `'checkout'` or `'web-publish-01'` with real values from your tenant. The data discovery queries below list them.
 
@@ -383,7 +383,7 @@ SELECT average(value) AS cpu FROM CpuUtilization FACET host TIMESERIES AUTO
 SELECT average(value) AS userPct FROM CpuUserPercent TIMESERIES AUTO
 ```
 
-> [!NOTE]
+>[!NOTE]
 >
 > SQL reads one entity per query, so user/system/iowait/steal need four side-by-side widgets (see [blueprint 11.6](#116-infrastructure-capacity-board) W7–W10). A Formula would collapse them into one number, not four series.
 

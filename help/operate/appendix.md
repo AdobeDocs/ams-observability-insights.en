@@ -5,8 +5,6 @@ description: Reference supplementary information for Observability Insights SQL 
 
 ## Appendix {#appendix}
 
-**In this doc:** [14.1 Limits](#141-limits) · [14.2 Export file format](#142-export-file-format) · [14.3 One-page cheat sheet](#143-one-page-cheat-sheet)
-
 ### Limits
 
 | Item                             | Limit                                                                   |

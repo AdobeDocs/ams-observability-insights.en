@@ -25,9 +25,10 @@ Start with [Application Performance Monitoring](/help/applications.md) to review
 
 See [Coverage, environments, and data retention](../get-started/coverage-and-data.md) for monitoring scope, application representation, retention periods, and operational implications.
 
-## I am having an issue when I try to login using Chrome browser while other browsers dont seem to be having an issue. 
+## Why can I sign in with other browsers but not Google Chrome?
 
-Follow these steps to resolve the issue: 
-1. Open chrome://settings/cookies
-2. Under Sites allowed to use third-party cookies, click Add and enter https://insights.adobecqms.net
-3. Re-try the login on Insights using an incognito window
+To allow third-party cookies for Observability Insights and try signing in again:
+
+1. To access cookie settings, open `chrome://settings/cookies` in Google Chrome.
+2. To allow cookies for Observability Insights, under **Sites allowed to use third-party cookies**, select **Add** and enter `https://insights.adobecqms.net`.
+3. To check whether the issue is resolved, sign in to Observability Insights in an Incognito window.

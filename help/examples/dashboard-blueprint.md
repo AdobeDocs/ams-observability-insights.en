@@ -7,19 +7,6 @@ description: Build Observability Insights dashboards using blueprints for applic
 
 Each blueprint is a complete, complex dashboard. It lists the goal, the tab and section layout, and every widget with its chart type, unit, thresholds, size and query. Sizes are `width×height` on the 12-column grid. Build each one from top to bottom, then drag to adjust.
 
-| Blueprint                                                                            | Audience              | Highlights                                                                         |
-| ------------------------------------------------------------------------------------ | --------------------- | ---------------------------------------------------------------------------------- |
-| [11.1 Golden Signals / SLO](#111-golden-signals--slo-board)                          | SRE, on-call          | KPI tiles with thresholds, Apdex, error %, saturation                              |
-| [11.2 Error Triage](#112-error-triage-board)                                         | On-call               | Error classes, 5xx hot spots, failing requests with trace IDs                      |
-| [11.3 Latency Deep-Dive](#113-latency-deep-dive-board)                               | Performance engineers | Percentiles, latency buckets, variability, transaction composition, slowest traces |
-| [11.4 Downstream Dependencies](#114-downstream-dependencies-board)                   | Service owners        | Outbound HTTP, DB, messaging, RPC                                                  |
-| [11.5 AEM Author / Publish / Dispatcher](#115-aem-author--publish--dispatcher-board) | AEM teams             | Sections per tier, Sling/JSP/JCR, dispatcher load                                  |
-| [11.6 Infrastructure Capacity](#116-infrastructure-capacity-board)                   | Platform / capacity   | CPU modes, memory, disk, network rates, formulas                                   |
-| [11.7 JVM Health](#117-jvm-health-board)                                             | Java teams            | Heap % formulas, heap per host and pool, threads, JVM CPU                          |
-| [11.8 Executive / NOC wall](#118-executive--noc-wall-board)                          | NOC, leadership       | KPI tiles, availability formula, traffic by tier, SLO note                         |
-| [11.9 Ratios & Headroom](#119-ratios--headroom-board-formula-showcase)               | Everyone              | Formula widget showcase                                                            |
-| [11.10 Service Explorer](#1110-service-explorer-variable-driven)                     | Every team            | Variable-driven, reusable                                                          |
-
 **Chart legend:** **N** = Number, **L** = Line, **A** = Area, **B** = Bar, **P** = Pie, **T** = Table.
 
 

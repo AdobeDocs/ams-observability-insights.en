@@ -11,7 +11,7 @@ Before you use any tool, it helps to know how it works. This doc shows how to ex
 
 The best way to use SQL is to open **Explore** and try it on your own data.
 
-> **Tip**
+>[!Tip]
 >
 > SQL is read-only. It can't change or delete data, and every query is scoped to your tenant.
 
@@ -88,6 +88,6 @@ Every query returns one of four shapes. The shape decides which charts make sens
 | **Explore**                       | The global time picker. `SINCE`/`UNTIL` are ignored when a picker range is active. |
 | **API without an explicit range** | `SINCE`/`UNTIL` in the query, defaulting to the last hour.                         |
 
-> **Note**
+>[!Note]
 >
 > Because the picker wins on dashboards and in Explore, this guide usually leaves `SINCE` out of dashboard queries. One should always define a time picker for the queries.

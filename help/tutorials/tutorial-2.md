@@ -63,7 +63,7 @@ Averages hide outliers. Percentiles show what most users experience (p50) and wh
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
-> **Tip**
+>[!TIP]
 >
 > p50, p95 and p99 of `Transaction.duration` are served from rollups over long windows, so they stay fast for weekly views.
 

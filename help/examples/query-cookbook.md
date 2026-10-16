@@ -7,8 +7,6 @@ description: Use SQL query recipes to investigate application and infrastructure
 
 The cookbook is a library of ready-to-use queries, grouped by topic. Each query is preceded by the chart type that suits it best, in **bold**. Time clauses are left out because the time picker controls the window.
 
-**In this doc:** [10.1 Data discovery](#101-data-discovery) · [10.2 Throughput](#102-throughput) · [10.3 Latency](#103-latency) · [10.4 Errors](#104-errors) · [10.5 Apdex](#105-apdex--user-experience) · [10.6 Services and hosts](#106-services-hosts--instances) · [10.7 Dependencies](#107-downstream-dependencies) · [10.8 AEM](#108-aem-adobe-experience-manager) · [10.9 Infrastructure](#109-infrastructure) · [10.10 JVM](#1010-jvm--runtime)
-
 >[!TIP]
 >
 > Replace example values such as `'checkout'` or `'web-publish-01'` with real values from your tenant. The data discovery queries below list them.

@@ -108,7 +108,7 @@ Each curated entity wraps one OpenTelemetry metric with the right filter and uni
 | `JvmCpuRecentUtilization`                                                      | JVM process CPU                     | %         |         | 1-minute rollup                              |
 | `DispatcherRequestRate`                                                        | AEM dispatcher HTTP requests        | req/s     | ✔       |                                              |
 
->[!NOTE]
+> [!NOTE]
 >
 > JVM memory metrics are reported **per memory pool**, so `average(value)` on `JvmHeapUsed` / `JvmHeapLimit` averages across pools. Use `FACET host, pool` for an exact per-pool view.
 

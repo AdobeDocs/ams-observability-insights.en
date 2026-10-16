@@ -35,7 +35,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
-> **Warning**
+>[!WARNING]
 >
 > Always facet `rate()` by `host` (and by `device` for disks), or filter to one host. Without that, the readings from different hosts get mixed together and the result is meaningless.
 

@@ -25,7 +25,7 @@ FROM   <Entity>
 <unit>        := second | seconds | minute | minutes | hour | hours | day | days | week | weeks
 ```
 
-> **Note**
+>[!Note]
 >
 > The `--` annotations above are documentation only. SQL itself doesn't accept comments.
 

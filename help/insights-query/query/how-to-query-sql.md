@@ -39,7 +39,7 @@ This counts requests per service, which shows you which services are reporting.
 
 > **Important**
 >
-> **Discover before you build.** Attribute availability depends on how each service is instrumented. Run the [discovery queries](#101-data-discovery) on a new tenant first to see which services, hosts, attributes and metrics actually contain data.
+> **Discover before you build.** Attribute availability depends on how each service is instrumented. Run the [discovery queries](../../examples/query-cookbook.md#data-discovery) on a new tenant first to see which services, hosts, attributes and metrics actually contain data.
 
 ### How a query runs
 

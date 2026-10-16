@@ -640,7 +640,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS txBytesPerSec FROM NetworkTransmitRate FACET host TIMESERIES AUTO
 ```
 
-**W20 · Total network I/O for one host (formula)** — Formula widget, L, `bytes/s`, 12×4. Formulas cannot `FACET`, and `rate()` must be scoped to one host (see [Curated metric entities](#53-curated-metric-entities)), so pin the host — replace `web-publish-01` with a real host name from W5.
+**W20 · Total network I/O for one host (formula)** — Formula widget, L, `bytes/s`, 12×4. Formulas cannot `FACET`, and `rate()` must be scoped to one host (see [Curated metric entities](../references/data-dictionary.md#curated-metric-entities)), so pin the host — replace `web-publish-01` with a real host name from W5.
 
 Query `netRx`:
 
@@ -935,7 +935,7 @@ Formula:
 limit - used
 ```
 
-**W5 · Network out/in ratio for one host** — Formula, L (pin the host; see [Curated metric entities](#53-curated-metric-entities))
+**W5 · Network out/in ratio for one host** — Formula, L (pin the host; see [Curated metric entities](../references/data-dictionary.md#curated-metric-entities))
 
 Query `rx`:
 

@@ -29,7 +29,7 @@ SELECT timestamp, service, name, duration FROM Transaction LIMIT 10
 
 Rows are sorted by the first column, descending, so putting `timestamp` first gives you the newest requests at the top.
 
-> **Note**
+>[!NOTE]
 >
 > SQL has no `SELECT *`. Listing attributes keeps results small and readable. The [Data dictionary](#data-dictionary), and the autocomplete in the editor, show what's available.
 
@@ -63,7 +63,7 @@ Separate aggregates with commas, and name each one with `AS`:
 SELECT count(*) AS requests, average(duration) AS avgMs, max(duration) AS maxMs FROM Transaction
 ```
 
-> **Tip**
+>[!TIP]
 >
 > Aliases become column headers and legend labels, and they're what you reference in `ORDER BY`. Get into the habit of naming every aggregate.
 
@@ -121,7 +121,7 @@ Use `LIKE` with `%` for partial matches:
 SELECT count(*) AS contentRequests FROM Transaction WHERE urlPath LIKE '/content/%'
 ```
 
-> **Note**
+>[!NOTE]
 >
 > String values are case sensitive and use single quotes: `'Error'`, not `"Error"` or `'error'`. Replace `checkout` with a service from your tenant. The next step shows how to list them.
 
